@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+
+# Local tooling / agent artifacts
+.superpowers/
+.claude/
+docs/superpowers/
+
+# Node (if a build is added later)
+node_modules/
+npm-debug.log*
+*.log
