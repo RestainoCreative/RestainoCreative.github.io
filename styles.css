@@ -4696,11 +4696,76 @@ body.font-bricolage .pc-breather-p { font-family: var(--body); font-weight: 600;
   display: flex; gap: clamp(16px, 2vw, 32px); padding: 0 clamp(24px, 5vw, 96px);
   width: max-content; will-change: transform;
 }
-.pc-gallery-item { margin: 0; flex-shrink: 0; }
+.pc-gallery-item { margin: 0; flex-shrink: 0; cursor: zoom-in; }
 .pc-gallery-media {
   position: relative; width: clamp(320px, 56vw, 880px); height: clamp(280px, 62vh, 620px);
   border-radius: 12px; overflow: hidden; background: #050403;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;
 }
+/* Clickable affordance: lift + dim the image and reveal a "View" badge. */
+.pc-gallery-item:hover .pc-gallery-media {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.pc-gallery-item:hover .pc-gallery-media .pc-media { filter: brightness(0.6); }
+.pc-gallery-media .pc-media { transition: filter .4s ease; }
+.pc-gallery-zoom {
+  position: absolute; inset: 0; z-index: 6; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  opacity: 0; transform: scale(0.9);
+  transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  color: var(--on-d);
+}
+.pc-gallery-item:hover .pc-gallery-zoom { opacity: 1; transform: scale(1); }
+.pc-zoom-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  border: 1px solid rgba(237,228,208,0.55);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; line-height: 1;
+  background: rgba(8,6,5,0.35); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.pc-zoom-label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+}
+
+/* ── Lightbox (click-to-enlarge) ───────────────────────── */
+.pc-lightbox {
+  position: fixed; inset: 0; z-index: 100000;
+  background: rgba(5,4,3,0.92);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1); backdrop-filter: blur(16px) saturate(1.1);
+  display: flex; align-items: center; justify-content: center;
+  padding: 6vh 5vw; cursor: zoom-out;
+  opacity: 0; animation: pcLightboxIn .28s ease forwards;
+}
+@keyframes pcLightboxIn { to { opacity: 1; } }
+.pc-lightbox-stage {
+  position: relative; max-width: 94vw; max-height: 90vh; cursor: default;
+  display: flex; flex-direction: column; align-items: center;
+  animation: pcLightboxZoom .35s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes pcLightboxZoom { from { transform: scale(0.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.pc-lightbox-media {
+  max-width: 94vw; max-height: 84vh; width: auto; height: auto;
+  object-fit: contain; border-radius: 8px; display: block;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.65);
+}
+.pc-lightbox-cap {
+  margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--on-d-dim); text-align: center; max-width: 70ch;
+}
+.pc-lightbox-close {
+  position: fixed; top: 22px; right: 26px; z-index: 2;
+  width: 46px; height: 46px; border-radius: 999px;
+  background: rgba(8,6,5,0.6); border: 1px solid rgba(237,228,208,0.3);
+  color: var(--on-d); font-size: 16px; cursor: pointer;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: border-color .3s ease, transform .3s ease;
+}
+.pc-lightbox-close:hover { border-color: var(--stage-1); transform: rotate(90deg); }
+/* When the dot cursor is on, hide native cursors but keep zoom hints sensible */
+body.custom-cursor .pc-gallery-item,
+body.custom-cursor .pc-lightbox,
+body.custom-cursor .pc-lightbox-close { cursor: none; }
 @media (hover: none) {
   /* Touch devices: fall back to native horizontal scroll, no pin. */
   .pc-gallery { height: auto !important; }

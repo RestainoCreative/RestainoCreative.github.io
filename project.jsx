@@ -489,24 +489,54 @@ function Approach() {
   );
 }
 
-function Gallery() {
+function Gallery({ onZoom }) {
   if (!PROJECT.gallery || !PROJECT.gallery.length) return null;
   return (
     <section className="pc-gallery" id="work">
       <div className="pc-gallery-pin">
         <div className="pc-gallery-head">
           <span className="pc-breather-label">— Selected work</span>
-          <span className="pc-gallery-hint">Scroll →</span>
+          <span className="pc-gallery-hint">Scroll →&nbsp;&nbsp;Click to enlarge</span>
         </div>
         <div className="pc-gallery-track">
           {PROJECT.gallery.map((m, i) => (
-            <figure className="pc-gallery-item" key={i}>
-              <div className="pc-gallery-media"><Media item={m} /></div>
+            <figure className="pc-gallery-item" key={i}
+              data-hover onClick={() => onZoom && onZoom(m)}>
+              <div className="pc-gallery-media">
+                <Media item={m} />
+                <div className="pc-gallery-zoom" aria-hidden="true">
+                  <span className="pc-zoom-icon">⤢</span>
+                  <span className="pc-zoom-label">View</span>
+                </div>
+              </div>
             </figure>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+/* Fullscreen image/video lightbox — opened by clicking a gallery item. */
+function Lightbox({ item, onClose }) {
+  useEffect(() => {
+    if (!item) return;
+    window.__scrollLocked = true;
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => { window.__scrollLocked = false; window.removeEventListener("keydown", onKey); };
+  }, [item, onClose]);
+  if (!item) return null;
+  return (
+    <div className="pc-lightbox is-on" onClick={onClose}>
+      <button className="pc-lightbox-close" onClick={onClose} data-hover aria-label="Close">✕</button>
+      <div className="pc-lightbox-stage" onClick={(e) => e.stopPropagation()}>
+        {item.type === "video"
+          ? <video className="pc-lightbox-media" src={item.src} poster={item.poster} controls autoPlay loop playsInline />
+          : <img className="pc-lightbox-media" src={item.src} alt={item.caption || ""} />}
+        {item.caption ? <div className="pc-lightbox-cap">{item.caption}</div> : null}
+      </div>
+    </div>
   );
 }
 
@@ -615,6 +645,7 @@ function App() {
   const t = SETTINGS;
   const [time, setTime] = useState("");
   const [, forceRender] = useState(0);
+  const [zoomItem, setZoomItem] = useState(null);
 
   // Load the requested project (?p=<slug>) into PROJECT, then re-render.
   // On any failure we keep the built-in fallback (the default project).
@@ -673,11 +704,13 @@ function App() {
         <Challenge />
         <Feature />
         <Approach />
-        <Gallery />
+        <Gallery onZoom={setZoomItem} />
         <Impact />
         <Credits />
         <NextProject time={time} />
       </main>
+
+      <Lightbox item={zoomItem} onClose={() => setZoomItem(null)} />
     </React.Fragment>
   );
 }
