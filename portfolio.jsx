@@ -4,6 +4,49 @@
 
 const { useState, useEffect, useRef, useCallback } = React;
 
+/* ───────────────── Home content ───────────────────
+   Live content loads from /content/home.json (CMS-editable). The object
+   below is the built-in fallback so the page always renders, even if the
+   fetch fails. `HOME` is reassigned when the JSON arrives, then App forces
+   a re-render; components read HOME directly. */
+const FALLBACK_HOME = {
+  hero: { video: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" },
+  statement: [
+    { text: "I strive to be at the forefront of creativity and innovation.", image: "/media/IMAGE1.jpg", align: "left" },
+    { text: "To create culturally-relevant, thought-provoking activations that WOW an audience.", image: "/media/IMAGE2.png", align: "center" },
+    { text: "...and enhance a brand's identity.", image: "/media/IMAGE3.png", align: "right" },
+    { text: "This is what I do.", textRight: "And I love it.", image: "/media/IMAGE4.jpg", align: "split" },
+  ],
+  numbers: {
+    roleLines: ["3× Emmy Award Winning", "Creative Director", "Producer", "Creative Strategist", "Innovator"],
+    metrics: [
+      { value: 3,  suffix: "",   label: "Emmys won",                            body: "Recognition from the room I respect most.",              style: "normal" },
+      { value: 99, suffix: "M+", label: "Social views",                         body: "The work travels further than the rooms it was made in.", style: "hero" },
+      { value: 14, suffix: "",   label: "Years of experience",                  body: "Long enough to know what works.",                        style: "normal" },
+      { value: 7,  suffix: "",   label: "Countries I have led creative in",     body: "Different rooms, same craft.",                           style: "normal" },
+      { value: 0,  suffix: "",   label: "Super Bowls my favorite team has won", body: "Still optimistic. Still watching.",                      style: "accent" },
+    ],
+  },
+  whatIDo: {
+    title: "What I Do",
+    items: [
+      { n: "01", title: "Creative Direction", body: "I specialize in conceptualizing, directing, and executing high-impact creative across live shows, sports, concerts, and immersive experiences." },
+      { n: "02", title: "Campaign Strategy",  body: "I build culturally relevant creative campaigns that extend across broadcast, social, digital, and in-person experiences." },
+      { n: "03", title: "Innovation",         body: "I bridge creativity and emerging technology to develop innovative content, workflows, and experiences powered by AI." },
+    ],
+  },
+  contact: {
+    email: "hello@justinrestaino.com",
+    location: "Las Vegas, NV\nWorldwide",
+    socials: [
+      { label: "Instagram", url: "#" },
+      { label: "LinkedIn",  url: "#" },
+      { label: "Vimeo",     url: "#" },
+    ],
+  },
+};
+let HOME = FALLBACK_HOME;
+
 /* ───────────────── Data ───────────────── */
 
 const PROJECTS = [
@@ -710,7 +753,7 @@ function HeroReelVideo() {
     <video
       ref={ref}
       className="reel-video"
-      src="/media/reel.mp4"
+      src={HOME.hero.video}
       loop
       muted
       autoPlay
@@ -807,7 +850,7 @@ function ReelModal({ open, onClose }) {
     <div className="reel-modal is-on" onClick={onClose}>
       <div className="reel-modal-frame" onClick={(e) => e.stopPropagation()}>
         <div className="reel-stage sharp">
-          <video ref={videoRef} className="reel-video" src="/media/reel.mp4" playsInline preload="auto" />
+          <video ref={videoRef} className="reel-video" src={HOME.hero.video} playsInline preload="auto" />
         </div>
 
         <div className="reel-modal-controls" onClick={(e) => e.stopPropagation()}>
@@ -940,18 +983,14 @@ function StatementImageCardSplit({ src, left, right }) {
 }
 
 function StatementSection() {
+  const cards = (HOME.statement && HOME.statement.length) ? HOME.statement : FALLBACK_HOME.statement;
   return (
     <React.Fragment>
-      <StatementImageCard src="/media/IMAGE1.jpg" align="left"
-        text="I strive to be at the forefront of creativity and innovation." />
-      <StatementImageCard src="/media/IMAGE2.png" align="center"
-        text="To create culturally-relevant, thought-provoking activations that WOW an audience." />
-      <StatementImageCard src="/media/IMAGE3.png" align="right"
-        text="...and enhance a brand's identity." />
-      <StatementImageCardSplit
-        src="/media/IMAGE4.jpg"
-        left="This is what I do."
-        right="And I love it." />
+      {cards.map((c, i) =>
+        c.align === "split"
+          ? <StatementImageCardSplit key={i} src={c.image} left={c.text} right={c.textRight} />
+          : <StatementImageCard key={i} src={c.image} align={c.align || "left"} text={c.text} />
+      )}
     </React.Fragment>);
 
 }
@@ -1124,7 +1163,7 @@ function NumbersSection() {
             out to make way for the "By the numbers" reveal (driven by --p). */}
         <div className="numbers-rolecard" aria-hidden="true">
           <div className="container">
-            {NUMBERS_ROLES.map((r, i) =>
+            {(HOME.numbers.roleLines || NUMBERS_ROLES).map((r, i) =>
               <div
                 className={"role-line" + (i === 0 ? " role-lead" : "")}
                 style={{ "--line-idx": i }}
@@ -1147,21 +1186,18 @@ function NumbersSection() {
           <div className="numbers-divider" aria-hidden="true"></div>
 
           <div className="numbers-row">
-            <NumberStory idx={0} target={3}
-              eyebrow="Emmys won"
-              body="Recognition from the room I respect most." />
-            <NumberStory idx={1} hero target={99} suffix="M+" duration={2200}
-              eyebrow="Social views"
-              body="The work travels further than the rooms it was made in." />
-            <NumberStory idx={2} target={14}
-              eyebrow="Years of experience"
-              body="Long enough to know what works." />
-            <NumberStory idx={3} target={7}
-              eyebrow="Countries I have led creative in"
-              body="Different rooms, same craft." />
-            <NumberStory idx={4} accent target={0}
-              eyebrow="Super Bowls my favorite team has won"
-              body="Still optimistic. Still watching." />
+            {(HOME.numbers.metrics || []).map((m, i) =>
+              <NumberStory
+                key={i}
+                idx={i}
+                target={Number(m.value) || 0}
+                suffix={m.suffix || ""}
+                eyebrow={m.label}
+                body={m.body}
+                hero={m.style === "hero"}
+                accent={m.style === "accent"}
+                duration={m.style === "hero" ? 2200 : 1600} />
+            )}
           </div>
         </div>
 
@@ -1208,15 +1244,15 @@ function WhatIDoSection() {
         </header>
 
         <div className="wid-list">
-          {DISCIPLINES.map((d, i) =>
+          {(HOME.whatIDo.items || DISCIPLINES).map((d, i) =>
             <article
               className="wid-item reveal"
               style={{ transitionDelay: i * 90 + "ms" }}
-              key={d.n}
+              key={i}
               data-hover>
-              <div className="wid-index">{d.n}</div>
-              <h3 className="wid-disc"><span className="wid-disc-text" data-text={d.t}>{d.t}</span></h3>
-              <p className="wid-desc">{d.b}</p>
+              <div className="wid-index">{d.n || String(i + 1).padStart(2, "0")}</div>
+              <h3 className="wid-disc"><span className="wid-disc-text" data-text={d.title || d.t}>{d.title || d.t}</span></h3>
+              <p className="wid-desc">{d.body || d.b}</p>
             </article>
           )}
         </div>
@@ -1228,6 +1264,9 @@ function WhatIDoSection() {
 /* ───────────────── Contact ───────────────── */
 
 function ContactSection() {
+  const c = HOME.contact || FALLBACK_HOME.contact;
+  const email = c.email || FALLBACK_HOME.contact.email;
+  const socials = (c.socials && c.socials.length) ? c.socials : FALLBACK_HOME.contact.socials;
   return (
     <section className="contact section" id="contact">
       <div className="container">
@@ -1241,7 +1280,7 @@ function ContactSection() {
           <span className="line"><span className="word lg">Let's build</span></span>
           <span className="line d1">
             <span className="word lg">
-              <a className="link" href="mailto:hello@justinrestaino.com" data-hover>
+              <a className="link" href={"mailto:" + email} data-hover>
                 something<span className="punct">.</span>
                 <span className="underline"></span>
               </a>
@@ -1266,18 +1305,25 @@ function ContactSection() {
         <div className="contact-meta">
           <div className="col reveal">
             <div className="k">— Email</div>
-            <div className="v"><a href="mailto:hello@justinrestaino.com" data-hover>hello@justinrestaino.com</a></div>
+            <div className="v"><a href={"mailto:" + email} data-hover>{email}</a></div>
           </div>
           <div className="col reveal reveal-d-1">
             <div className="k">— Based</div>
-            <div className="v">Las Vegas, NV<br />Worldwide</div>
+            <div className="v">
+              {(c.location || "").split("\n").map((line, i, arr) =>
+                <React.Fragment key={i}>{line}{i < arr.length - 1 ? <br /> : null}</React.Fragment>
+              )}
+            </div>
           </div>
           <div className="col reveal reveal-d-2">
             <div className="k">— Connect</div>
             <div className="v">
-              <a href="#" data-hover>Instagram</a><br />
-              <a href="#" data-hover>LinkedIn</a><br />
-              <a href="#" data-hover>Vimeo</a>
+              {socials.map((s, i) =>
+                <React.Fragment key={i}>
+                  <a href={s.url || "#"} data-hover>{s.label}</a>
+                  {i < socials.length - 1 ? <br /> : null}
+                </React.Fragment>
+              )}
             </div>
           </div>
           <div className="col reveal reveal-d-3">
@@ -1349,6 +1395,15 @@ function App() {
   const [reelOpen, setReelOpen] = useState(false);
   const [time, setTime] = useState("");
   const [activeId, setActiveId] = useState("top");
+  const [, forceHome] = useState(0);
+
+  // Load editable home content; keep the built-in fallback on any failure.
+  useEffect(() => {
+    fetch("/content/home.json")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => { HOME = j; forceHome((x) => x + 1); })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const c = document.body.classList;

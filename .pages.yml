@@ -8,6 +8,69 @@ media:
   extensions: [jpg, jpeg, png, gif, webp, svg, mp4, webm, mov]
 
 content:
+  # ── Home page content ──
+  - name: home
+    label: "Home Page"
+    type: file
+    path: content/home.json
+    fields:
+      - name: hero
+        label: Hero reel
+        type: object
+        fields:
+          - { name: video,  label: "Hero video", type: file }
+          - { name: poster, label: "Poster image (fallback frame)", type: image }
+      - name: statement
+        label: "Statement cards (intro sequence)"
+        type: object
+        list: true
+        fields:
+          - { name: text,      label: "Text", type: text }
+          - { name: textRight, label: "Right-side text (split card only)", type: text }
+          - { name: image,     label: "Background image", type: image }
+          - { name: align,     label: "Alignment", type: select, options: { values: [left, center, right, split] } }
+      - name: numbers
+        label: "By the Numbers"
+        type: object
+        fields:
+          - { name: roleLines, label: "Intro role lines", type: string, list: true }
+          - name: metrics
+            label: Metrics
+            type: object
+            list: true
+            fields:
+              - { name: value,  label: "Number", type: number }
+              - { name: suffix, label: "Suffix (e.g. M+, K)", type: string }
+              - { name: label,  label: "Label", type: string }
+              - { name: body,   label: "Caption", type: text }
+              - { name: style,  label: "Emphasis", type: select, options: { values: [normal, hero, accent] } }
+      - name: whatIDo
+        label: "What I Do"
+        type: object
+        fields:
+          - { name: title, label: "Section title", type: string }
+          - name: items
+            label: Disciplines
+            type: object
+            list: true
+            fields:
+              - { name: n,     label: "Number (e.g. 01)", type: string }
+              - { name: title, label: "Title", type: string }
+              - { name: body,  label: "Description", type: text }
+      - name: contact
+        label: "Contact"
+        type: object
+        fields:
+          - { name: email,    label: "Email", type: string }
+          - { name: location, label: "Location (one line per row)", type: text }
+          - name: socials
+            label: Social links
+            type: object
+            list: true
+            fields:
+              - { name: label, label: "Label", type: string }
+              - { name: url,   label: "URL", type: string }
+
   # ── Work index: the order + cards of the stacked reel on /work ──
   - name: work
     label: "Work — Reel order"
