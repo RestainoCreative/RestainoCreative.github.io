@@ -527,15 +527,15 @@ function Lightbox({ item, onClose }) {
     return () => { window.__scrollLocked = false; window.removeEventListener("keydown", onKey); };
   }, [item, onClose]);
   if (!item) return null;
+  // Full-screen takeover. Click anywhere to dismiss (for video, clicks on the
+  // element are swallowed so its controls work — close with ✕ or Esc).
   return (
     <div className="pc-lightbox is-on" onClick={onClose}>
       <button className="pc-lightbox-close" onClick={onClose} data-hover aria-label="Close">✕</button>
-      <div className="pc-lightbox-stage" onClick={(e) => e.stopPropagation()}>
-        {item.type === "video"
-          ? <video className="pc-lightbox-media" src={item.src} poster={item.poster} controls autoPlay loop playsInline />
-          : <img className="pc-lightbox-media" src={item.src} alt={item.caption || ""} />}
-        {item.caption ? <div className="pc-lightbox-cap">{item.caption}</div> : null}
-      </div>
+      {item.type === "video"
+        ? <video className="pc-lightbox-media" src={item.src} poster={item.poster}
+            controls autoPlay loop playsInline onClick={(e) => e.stopPropagation()} />
+        : <img className="pc-lightbox-media" src={item.src} alt="" />}
     </div>
   );
 }
