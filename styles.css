@@ -4632,9 +4632,11 @@ body.font-bricolage .pc-hero-title .mask-line > span { font-family: var(--body);
   letter-spacing: -0.01em; line-height: 1.3; color: var(--on-d);
 }
 
-/* Text breather — large-type minimal copy, optionally over a dark media still. */
+/* Text breather — compact editorial copy, optionally over a dark media still.
+   Body is set in the readable body font at a comfortable reading size (not
+   giant display type) so multi-sentence sections stay short to scroll. */
 .pc-breather { position: relative; overflow: hidden; background: var(--ink);
-  padding: clamp(96px, 18vh, 220px) clamp(24px, 5vw, 96px); }
+  padding: clamp(56px, 9vh, 104px) clamp(24px, 5vw, 96px); }
 .pc-breather-bg { position: absolute; inset: 0; z-index: 0; }
 .pc-breather-bg .pc-media { filter: grayscale(1) brightness(0.5); transform: scale(1.05); }
 .pc-breather-scrim { position: absolute; inset: 0; z-index: 2;
@@ -4642,31 +4644,36 @@ body.font-bricolage .pc-hero-title .mask-line > span { font-family: var(--body);
 .pc-breather-inner { position: relative; z-index: 3; max-width: 1100px; margin: 0 auto; }
 .pc-breather-label {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--stage-1); margin-bottom: 28px;
+  color: var(--stage-1); margin-bottom: 22px;
 }
 .pc-breather-p {
-  font-family: var(--display); font-weight: 500; letter-spacing: -0.025em; line-height: 1.18;
-  color: var(--on-d-dim); margin: 0 0 0.6em; max-width: 24ch;
-  font-size: clamp(24px, 3.4vw, 52px);
+  font-family: var(--body); font-weight: 400; letter-spacing: 0;
+  font-size: clamp(15px, 1.15vw, 18.5px); line-height: 1.6;
+  color: var(--on-d-dim); margin: 0 0 1.05em; max-width: 60ch;
 }
-.pc-breather-p.is-lead { color: var(--on-d); max-width: 22ch; }
-body.font-bigshoulders .pc-breather-p { font-family: var(--display-alt); font-weight: 700; letter-spacing: -0.015em; }
-body.font-bricolage .pc-breather-p { font-family: var(--body); font-weight: 600; letter-spacing: -0.03em; }
+/* Lead paragraph: a short display-type pull-statement above the body copy. */
+.pc-breather-p.is-lead {
+  font-family: var(--display); font-weight: 500; letter-spacing: -0.02em;
+  font-size: clamp(20px, 2.1vw, 30px); line-height: 1.28;
+  color: var(--on-d); max-width: 26ch; margin-bottom: 0.7em;
+}
+body.font-bigshoulders .pc-breather-p.is-lead { font-family: var(--display-alt); font-weight: 700; }
 
 /* Feature moment — single strongest asset, full-bleed, tall. */
 .pc-feature { position: relative; height: 100vh; min-height: 560px; overflow: hidden; background: #050403; }
 .pc-feature .pc-media-cap { left: clamp(24px, 5vw, 96px); bottom: clamp(24px, 5vh, 56px); font-size: 12px; max-width: 40ch; }
 
-/* Approach — text breather paired with a numbered "what I led" list. */
-.pc-approach { background: var(--ink); padding: clamp(96px, 16vh, 200px) clamp(24px, 5vw, 96px); }
+/* Approach — compact editorial copy paired with a numbered "what I led" list. */
+.pc-approach { background: var(--ink); padding: clamp(56px, 10vh, 120px) clamp(24px, 5vw, 96px); }
 .pc-approach-inner {
-  max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr;
-  gap: clamp(40px, 6vw, 96px); align-items: start;
+  max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr;
+  gap: clamp(40px, 6vw, 88px); align-items: start;
 }
-@media (max-width: 900px) { .pc-approach-inner { grid-template-columns: 1fr; gap: 48px; } }
-.pc-approach-solo .pc-approach-inner { grid-template-columns: 1fr; max-width: 1000px; }
-.pc-approach-solo .pc-approach-body .pc-breather-p { max-width: 30ch; }
-.pc-approach-body .pc-breather-p { max-width: 26ch; font-size: clamp(22px, 2.8vw, 42px); }
+@media (max-width: 900px) { .pc-approach-inner { grid-template-columns: 1fr; gap: 40px; } }
+.pc-approach-solo .pc-approach-inner { grid-template-columns: 1fr; max-width: 920px; }
+.pc-approach-solo .pc-approach-body .pc-breather-p { max-width: 60ch; }
+.pc-approach-body .pc-breather-p { max-width: 52ch; font-size: clamp(15px, 1.15vw, 18.5px); }
+.pc-approach-body .pc-breather-p.is-lead { max-width: 26ch; font-size: clamp(20px, 2.1vw, 30px); }
 .pc-led-eyebrow {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--on-d-mute); margin-bottom: 24px; padding-top: 8px;
