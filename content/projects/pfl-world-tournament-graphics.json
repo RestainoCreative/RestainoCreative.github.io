@@ -1,0 +1,139 @@
+{
+  "slug": "pfl-world-tournament-graphics",
+  "title": "PFL World Tournament: Brand Development",
+  "tagline": "Creating the visual future for the Professional Fighters League.",
+  "tags": [
+    "Brand Identity",
+    "Creative Direction",
+    "Creative Producer",
+    "Innovation"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/pfl-world-tournament-graphics/hero.png"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Professional Fighters League"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Brand Identity + Graphics Package"
+    },
+    {
+      "k": "Year",
+      "v": "2025"
+    },
+    {
+      "k": "Timeframe",
+      "v": "4 months"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "The PFL wanted a graphics system centered around bold, 3D visuals — especially for the fight clock and key broadcast elements — while showcasing the global nature of the tournament. Most importantly, the bracket needed to feel like a central character, driving the narrative from fight to fight.",
+      "When we began, the tournament structure and overall narrative were completely different. The graphics we were initially developing, while still on-brand, were tailored to an entirely different product — requiring us to pivot quickly once the new World Tournament format was finalized."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "The PFL was launching its new World Tournament broadcast and needed a fresh graphics package that set it apart while staying true to the core identity fans know and love. As Creative Director, I led a one-month concept phase followed by a three-month execution, delivering over 100 custom graphics for broadcast, brand integration, and promotional content.",
+      "We created the slogan “ONE SHOT” to capture the high-stakes, win-or-go-home nature of the tournament. The phrase became a unifying theme, woven throughout the brand campaign and embedded across the entire graphics package."
+    ],
+    "led": [
+      "Led a one-month concept and three-month execution",
+      "Delivered 100+ custom broadcast graphics",
+      "Built the 'ONE SHOT' campaign theme"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g04.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g05.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g06.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g08.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/g09.png",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "100",
+        "suffix": "+",
+        "k": "Custom graphic assets"
+      }
+    ],
+    "note": "The client was thrilled, and fans across social media praised the package for its modern, sleek look — over 100 custom assets spanning broadcast, brand campaign, and promotional spots."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Professional Fighters League"
+    }
+  ],
+  "next": {
+    "slug": "pfl-brand-film",
+    "title": "PFL World Tournament: Brand Spot",
+    "tagline": "Creating a promotional spot for the Professional Fighters League.",
+    "media": {
+      "type": "image",
+      "src": "/media/pfl-brand-film/hero.png"
+    }
+  }
+}

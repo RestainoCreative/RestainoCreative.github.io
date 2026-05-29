@@ -1,0 +1,164 @@
+{
+  "slug": "2019-worlds",
+  "title": "Paris World Championship",
+  "tagline": "Creating a spectacle for the Riot Games World Championship using holograms.",
+  "tags": [
+    "Opening Ceremony",
+    "Creative Direction",
+    "Creative Producer",
+    "Innovation"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/2019-worlds/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Opening Ceremony"
+    },
+    {
+      "k": "Year",
+      "v": "2019"
+    },
+    {
+      "k": "Timeframe",
+      "v": "12 months"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "This show brought together several major company priorities that all needed to shine within a single performance — the global debut of Riot's new virtual music group True Damage, a high-profile partnership with Louis Vuitton, and the celebration of the League of Legends World Championship, the pinnacle event in global esports.",
+      "Riot Games opening ceremonies had become synonymous with groundbreaking spectacle. The challenge was not only to push the boundaries creatively, but to ensure the in-venue experience felt just as special and immersive as the broadcast viewed at home."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/2019-worlds/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "I led the end-to-end creative and technical execution of the Opening Ceremony, from concept development through live performance. As creative lead, I directed a multidisciplinary team spanning design, animation, choreography, and live production — shaping the vision, presenting to stakeholders, and managing internal teams and external partners throughout.",
+      "My role included overseeing stage and lighting design, hologram content, and choreography, while aligning every element with Riot Games' business goals. I was on site to ensure flawless execution, managing real-time decisions and maintaining creative consistency throughout the show."
+    ],
+    "led": [
+      "Directed concept through live performance",
+      "Oversaw stage, lighting, hologram content, and choreography",
+      "Managed internal teams and external partners on site"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g08.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g09.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g10.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g11.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2019-worlds/g12.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "2",
+        "suffix": "nd",
+        "k": "Emmy Award"
+      },
+      {
+        "n": "100",
+        "suffix": "M+",
+        "k": "Viewers worldwide"
+      },
+      {
+        "n": "1.1",
+        "suffix": "B",
+        "k": "Social impressions"
+      }
+    ],
+    "note": "The opening ceremony earned Riot Games its second Emmy Award and was viewed by more than 100 million people — going viral with 1.1B+ impressions, a 104% increase in Twitter video views, and a 221% surge in Instagram Story engagement."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Partner",
+      "v": "Louis Vuitton"
+    }
+  ],
+  "next": {
+    "slug": "pfl-world-tournament-graphics",
+    "title": "PFL World Tournament: Brand Development",
+    "tagline": "Creating the visual future for the Professional Fighters League.",
+    "media": {
+      "type": "image",
+      "src": "/media/pfl-world-tournament-graphics/hero.png"
+    }
+  }
+}

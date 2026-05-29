@@ -1,0 +1,123 @@
+{
+  "slug": "elpelotazo",
+  "title": "Telemundo: El Pelotazo",
+  "tagline": "Designing the brand identity for a new Telemundo talk show.",
+  "tags": [
+    "Brand Identity",
+    "Creative Direction",
+    "Creative Producer",
+    "Strategy"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/elpelotazo/hero.png"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Telemundo Deportes"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Brand Identity + Graphics Package"
+    },
+    {
+      "k": "Year",
+      "v": "2025"
+    },
+    {
+      "k": "Timeframe",
+      "v": "8 weeks"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "As a brand-new sports show on Telemundo, creating the visual identity from scratch offered a nearly blank slate to work from. While creatively exciting, the range of possible directions was incredibly broad.",
+      "With only a few weeks from ideation to delivery, staying aligned with both the client and the team of artists was crucial to delivering a cohesive and impactful final product under tight timelines."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/elpelotazo/g01.png"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "Telemundo was launching a brand-new sports talk show, El Pelotazo, and needed a full brand identity and graphics package for their studio. As the Creative Director, I worked directly with the client to understand their goals and led the creative vision from initial concept through to final execution, collaborating with concept and motion artists to capture the energy and tone of the show.",
+      "During concepting, the direction that resonated most centered around bright, bold colors, oversized 3D environments, and Rube Goldberg-inspired machines. This fun, playful style evolved into the final package — featuring high-energy animations, kinetic camera moves, and sequences that followed balls flying through frame to drive momentum and excitement."
+    ],
+    "led": [
+      "Led the creative vision from concept to delivery",
+      "Directed concept and motion artists",
+      "Managed weekly client feedback and alignment"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g01.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g02.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g03.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g04.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g05.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g06.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/elpelotazo/g07.png",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [],
+    "note": "The reaction from the client and stakeholders was overwhelmingly positive, exceeding expectations across the board — elevating the brand and helping secure future business."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Telemundo Deportes"
+    }
+  ],
+  "next": {
+    "slug": "2019-worlds",
+    "title": "Paris World Championship",
+    "tagline": "Creating a spectacle for the Riot Games World Championship using holograms.",
+    "media": {
+      "type": "image",
+      "src": "/media/2019-worlds/hero.jpg"
+    }
+  }
+}

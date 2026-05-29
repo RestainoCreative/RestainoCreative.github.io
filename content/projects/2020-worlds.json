@@ -1,0 +1,130 @@
+{
+  "slug": "2020-worlds",
+  "title": "Beijing World Championship",
+  "tagline": "Creating a 10-year anniversary spectacle during a pandemic.",
+  "tags": [
+    "Opening Ceremony",
+    "Creative Direction",
+    "Creative Producer",
+    "Innovation"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/2020-worlds/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Opening Ceremony"
+    },
+    {
+      "k": "Year",
+      "v": "2020"
+    },
+    {
+      "k": "Timeframe",
+      "v": "12 months"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "Due to the pandemic and the event's location in China, we faced numerous creative restrictions — strict limits on how many people could be on stage at once, creative partners unable to legally enter the country, and music performers unable to travel, among many other challenges.",
+      "The show had to deliver on multiple fronts: a full AR performance marking K/DA's return to the main stage, a celebration of the 10-year anniversary of League of Legends Esports, and a spotlight on the two teams competing in the championship match."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/2020-worlds/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "It was the 10th anniversary of the World Championship and Riot aimed to create the biggest celebration in company history. As Creative Director, I led a diverse team of external agencies, stage designers, lighting designers, and choreographers to craft an authentic tribute honoring the tournament's legacy — the first live event returning from the pandemic.",
+      "Adapting the creative vision in the months leading up to the show while staying true to the core pillars was critical. We delivered a 15-minute experience featuring a 30-foot-tall set design, choreography seamlessly integrated with content, stunning lighting visuals, and massive AR activations that transformed the entire stadium."
+    ],
+    "led": [
+      "Led external agencies and design teams",
+      "Adapted the vision around pandemic constraints",
+      "Delivered a 15-minute AR-driven ceremony"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2020-worlds/g07.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "3",
+        "suffix": "rd",
+        "k": "Emmy Award"
+      },
+      {
+        "n": "100",
+        "suffix": "M+",
+        "k": "Live viewers"
+      }
+    ],
+    "note": "The show was a massive success, garnering Riot Games their third Emmy Award — viewed live by 100M+ and earning critical acclaim across social channels."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    }
+  ],
+  "next": {
+    "slug": "phish-at-sphere",
+    "title": "Phish Residency at Sphere",
+    "tagline": "Reimagining real-time visuals for concerts.",
+    "media": {
+      "type": "image",
+      "src": "/media/phish-at-sphere/hero.jpeg"
+    }
+  }
+}

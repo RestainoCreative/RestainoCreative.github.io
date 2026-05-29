@@ -1,0 +1,135 @@
+{
+  "slug": "2018-worlds",
+  "title": "2018 World Championship",
+  "tagline": "Debuting a virtual band live on stage.",
+  "tags": [
+    "AR Concert",
+    "Creative Direction",
+    "Creative Producer",
+    "Innovation"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/2018-worlds/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Augmented Reality Concert"
+    },
+    {
+      "k": "Year",
+      "v": "2018"
+    },
+    {
+      "k": "Timeframe",
+      "v": "12 months"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "A live performance featuring multiple AR characters interacting in real time with real-life performers had never been done before. We had to build everything from the ground up — custom technology, original character assets, and animation that synced perfectly with the choreography happening live on stage.",
+      "Launching K/DA was Riot's most ambitious IP rollout in over a decade. The stakes were high, and the challenge was bringing together teams across game development, marketing, music, and esports to pull off a cohesive, global launch."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/2018-worlds/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "Riot Games was launching K/DA — a virtual pop group composed of League of Legends characters. To introduce them to the world, I pitched the idea of a live performance where the virtual idols would share the stage with their real-world counterparts, overseeing all creative integration to deliver a globally acclaimed moment.",
+      "As creative lead, I sourced and managed the external partners that brought the band to life. Over seven months, we modeled the characters from scratch, collaborated with a motion-capture studio to record the choreography, refined the animation, and applied it to the digital performers — all while working closely with creative teams across Riot."
+    ],
+    "led": [
+      "Pitched and led the K/DA live performance",
+      "Sourced and managed external partners",
+      "Oversaw character modeling, mocap, and animation"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2018-worlds/g08.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "100",
+        "suffix": "M+",
+        "k": "Viewers worldwide"
+      },
+      {
+        "n": "1",
+        "suffix": "",
+        "k": "Highest-grossing skin line in Riot history"
+      }
+    ],
+    "note": "A massively successful launch — K/DA became the highest-grossing skin line in Riot Games' history, and the live performance drew over 100 million viewers, cementing the moment as a cultural milestone for gaming and entertainment."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    }
+  ],
+  "next": {
+    "slug": "2022-spring-finals",
+    "title": "Tyler1 LCS Promo",
+    "tagline": "Teaming up with League's biggest influencer to bring fans back from the pandemic.",
+    "media": {
+      "type": "image",
+      "src": "/media/2022-spring-finals/hero.jpg"
+    }
+  }
+}

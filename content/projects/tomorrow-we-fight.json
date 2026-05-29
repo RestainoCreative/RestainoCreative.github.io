@@ -1,0 +1,153 @@
+{
+  "slug": "tomorrow-we-fight",
+  "title": "Tomorrow We Fight",
+  "tagline": "Using legends to usher in the next generation of League of Legends Esports.",
+  "tags": [
+    "Promotional Film",
+    "Creative Direction",
+    "Creative Producer",
+    "Strategy"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/tomorrow-we-fight/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Promotional Film"
+    },
+    {
+      "k": "Year",
+      "v": "2022"
+    },
+    {
+      "k": "Timeframe",
+      "v": "7 weeks"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "A key goal of the film was to not only honor the past but also spotlight the future by introducing the next generation of pro players. However, due to scheduling conflicts with the league, we were unable to feature any of the current pros in the video — an obstacle that required creative solutions to still deliver on that narrative balance."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "As the LCS approached its 10-year anniversary, the challenge was to honor its legacy while ushering in the next generation. As Creative Director, I oversaw the entire creative process — from early ideation to stakeholder presentations, RFPs for production partners, onsite execution, and final delivery.",
+      "Instead of featuring current pros, we pivoted to center entirely on the legends of the past as a way to symbolically usher in the next generation. We designed three distinct set locations — Reflection, Remembrance, and Honor stations — where these icons could look back on their careers alongside friends they hadn't seen in years, creating authentic, unscripted moments that resonated deeply."
+    ],
+    "led": [
+      "Directed concept through final delivery",
+      "Ran RFPs and managed production partners",
+      "Designed the three-station narrative structure"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g08.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g09.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g10.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/tomorrow-we-fight/g11.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "10",
+        "suffix": "M+",
+        "k": "Views across social"
+      },
+      {
+        "n": "1",
+        "suffix": "",
+        "k": "Esports Awards nomination"
+      }
+    ],
+    "note": "The film received overwhelmingly positive feedback from fans and pros alike — viewed over 10 million times across social and nominated for Best Esports Video at the Esports Awards."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    }
+  ],
+  "next": {
+    "slug": "igniteupriseunleash",
+    "title": "Ignite. Uprise. Unleash.",
+    "tagline": "Changing the tone and voice for the League Championship Series.",
+    "media": {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/hero.jpg"
+    }
+  }
+}

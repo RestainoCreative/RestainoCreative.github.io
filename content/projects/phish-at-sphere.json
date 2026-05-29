@@ -1,73 +1,171 @@
 {
   "slug": "phish-at-sphere",
-  "title": "Phish at Sphere",
+  "title": "Phish Residency at Sphere",
   "tagline": "Reimagining real-time visuals for concerts.",
-  "tags": ["Concert", "Creative Direction", "Creative Producer", "Innovation", "AI"],
-  "hero": { "type": "video", "src": "/media/reel.mp4", "poster": "/media/IMAGE1.jpg" },
-
-  "facts": [
-    { "k": "Client",       "v": "Moment Factory" },
-    { "k": "Role",         "v": "Creative Director, Creative Producer" },
-    { "k": "Discipline",   "v": "Live ✦ Immersive" },
-    { "k": "Year",         "v": "2024" },
-    { "k": "Deliverables", "v": "86 songs of real-time visuals, 16K" }
+  "tags": [
+    "Concert",
+    "Creative Direction",
+    "Creative Producer",
+    "Innovation"
   ],
-
+  "hero": {
+    "type": "image",
+    "src": "/media/phish-at-sphere/hero.jpeg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Moment Factory"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Concert"
+    },
+    {
+      "k": "Year",
+      "v": "2024"
+    },
+    {
+      "k": "Timeframe",
+      "v": "7 months"
+    }
+  ],
   "challenge": {
     "body": [
-      "A four-night Sphere residency for a jam band means no two performances are alike — songs run anywhere from four to thirty minutes, and the visuals have to follow the music live, in real time, on a 16K wraparound display.",
-      "That meant orchestrating over 400 terabytes of content from partners across multiple countries into a single real-time system that could improvise alongside the band — twelve-plus hours of visuals, none of it on a fixed timeline."
+      "Phish is a jam band, meaning their songs can last anywhere between 4–30 minutes. Our challenge was to develop a real-time creative ecosystem that allowed us to follow along with the band live during their performance. Ensuring we had individual content for 86 songs spanned across 4 nights that could live for 30+ minutes was essential.",
+      "This amount of content created over 400 terabytes of data that had to be transferred from 4 different countries all the way to our onsite servers at the Sphere in Las Vegas."
     ],
-    "media": { "type": "image", "src": "/media/IMAGE2.png" }
+    "media": {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g01.jpg"
+    }
   },
-
-  "feature": { "type": "video", "src": "/media/reel.mp4", "poster": "/media/IMAGE3.png",
-    "caption": "Encore — full rig, real-time generative visuals across the dome." },
-
+  "feature": null,
   "approach": {
     "body": [
-      "I led creative development and the real-time Unreal Engine implementation, building the visual language around states of matter and a pipeline that blended pre-rendered, real-time, and AI-generated content.",
-      "Three partner studios, Disguise asset management, and a GrandMA2 console let us layer and call looks live — so the room could change with the band instead of playing back at it."
+      "I was brought on to lead the brainstorm and ideation of creative, production and delivery of content, lead all Unreal development and implementation, oversee all onsite technical innovation and capabilities, and ensure a proper and safe delivery of the show. I led a team that developed visuals that merge with scenographic elements, 360° live performance capture, and emerging real-time technology including Unreal and Notch, as well as pre-rendered imagery and AI-generated visuals.",
+      "We partnered with three different agencies (Sila Sveta, Fly Studios, Myreze), as well as internal and external artists, to develop 12+ hours of pre-rendered, real-time, and AI-generated content. We utilized Disguise's asset management platform and a GrandMA2 console to control and layer all of the content in real time — pre-programming hundreds of looks that could be seamlessly layered, transitioned, and executed live while the band was playing."
     ],
     "led": [
-      "Defined the creative concept and visual language across 86 songs.",
-      "Directed the real-time Unreal Engine implementation.",
-      "Built the live layering pipeline: pre-rendered + real-time + AI.",
-      "Led the cross-studio team across multiple countries."
+      "Led creative ideation, production, and content delivery",
+      "Led all Unreal development and implementation",
+      "Oversaw onsite technical innovation and safe show delivery"
     ]
   },
-
   "gallery": [
-    { "type": "image", "src": "/media/IMAGE1.jpg", "caption": "Cold open — single source, full dome." },
-    { "type": "video", "src": "/media/reel.mp4",  "poster": "/media/IMAGE2.png", "caption": "Real-time visuals tracking the jam." },
-    { "type": "image", "src": "/media/IMAGE3.png", "caption": "States of matter — liquid sequence." },
-    { "type": "image", "src": "/media/IMAGE4.jpg", "caption": "AI-generated transition, called live." },
-    { "type": "video", "src": "/media/reel.mp4",  "poster": "/media/IMAGE1.jpg", "caption": "Encore — full rig at 100%." }
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g08.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g09.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/phish-at-sphere/g10.jpg",
+      "caption": ""
+    }
   ],
-
   "impact": {
     "metrics": [
-      { "n": "80",  "suffix": "K",  "k": "Fans live in attendance" },
-      { "n": "20",  "suffix": "M+", "k": "Social views" },
-      { "n": "86",  "suffix": "",   "k": "Songs, each unique" },
-      { "n": "4",   "suffix": "",   "k": "Nights" }
+      {
+        "n": "80",
+        "suffix": "K",
+        "k": "Fans live in attendance"
+      },
+      {
+        "n": "20",
+        "suffix": "M+",
+        "k": "Social views"
+      },
+      {
+        "n": "86",
+        "suffix": "",
+        "k": "Songs, each unique"
+      },
+      {
+        "n": "4",
+        "suffix": "",
+        "k": "Sold-out nights"
+      }
     ],
-    "note": "Four sold-out nights, 80,000 fans, and 20M+ views across social — a new bar for real-time concert visuals."
+    "note": "The show was a tremendous success — 4 sold-out nights at the Sphere, 80,000 fans live, and clips viewed over 20,000,000 times across social."
   },
-
   "credits": [
-    { "k": "Creative Direction",   "v": "Justin Restaino" },
-    { "k": "Creative Production",  "v": "Justin Restaino" },
-    { "k": "Studio",               "v": "Moment Factory" },
-    { "k": "Real-Time Engine",     "v": "Unreal Engine team" },
-    { "k": "Asset Management",     "v": "Disguise" },
-    { "k": "Lighting Console",     "v": "GrandMA2" }
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Moment Factory"
+    },
+    {
+      "k": "Content Partners",
+      "v": "Sila Sveta · Fly Studios · Myreze"
+    },
+    {
+      "k": "Real-Time / Media Server",
+      "v": "Disguise"
+    },
+    {
+      "k": "Lighting Console",
+      "v": "GrandMA2"
+    }
   ],
-
   "next": {
-    "slug": "field-of-echoes",
-    "title": "Field of Echoes",
-    "tagline": "Next case study.",
-    "media": { "type": "image", "src": "/media/IMAGE4.jpg" }
+    "slug": "elpelotazo",
+    "title": "Telemundo: El Pelotazo",
+    "tagline": "Designing the brand identity for a new Telemundo talk show.",
+    "media": {
+      "type": "image",
+      "src": "/media/elpelotazo/hero.png"
+    }
   }
 }

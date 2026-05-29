@@ -1,0 +1,143 @@
+{
+  "slug": "pfl-brand-film",
+  "title": "PFL World Tournament: Brand Spot",
+  "tagline": "Creating a promotional spot for the Professional Fighters League.",
+  "tags": [
+    "Promotional Film",
+    "Creative Direction",
+    "Creative Producer",
+    "Strategy"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/pfl-brand-film/hero.png"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Professional Fighters League"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Promotional Video"
+    },
+    {
+      "k": "Year",
+      "v": "2025"
+    },
+    {
+      "k": "Timeframe",
+      "v": "4 weeks"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "One of the biggest challenges was introducing the brand-new World Tournament format in a way that was both educational and exciting for fans. Balancing clarity, hype, and storytelling under pressure was crucial to making the campaign land.",
+      "At the same time, we had to feature fighters from around the globe — each with their own story — while working under a tight four-week turnaround."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "The PFL was launching a new win-or-go-home tournament format and needed a launch film to bring excitement to fans. With fighters from all over the world competing, we made sure to capture the global aspect of the tournament alongside the proper CTAs and branding.",
+      "To bring the concept to life, we shot near the fighters' training facility in Florida using a 20-foot LED wall, creating an immersive environment that visually aligned with the new broadcast package — producing high-impact visuals while keeping the look cohesive across all PFL content."
+    ],
+    "led": [
+      "Led creative direction and production",
+      "Aligned the film with the new broadcast package",
+      "Delivered under a tight four-week turnaround"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g05.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g06.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g07.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g08.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g09.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g10.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/pfl-brand-film/g11.png",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [],
+    "note": "The final video was met with enthusiasm from the client and overwhelmingly positive fan sentiment online — praised for both the clarity of the format and the cinematic quality of the promo."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Professional Fighters League"
+    }
+  ],
+  "next": {
+    "slug": "2017-worlds",
+    "title": "AR Elder Dragon",
+    "tagline": "Summoning an AR dragon into the stadium.",
+    "media": {
+      "type": "image",
+      "src": "/media/2017-worlds/hero.jpeg"
+    }
+  }
+}

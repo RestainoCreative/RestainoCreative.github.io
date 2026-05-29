@@ -449,6 +449,7 @@ function Challenge() {
 }
 
 function Feature() {
+  if (!PROJECT.feature) return null;
   return (
     <section className="pc-feature" aria-label="Feature">
       <Media item={PROJECT.feature} />
@@ -457,21 +458,24 @@ function Feature() {
 }
 
 function Approach() {
-  const a = PROJECT.approach;
+  const a = PROJECT.approach || { body: [], led: [] };
+  const body = a.body || [];
+  const led = a.led || [];
   return (
-    <section className="pc-approach" id="approach">
+    <section className={"pc-approach" + (led.length ? "" : " pc-approach-solo")} id="approach">
       <div className="pc-approach-inner">
         <div className="pc-approach-body">
           <div className="pc-breather-label reveal">— The Approach</div>
-          {a.body.map((p, i) => (
+          {body.map((p, i) => (
             <p className={"pc-breather-p reveal " + (i === 0 ? "is-lead" : "")} key={i}
               style={{ transitionDelay: i * 90 + "ms" }}>{p}</p>
           ))}
         </div>
+        {led.length > 0 && (
         <aside className="pc-approach-led">
           <div className="pc-led-eyebrow reveal">— What I led</div>
           <ol className="pc-led-list">
-            {a.led.map((l, i) => (
+            {led.map((l, i) => (
               <li className="pc-led-item reveal" key={i} style={{ transitionDelay: i * 80 + "ms" }}>
                 <span className="pc-led-n">{String(i + 1).padStart(2, "0")}</span>
                 <span className="pc-led-t">{l}</span>
@@ -479,12 +483,14 @@ function Approach() {
             ))}
           </ol>
         </aside>
+        )}
       </div>
     </section>
   );
 }
 
 function Gallery() {
+  if (!PROJECT.gallery || !PROJECT.gallery.length) return null;
   return (
     <section className="pc-gallery" id="work">
       <div className="pc-gallery-pin">
@@ -515,28 +521,34 @@ function Metric({ n, suffix, k }) {
 }
 
 function Impact() {
-  const im = PROJECT.impact;
+  const im = PROJECT.impact || {};
+  const metrics = im.metrics || [];
+  if (!metrics.length && !im.note) return null;
   return (
     <section className="pc-impact" id="impact">
       <div className="pc-impact-inner">
         <div className="pc-breather-label reveal">— The Impact</div>
-        <div className="pc-impact-row">
-          {im.metrics.map((m, i) => <Metric key={i} {...m} />)}
-        </div>
-        <p className="pc-impact-note reveal">{im.note}</p>
+        {metrics.length > 0 && (
+          <div className="pc-impact-row">
+            {metrics.map((m, i) => <Metric key={i} {...m} />)}
+          </div>
+        )}
+        {im.note && <p className="pc-impact-note reveal">{im.note}</p>}
       </div>
     </section>
   );
 }
 
 function Credits() {
+  const credits = PROJECT.credits || [];
+  if (!credits.length) return null;
   return (
     <section className="pc-credits" id="credits">
       <div className="pc-credits-inner">
         <div className="pc-breather-label reveal">— Credits</div>
         <div className="pc-credits-grid">
-          {PROJECT.credits.map((c) => (
-            <div className="pc-credit reveal" key={c.k}>
+          {credits.map((c, i) => (
+            <div className="pc-credit reveal" key={i}>
               <div className="pc-credit-k">{c.k}</div>
               <div className="pc-credit-v">{c.v}</div>
             </div>
@@ -549,9 +561,10 @@ function Credits() {
 
 function NextProject({ time }) {
   const n = PROJECT.next;
+  if (!n) return null;
   return (
     <section className="pc-next" id="next">
-      <a className="pc-next-link" href={n.slug} data-hover>
+      <a className="pc-next-link" href={n.slug ? ("project.html?p=" + n.slug) : "work.html"} data-hover>
         <div className="pc-next-media" aria-hidden="true">
           <Media item={n.media} />
           <div className="pc-next-scrim"></div>

@@ -1,0 +1,147 @@
+{
+  "slug": "2022-spring-finals",
+  "title": "Tyler1 LCS Promo",
+  "tagline": "Teaming up with League's biggest influencer to bring fans back from the pandemic.",
+  "tags": [
+    "Promotional Film",
+    "Creative Direction",
+    "Creative Producer",
+    "Strategy"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/2022-spring-finals/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Promotional Film + Opening Ceremony"
+    },
+    {
+      "k": "Year",
+      "v": "2022"
+    },
+    {
+      "k": "Timeframe",
+      "v": "6 weeks"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "This was the first live show in two years following the pandemic, held at NRG Stadium in Houston, Texas. Our challenge was to design a set and produce a live experience that could not only fill the stadium but also deliver an unforgettable, high-energy return for fans seeing the LCS in person again."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "As the Creative Director for Riot Games Esports, I pitched, led, and oversaw a campaign that positioned Tyler1 as the spokesperson for the Spring Finals at NRG Stadium — overseeing writers, influencer management, internal and external artists, the RFP process, and the stage, lighting, and pyro teams that brought the full vision to life.",
+      "Tyler1 is arguably the biggest personality in gaming, making him the perfect partner. He brought unmatched energy both in the promotional film and live on stage, creating a must-see moment that fans couldn't ignore and helping drive massive interest around the Finals."
+    ],
+    "led": [
+      "Pitched and led the Tyler1 campaign",
+      "Managed writers, influencer talent, and production RFPs",
+      "Oversaw stage, lighting, and pyro execution"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g07.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g08.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g09.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g10.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g11.png",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/2022-spring-finals/g12.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [],
+    "note": "The promotional film drove the highest AMA viewership for an LCS Opening Ceremony in the league's history, with positive remarks from both fans and stakeholders."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    }
+  ],
+  "next": {
+    "slug": "2020-worlds",
+    "title": "Beijing World Championship",
+    "tagline": "Creating a 10-year anniversary spectacle during a pandemic.",
+    "media": {
+      "type": "image",
+      "src": "/media/2020-worlds/hero.jpg"
+    }
+  }
+}

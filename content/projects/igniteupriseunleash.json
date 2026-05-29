@@ -1,0 +1,139 @@
+{
+  "slug": "igniteupriseunleash",
+  "title": "Ignite. Uprise. Unleash.",
+  "tagline": "Changing the tone and voice for the League Championship Series.",
+  "tags": [
+    "Promotional Film",
+    "Creative Direction",
+    "Creative Producer",
+    "Strategy"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/igniteupriseunleash/hero.jpg"
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    },
+    {
+      "k": "Role",
+      "v": "Creative Director, Creative Producer"
+    },
+    {
+      "k": "Discipline",
+      "v": "Promotional Film"
+    },
+    {
+      "k": "Year",
+      "v": "2022"
+    },
+    {
+      "k": "Timeframe",
+      "v": "6 weeks"
+    }
+  ],
+  "challenge": {
+    "body": [
+      "The LCS had gained a reputation as a “meme league,” often labeled a “fiesta” due to inconsistent gameplay. While there's value in being able to laugh at yourself, constantly being the punchline had started to wear on the league's identity and morale.",
+      "Many fan-favorite pro players had retired, and there had been little effort to build new heroes for the next generation. Part of the creative challenge was to start that process — giving fans new faces to root for and invest in."
+    ],
+    "media": {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g01.jpg"
+    }
+  },
+  "feature": null,
+  "approach": {
+    "body": [
+      "The LCS was coming off one of its toughest seasons. I was brought in as Creative Director to help reset the narrative — shaping a new tone and direction aimed at reigniting fan passion and giving audiences a compelling reason to tune in again, while building early fandom for a new generation of pros.",
+      "We established a more serious tone for the league — because if we weren't proud of the LCS, why should the fans be? We treated the gameplay, the pros, and the storytelling with the respect they deserved, directly acknowledging the fan sentiment online and responding with a bold, statement-making film to reset expectations."
+    ],
+    "led": [
+      "Reset the league's creative tone and voice",
+      "Built early fandom for the next generation of pros",
+      "Directed the season-opening film"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g01.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g02.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g03.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g04.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g05.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g06.jpg",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "/media/igniteupriseunleash/g07.jpg",
+      "caption": ""
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "10",
+        "suffix": "%",
+        "k": "Viewership increase"
+      },
+      {
+        "n": "99",
+        "suffix": "%",
+        "k": "TikTok engagement growth"
+      },
+      {
+        "n": "40",
+        "suffix": "%",
+        "k": "Instagram engagement growth"
+      }
+    ],
+    "note": "Fan sentiment completely shifted — audiences began taking the players and the league more seriously, driving a 10% increase in viewership and major social growth (Instagram +40%, Twitter +18%, TikTok +99%)."
+  },
+  "credits": [
+    {
+      "k": "Creative Direction",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Creative Production",
+      "v": "Justin Restaino"
+    },
+    {
+      "k": "Client",
+      "v": "Riot Games"
+    }
+  ],
+  "next": {
+    "slug": "2018-worlds",
+    "title": "2018 World Championship",
+    "tagline": "Debuting a virtual band live on stage.",
+    "media": {
+      "type": "image",
+      "src": "/media/2018-worlds/hero.jpg"
+    }
+  }
+}
