@@ -1,0 +1,73 @@
+{
+  "slug": "phish-at-sphere",
+  "title": "Phish at Sphere",
+  "tagline": "Reimagining real-time visuals for concerts.",
+  "tags": ["Concert", "Creative Direction", "Creative Producer", "Innovation", "AI"],
+  "hero": { "type": "video", "src": "/media/reel.mp4", "poster": "/media/IMAGE1.jpg" },
+
+  "facts": [
+    { "k": "Client",       "v": "Moment Factory" },
+    { "k": "Role",         "v": "Creative Director, Creative Producer" },
+    { "k": "Discipline",   "v": "Live ✦ Immersive" },
+    { "k": "Year",         "v": "2024" },
+    { "k": "Deliverables", "v": "86 songs of real-time visuals, 16K" }
+  ],
+
+  "challenge": {
+    "body": [
+      "A four-night Sphere residency for a jam band means no two performances are alike — songs run anywhere from four to thirty minutes, and the visuals have to follow the music live, in real time, on a 16K wraparound display.",
+      "That meant orchestrating over 400 terabytes of content from partners across multiple countries into a single real-time system that could improvise alongside the band — twelve-plus hours of visuals, none of it on a fixed timeline."
+    ],
+    "media": { "type": "image", "src": "/media/IMAGE2.png" }
+  },
+
+  "feature": { "type": "video", "src": "/media/reel.mp4", "poster": "/media/IMAGE3.png",
+    "caption": "Encore — full rig, real-time generative visuals across the dome." },
+
+  "approach": {
+    "body": [
+      "I led creative development and the real-time Unreal Engine implementation, building the visual language around states of matter and a pipeline that blended pre-rendered, real-time, and AI-generated content.",
+      "Three partner studios, Disguise asset management, and a GrandMA2 console let us layer and call looks live — so the room could change with the band instead of playing back at it."
+    ],
+    "led": [
+      "Defined the creative concept and visual language across 86 songs.",
+      "Directed the real-time Unreal Engine implementation.",
+      "Built the live layering pipeline: pre-rendered + real-time + AI.",
+      "Led the cross-studio team across multiple countries."
+    ]
+  },
+
+  "gallery": [
+    { "type": "image", "src": "/media/IMAGE1.jpg", "caption": "Cold open — single source, full dome." },
+    { "type": "video", "src": "/media/reel.mp4",  "poster": "/media/IMAGE2.png", "caption": "Real-time visuals tracking the jam." },
+    { "type": "image", "src": "/media/IMAGE3.png", "caption": "States of matter — liquid sequence." },
+    { "type": "image", "src": "/media/IMAGE4.jpg", "caption": "AI-generated transition, called live." },
+    { "type": "video", "src": "/media/reel.mp4",  "poster": "/media/IMAGE1.jpg", "caption": "Encore — full rig at 100%." }
+  ],
+
+  "impact": {
+    "metrics": [
+      { "n": "80",  "suffix": "K",  "k": "Fans live in attendance" },
+      { "n": "20",  "suffix": "M+", "k": "Social views" },
+      { "n": "86",  "suffix": "",   "k": "Songs, each unique" },
+      { "n": "4",   "suffix": "",   "k": "Nights" }
+    ],
+    "note": "Four sold-out nights, 80,000 fans, and 20M+ views across social — a new bar for real-time concert visuals."
+  },
+
+  "credits": [
+    { "k": "Creative Direction",   "v": "Justin Restaino" },
+    { "k": "Creative Production",  "v": "Justin Restaino" },
+    { "k": "Studio",               "v": "Moment Factory" },
+    { "k": "Real-Time Engine",     "v": "Unreal Engine team" },
+    { "k": "Asset Management",     "v": "Disguise" },
+    { "k": "Lighting Console",     "v": "GrandMA2" }
+  ],
+
+  "next": {
+    "slug": "field-of-echoes",
+    "title": "Field of Echoes",
+    "tagline": "Next case study.",
+    "media": { "type": "image", "src": "/media/IMAGE4.jpg" }
+  }
+}

@@ -710,7 +710,7 @@ function HeroReelVideo() {
     <video
       ref={ref}
       className="reel-video"
-      src="reel.mp4"
+      src="/media/reel.mp4"
       loop
       muted
       autoPlay
@@ -807,7 +807,7 @@ function ReelModal({ open, onClose }) {
     <div className="reel-modal is-on" onClick={onClose}>
       <div className="reel-modal-frame" onClick={(e) => e.stopPropagation()}>
         <div className="reel-stage sharp">
-          <video ref={videoRef} className="reel-video" src="reel.mp4" playsInline preload="auto" />
+          <video ref={videoRef} className="reel-video" src="/media/reel.mp4" playsInline preload="auto" />
         </div>
 
         <div className="reel-modal-controls" onClick={(e) => e.stopPropagation()}>
@@ -942,14 +942,14 @@ function StatementImageCardSplit({ src, left, right }) {
 function StatementSection() {
   return (
     <React.Fragment>
-      <StatementImageCard src="IMAGE1.jpg" align="left"
+      <StatementImageCard src="/media/IMAGE1.jpg" align="left"
         text="I strive to be at the forefront of creativity and innovation." />
-      <StatementImageCard src="IMAGE2.png" align="center"
+      <StatementImageCard src="/media/IMAGE2.png" align="center"
         text="To create culturally-relevant, thought-provoking activations that WOW an audience." />
-      <StatementImageCard src="IMAGE3.png" align="right"
+      <StatementImageCard src="/media/IMAGE3.png" align="right"
         text="...and enhance a brand's identity." />
       <StatementImageCardSplit
-        src="IMAGE4.jpg"
+        src="/media/IMAGE4.jpg"
         left="This is what I do."
         right="And I love it." />
     </React.Fragment>);

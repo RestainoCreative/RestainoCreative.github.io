@@ -2,34 +2,52 @@
 
 const { useState, useEffect, useRef } = React;
 
-/* ─────────────── Data (swap media/titles/links per project) ─────────────── */
+/* ─────────────── Data ───────────────
+   Live content comes from /content/work.json (CMS-editable). The array
+   below is a built-in fallback so the page still renders if the fetch
+   fails. Keep it roughly in sync, or let the JSON be the source of truth. */
 
-const WORKS = [
-  { num: "01", title: "Phish at Sphere",   client: "Moment Factory",       year: 2024,
+const FALLBACK_WORKS = [
+  { num: "01", slug: "phish-at-sphere",     title: "Phish at Sphere",     client: "Moment Factory",       year: 2024,
     tags: ["Concert", "Creative Direction", "Innovation"],
-    media: { type: "video", src: "reel.mp4", poster: "IMAGE1.jpg" }, href: "project.html" },
-  { num: "02", title: "Field of Echoes",   client: "Sports Broadcast",     year: 2024,
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" } },
+  { num: "02", slug: "field-of-echoes",     title: "Field of Echoes",     client: "Sports Broadcast",     year: 2024,
     tags: ["Sports", "Broadcast", "Cinematic Open"],
-    media: { type: "image", src: "IMAGE2.png" }, href: "project.html" },
-  { num: "03", title: "Pulse Atlas",       client: "League Broadcast",     year: 2023,
+    media: { type: "image", src: "/media/IMAGE2.png" } },
+  { num: "03", slug: "pulse-atlas",         title: "Pulse Atlas",         client: "League Broadcast",     year: 2023,
     tags: ["Sports", "Identity", "Campaign Strategy"],
-    media: { type: "image", src: "IMAGE3.png" }, href: "project.html" },
-  { num: "04", title: "Hollow City",       client: "Cultural Institution", year: 2023,
+    media: { type: "image", src: "/media/IMAGE3.png" } },
+  { num: "04", slug: "hollow-city",         title: "Hollow City",         client: "Cultural Institution", year: 2023,
     tags: ["Immersive", "AR / XR", "Innovation"],
-    media: { type: "image", src: "IMAGE4.jpg" }, href: "project.html" },
-  { num: "05", title: "Signal Drift",      client: "Telecom",              year: 2023,
+    media: { type: "image", src: "/media/IMAGE4.jpg" } },
+  { num: "05", slug: "signal-drift",        title: "Signal Drift",        client: "Telecom",              year: 2023,
     tags: ["Campaign", "AR / XR", "Strategy"],
-    media: { type: "video", src: "reel.mp4", poster: "IMAGE2.png" }, href: "project.html" },
-  { num: "06", title: "Slow Cathedral",    client: "Touring Artist",       year: 2022,
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE2.png" } },
+  { num: "06", slug: "slow-cathedral",      title: "Slow Cathedral",      client: "Touring Artist",       year: 2022,
     tags: ["Concert", "Production Design", "Tour"],
-    media: { type: "image", src: "IMAGE1.jpg" }, href: "project.html" },
-  { num: "07", title: "The Long Take",     client: "Fashion House",        year: 2022,
+    media: { type: "image", src: "/media/IMAGE1.jpg" } },
+  { num: "07", slug: "the-long-take",       title: "The Long Take",       client: "Fashion House",        year: 2022,
     tags: ["Campaign", "Film", "Direction"],
-    media: { type: "image", src: "IMAGE3.png" }, href: "project.html" },
-  { num: "08", title: "Lighthouse Protocol", client: "Tech Startup",       year: 2022,
+    media: { type: "image", src: "/media/IMAGE3.png" } },
+  { num: "08", slug: "lighthouse-protocol", title: "Lighthouse Protocol", client: "Tech Startup",         year: 2022,
     tags: ["Innovation", "AI", "Launch Campaign"],
-    media: { type: "video", src: "reel.mp4", poster: "IMAGE4.jpg" }, href: "project.html" },
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE4.jpg" } },
 ];
+
+/* Fetch JSON content with an instant fallback (renders immediately, then
+   swaps to the fetched data when it arrives). */
+function useContent(path, fallback) {
+  const [data, setData] = useState(fallback);
+  useEffect(() => {
+    let alive = true;
+    fetch(path)
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => { if (alive) setData(j); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, [path]);
+  return data;
+}
 
 /* ─────────────── Hooks (shared with the rest of the site) ─────────────── */
 
@@ -274,8 +292,9 @@ function WorkHeader({ count }) {
 /* ─────────────── Reel band ─────────────── */
 
 function ReelBand({ project, total }) {
+  const href = "project.html?p=" + (project.slug || "phish-at-sphere");
   return (
-    <a className="wi-band" href={project.href} data-hover>
+    <a className="wi-band" href={href} data-hover>
       <div className="wi-band-media" aria-hidden="true">
         <Media item={project.media} />
         <div className="wi-band-scrim"></div>
@@ -297,11 +316,11 @@ function ReelBand({ project, total }) {
   );
 }
 
-function Reel() {
+function Reel({ projects }) {
   return (
     <section className="wi-reel" id="reel">
-      {WORKS.map((p) => (
-        <ReelBand key={p.num} project={p} total={WORKS.length} />
+      {projects.map((p) => (
+        <ReelBand key={p.num} project={p} total={projects.length} />
       ))}
     </section>
   );
@@ -326,6 +345,8 @@ const SETTINGS = { font: "unbounded", cursor: true, grain: true, smooth: true };
 function App() {
   const t = SETTINGS;
   const [time, setTime] = useState("");
+  const work = useContent("/content/work.json", { projects: FALLBACK_WORKS });
+  const projects = (work && work.projects && work.projects.length) ? work.projects : FALLBACK_WORKS;
 
   useEffect(() => {
     const c = document.body.classList;
@@ -365,8 +386,8 @@ function App() {
       <Nav time={time} />
 
       <main className="wi-page">
-        <WorkHeader count={WORKS.length} />
-        <Reel />
+        <WorkHeader count={projects.length} />
+        <Reel projects={projects} />
         <Footer time={time} />
       </main>
     </React.Fragment>

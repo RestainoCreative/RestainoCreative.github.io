@@ -2,14 +2,17 @@
 
 const { useState, useEffect, useRef } = React;
 
-/* ─────────────── Project data (swap this per project) ─────────────── */
+/* ─────────────── Project data ───────────────
+   Live content is loaded from /content/projects/<slug>.json based on the
+   ?p=<slug> URL param (CMS-editable; add new projects as new files). The
+   object below is the built-in fallback (also the default project). */
 
-const PROJECT = {
+const FALLBACK_PROJECT = {
   slug: "phish-at-sphere",
   title: "Phish at Sphere",
   tagline: "Reimagining real-time visuals for concerts.",
   tags: ["Concert", "Creative Direction", "Creative Producer", "Innovation", "AI"],
-  hero: { type: "video", src: "reel.mp4", poster: "IMAGE1.jpg" },
+  hero: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" },
 
   facts: [
     { k: "Client",       v: "Moment Factory" },
@@ -24,10 +27,10 @@ const PROJECT = {
       "A four-night Sphere residency for a jam band means no two performances are alike — songs run anywhere from four to thirty minutes, and the visuals have to follow the music live, in real time, on a 16K wraparound display.",
       "That meant orchestrating over 400 terabytes of content from partners across multiple countries into a single real-time system that could improvise alongside the band — twelve-plus hours of visuals, none of it on a fixed timeline.",
     ],
-    media: { type: "image", src: "IMAGE2.png" },
+    media: { type: "image", src: "/media/IMAGE2.png" },
   },
 
-  feature: { type: "video", src: "reel.mp4", poster: "IMAGE3.png",
+  feature: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE3.png",
     caption: "Encore — full rig, real-time generative visuals across the dome." },
 
   approach: {
@@ -44,11 +47,11 @@ const PROJECT = {
   },
 
   gallery: [
-    { type: "image", src: "IMAGE1.jpg", caption: "Cold open — single source, full dome." },
-    { type: "video", src: "reel.mp4",  poster: "IMAGE2.png", caption: "Real-time visuals tracking the jam." },
-    { type: "image", src: "IMAGE3.png", caption: "States of matter — liquid sequence." },
-    { type: "image", src: "IMAGE4.jpg", caption: "AI-generated transition, called live." },
-    { type: "video", src: "reel.mp4",  poster: "IMAGE1.jpg", caption: "Encore — full rig at 100%." },
+    { type: "image", src: "/media/IMAGE1.jpg", caption: "Cold open — single source, full dome." },
+    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE2.png", caption: "Real-time visuals tracking the jam." },
+    { type: "image", src: "/media/IMAGE3.png", caption: "States of matter — liquid sequence." },
+    { type: "image", src: "/media/IMAGE4.jpg", caption: "AI-generated transition, called live." },
+    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE1.jpg", caption: "Encore — full rig at 100%." },
   ],
 
   impact: {
@@ -74,9 +77,13 @@ const PROJECT = {
     slug: "index.html#work",
     title: "More work",
     tagline: "See the full index.",
-    media: { type: "image", src: "IMAGE4.jpg" },
+    media: { type: "image", src: "/media/IMAGE4.jpg" },
   },
 };
+
+/* Mutable current project — reassigned when the JSON for the requested
+   slug loads, then a re-render is forced. Components read PROJECT directly. */
+let PROJECT = FALLBACK_PROJECT;
 
 /* ─────────────── Hooks (shared with the rest of the site) ─────────────── */
 
@@ -594,6 +601,18 @@ const SETTINGS = { font: "unbounded", cursor: true, grain: true, smooth: true };
 function App() {
   const t = SETTINGS;
   const [time, setTime] = useState("");
+  const [, forceRender] = useState(0);
+
+  // Load the requested project (?p=<slug>) into PROJECT, then re-render.
+  // On any failure we keep the built-in fallback (the default project).
+  useEffect(() => {
+    let slug = "phish-at-sphere";
+    try { slug = new URLSearchParams(window.location.search).get("p") || slug; } catch (e) {}
+    fetch("/content/projects/" + slug + ".json")
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => { PROJECT = j; forceRender((x) => x + 1); })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const c = document.body.classList;
