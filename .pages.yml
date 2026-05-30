@@ -110,7 +110,6 @@ content:
         type: object
         list: true
         fields:
-          - { name: num,    label: "Number (e.g. 01)", type: string }
           - { name: slug,   label: "Slug — must match a Case Study file name", type: string }
           - { name: title,  label: Title,  type: string }
           - { name: client, label: Client, type: string }

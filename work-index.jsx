@@ -293,8 +293,10 @@ function WorkHeader({ count }) {
 
 /* ─────────────── Reel band ─────────────── */
 
-function ReelBand({ project, total }) {
+function ReelBand({ project, idx, total }) {
   const href = "project.html?p=" + (project.slug || "phish-at-sphere");
+  // Number auto-derives from the project's position in the CMS reel order.
+  const num = String(idx + 1).padStart(2, "0");
   return (
     <a className="wi-band" href={href} data-hover>
       <div className="wi-band-media" aria-hidden="true">
@@ -303,8 +305,8 @@ function ReelBand({ project, total }) {
       </div>
       <div className="wi-band-overlay">
         <div className="wi-band-top">
-          <span className="wi-band-num">{project.num}<span className="of"> / {String(total).padStart(2, "0")}</span></span>
-          <span className="wi-band-tags">{project.tags.join("  ✦  ")}</span>
+          <span className="wi-band-num">{num}<span className="of"> / {String(total).padStart(2, "0")}</span></span>
+          <span className="wi-band-tags">{(project.tags || []).map((t) => String(t).trim()).join("  ✦  ")}</span>
         </div>
         <div className="wi-band-bottom">
           <h2 className="wi-band-title">{project.title}</h2>
@@ -321,8 +323,8 @@ function ReelBand({ project, total }) {
 function Reel({ projects }) {
   return (
     <section className="wi-reel" id="reel">
-      {projects.map((p) => (
-        <ReelBand key={p.num} project={p} total={projects.length} />
+      {projects.map((p, i) => (
+        <ReelBand key={p.slug || i} project={p} idx={i} total={projects.length} />
       ))}
     </section>
   );
