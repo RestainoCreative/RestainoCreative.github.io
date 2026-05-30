@@ -18,6 +18,8 @@ const FALLBACK_HOME = {
     { text: "This is what I do.", textRight: "And I love it.", image: "/media/IMAGE4.jpg", align: "split" },
   ],
   numbers: {
+    headline: "A creative career, distilled into five digits.",
+    headlineHighlight: "five digits",
     roleLines: ["3× Emmy Award Winning", "Creative Director", "Producer", "Creative Strategist", "Innovator"],
     metrics: [
       { value: 3,  suffix: "",   label: "Emmys won",                            body: "Recognition from the room I respect most.",              style: "normal" },
@@ -1155,6 +1157,14 @@ const NUMBERS_ROLES = [
    <img src="..."> later. */
 const BRAND_LOGOS = ["Logo 01", "Logo 02", "Logo 03", "Logo 04", "Logo 05", "Logo 06", "Logo 07", "Logo 08"];
 
+/* Renders `text` with the first occurrence of `phrase` wrapped in the
+   light-show gradient span. */
+function renderHighlight(text, phrase) {
+  if (!phrase || !text || text.indexOf(phrase) === -1) return text;
+  const i = text.indexOf(phrase);
+  return (<React.Fragment>{text.slice(0, i)}<span className="reel-em">{phrase}</span>{text.slice(i + phrase.length)}</React.Fragment>);
+}
+
 function NumbersSection() {
   return (
     <section className="numbers-wrap section stick" id="numbers">
@@ -1181,7 +1191,10 @@ function NumbersSection() {
               <span className="dot"></span>02 — By the numbers
             </div>
             <h2 className="numbers-headline">
-              A creative career, distilled into <span className="reel-em">five digits</span>.
+              {renderHighlight(
+                (HOME.numbers && HOME.numbers.headline) || "A creative career, distilled into five digits.",
+                (HOME.numbers && HOME.numbers.headlineHighlight) || "five digits"
+              )}
             </h2>
           </header>
 
