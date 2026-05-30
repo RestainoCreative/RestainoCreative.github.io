@@ -4,36 +4,97 @@
     "poster": "/media/IMAGE1.jpg"
   },
   "statement": [
-    { "text": "I strive to be at the forefront of creativity and innovation.", "image": "/media/IMAGE1.jpg", "align": "left" },
-    { "text": "To create culturally-relevant, thought-provoking activations that WOW an audience.", "image": "/media/IMAGE2.png", "align": "center" },
-    { "text": "...and enhance a brand's identity.", "image": "/media/IMAGE3.png", "align": "right" },
-    { "text": "This is what I do.", "textRight": "And I love it.", "image": "/media/IMAGE4.jpg", "align": "split" }
+    {
+      "text": "I strive to be at the forefront of creativity and innovation.",
+      "image": "/media/IMAGE1.jpg",
+      "align": "left"
+    },
+    {
+      "text": "To create culturally-relevant, thought-provoking activations that WOW an audience.",
+      "image": "/media/IMAGE2.png",
+      "align": "center"
+    },
+    {
+      "text": "...and enhance a brand's identity.",
+      "image": "/media/IMAGE3.png",
+      "align": "right"
+    },
+    {
+      "text": "This is what I do.",
+      "textRight": "And I love it.",
+      "image": "/media/IMAGE4.jpg",
+      "align": "split"
+    }
   ],
   "numbers": {
-    "roleLines": ["3× Emmy Award Winning", "Creative Director", "Producer", "Creative Strategist", "Innovator"],
+    "roleLines": [
+      "3× Emmy Award Winning",
+      "Creative Director",
+      "Producer",
+      "Creative Strategist",
+      "Innovator"
+    ],
     "metrics": [
-      { "value": 3,  "suffix": "",   "label": "Emmys won",                              "body": "Recognition from the room I respect most.",            "style": "normal" },
-      { "value": 99, "suffix": "M+", "label": "Social views",                           "body": "The work travels further than the rooms it was made in.", "style": "hero" },
-      { "value": 14, "suffix": "",   "label": "Years of experience",                    "body": "Long enough to know what works.",                      "style": "normal" },
-      { "value": 7,  "suffix": "",   "label": "Countries I have led creative in",       "body": "Different rooms, same craft.",                         "style": "normal" },
-      { "value": 0,  "suffix": "",   "label": "Super Bowls my favorite team has won",   "body": "Still optimistic. Still watching.",                    "style": "accent" }
+      {
+        "value": 3,
+        "label": "Emmys won",
+        "style": "normal"
+      },
+      {
+        "value": 99,
+        "suffix": "M+",
+        "label": "Social views",
+        "style": "normal"
+      },
+      {
+        "value": 14,
+        "label": "Years of experience",
+        "style": "normal"
+      },
+      {
+        "value": 7,
+        "label": "Countries I have led creative in",
+        "style": "normal"
+      },
+      {
+        "value": 0,
+        "label": "Super Bowls my favorite team has won",
+        "style": "normal"
+      }
     ]
   },
   "whatIDo": {
     "title": "What I Do",
     "items": [
-      { "n": "01", "title": "Creative Direction", "body": "I specialize in conceptualizing, directing, and executing high-impact creative across live shows, sports, concerts, and immersive experiences." },
-      { "n": "02", "title": "Campaign Strategy",  "body": "I build culturally relevant creative campaigns that extend across broadcast, social, digital, and in-person experiences." },
-      { "n": "03", "title": "Innovation",         "body": "I bridge creativity and emerging technology to develop innovative content, workflows, and experiences powered by AI." }
+      {
+        "n": "01",
+        "title": "Creative Direction",
+        "body": "I specialize in conceptualizing, directing, and executing high-impact creative across live shows, sports, concerts, and immersive experiences."
+      },
+      {
+        "n": "02",
+        "title": "Campaign Strategy",
+        "body": "I build culturally relevant creative campaigns that extend across broadcast, social, digital, and in-person experiences."
+      },
+      {
+        "n": "03",
+        "title": "Innovation",
+        "body": "I bridge creativity and emerging technology to develop innovative content, workflows, and experiences powered by AI."
+      }
     ]
   },
   "contact": {
     "email": "jrestaino91@gmail.com",
     "location": "Las Vegas, NV\nWorldwide",
     "socials": [
-      { "label": "Instagram", "url": "#" },
-      { "label": "LinkedIn",  "url": "#" },
-      { "label": "Vimeo",     "url": "#" }
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/restainocreative/"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/justinrestaino/"
+      }
     ]
   }
 }
