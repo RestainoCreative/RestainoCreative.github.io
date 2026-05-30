@@ -1,0 +1,305 @@
+/* about.jsx — About Me */
+
+const { useState, useEffect, useRef } = React;
+
+/* ─────────────── Content (CMS-editable via /content/about.json) ─────────────── */
+
+const FALLBACK_ABOUT = {
+  eyebrow: "About",
+  name: "Justin Restaino",
+  descriptor: "Dad. Gamer. Sports Fanatic. Creator. Dungeon Master.",
+  portrait: "/media/about/photo-1.jpg",
+  bio: "Whether it has been getting engaged backstage at Hamilton on Broadway, creating graphics packages for NFL on CBS, March Madness, and UFC, winning three Emmys for continuing to innovate and build brand experiences, or making fictional dragons and video game characters perform live on stage in front of 30–40k people in arenas and stadiums — my passion for pushing creative forward is unparalleled.",
+  philosophy: "From pioneering new technology to using standard techniques in unconventional ways, my experience reflects a desire to push myself and my team to the next level — and to go beyond industry standards.",
+  mission: "I want to be at the forefront of creativity and innovation — to create culturally-relevant, thought-provoking activations that WOW an audience and enhance a brand's identity.",
+  wideImage: "/media/about/photo-wide.jpg",
+  sideImage: "/media/about/photo-2.jpg",
+  funFacts: [
+    "I got engaged in Lin-Manuel Miranda's dressing room at the Broadway musical, Hamilton.",
+    "I am a national champion public speaker.",
+  ],
+  email: "jrestaino91@gmail.com",
+};
+let ABOUT = FALLBACK_ABOUT;
+
+/* ─────────────── Hooks (shared with the rest of the site) ─────────────── */
+
+function useSmoothScroll(enabled) {
+  useEffect(() => {
+    if (!enabled) return;
+    if (window.matchMedia("(hover: none)").matches) return;
+    let target = window.scrollY, current = window.scrollY, raf, scheduled = false, suppressNext = false;
+    const maxScroll = () => document.documentElement.scrollHeight - window.innerHeight;
+    const clamp = (v) => Math.max(0, Math.min(maxScroll(), v));
+    const tick = () => {
+      const diff = target - current;
+      if (Math.abs(diff) < 0.4) { current = target; suppressNext = true; window.scrollTo(0, current); scheduled = false; return; }
+      current += diff * 0.12; suppressNext = true; window.scrollTo(0, current); raf = requestAnimationFrame(tick);
+    };
+    const start = () => { if (!scheduled) { scheduled = true; tick(); } };
+    const onWheel = (e) => { if (window.__scrollLocked) { e.preventDefault(); return; } if (e.ctrlKey) return; e.preventDefault(); target = clamp(target + e.deltaY); start(); };
+    const onKey = (e) => {
+      const k = e.key, tag = e.target?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      let delta = 0;
+      if (k === "ArrowDown") delta = 80; else if (k === "ArrowUp") delta = -80;
+      else if (k === " " || k === "PageDown") delta = window.innerHeight * 0.85;
+      else if (k === "PageUp") delta = -window.innerHeight * 0.85;
+      else if (k === "Home") { e.preventDefault(); target = 0; start(); return; }
+      else if (k === "End") { e.preventDefault(); target = maxScroll(); start(); return; }
+      else return;
+      e.preventDefault(); target = clamp(target + delta); start();
+    };
+    const onScroll = () => { if (suppressNext) { suppressNext = false; return; } target = window.scrollY; current = window.scrollY; };
+    window.__smoothScrollTo = (y) => { target = clamp(y); start(); };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("wheel", onWheel); window.removeEventListener("keydown", onKey); window.removeEventListener("scroll", onScroll);
+      delete window.__smoothScrollTo;
+    };
+  }, [enabled]);
+}
+
+function useCursor(enabled) {
+  useEffect(() => {
+    if (!enabled) { document.body.classList.remove("custom-cursor"); return; }
+    document.body.classList.add("custom-cursor");
+    const onMove = (e) => { const r = document.documentElement.style; r.setProperty("--cx", e.clientX + "px"); r.setProperty("--cy", e.clientY + "px"); };
+    const onLeave = () => document.querySelector(".cursor-dot")?.classList.add("is-hidden");
+    const onEnter = () => document.querySelector(".cursor-dot")?.classList.remove("is-hidden");
+    window.addEventListener("mousemove", onMove); window.addEventListener("mouseleave", onLeave); window.addEventListener("mouseenter", onEnter);
+    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseleave", onLeave); window.removeEventListener("mouseenter", onEnter); document.body.classList.remove("custom-cursor"); };
+  }, [enabled]);
+}
+
+function useHoverDot() {
+  useEffect(() => {
+    const onOver = (e) => { const el = e.target.closest("a, button, [data-hover]"); if (el) document.querySelector(".cursor-dot")?.classList.add("is-hover"); };
+    const onOut = (e) => { const next = e.relatedTarget; if (!next || !next.closest?.("a, button, [data-hover]")) document.querySelector(".cursor-dot")?.classList.remove("is-hover"); };
+    document.addEventListener("mouseover", onOver); document.addEventListener("mouseout", onOut);
+    return () => { document.removeEventListener("mouseover", onOver); document.removeEventListener("mouseout", onOut); };
+  }, []);
+}
+
+function useReveal() {
+  useEffect(() => {
+    const select = () => document.querySelectorAll(".reveal, .mask-line");
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    select().forEach((el) => io.observe(el));
+    const init = setTimeout(() => { select().forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) { el.classList.add("is-in"); io.unobserve(el); } }); }, 80);
+    return () => { clearTimeout(init); io.disconnect(); };
+  }, []);
+}
+
+function useAnchorClicks() {
+  useEffect(() => {
+    const onClick = (e) => {
+      const link = e.target.closest('a[href^="#"]'); if (!link) return;
+      const href = link.getAttribute("href"); if (!href || href.length <= 1) return;
+      const id = href.slice(1);
+      if (id === "top") { e.preventDefault(); window.__smoothScrollTo ? window.__smoothScrollTo(0) : window.scrollTo({ top: 0 }); return; }
+      const el = document.getElementById(id); if (!el) return;
+      e.preventDefault(); const top = window.scrollY + el.getBoundingClientRect().top;
+      window.__smoothScrollTo ? window.__smoothScrollTo(top) : window.scrollTo({ top });
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+}
+
+function useContent(path, fallback, apply) {
+  useEffect(() => {
+    let alive = true;
+    fetch(path).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((j) => { if (alive) apply(j); }).catch(() => {});
+    return () => { alive = false; };
+  }, [path]);
+}
+
+/* ─────────────── Media slot (image | video) ─────────────── */
+
+function Media({ item, className = "" }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (item && item.type === "video" && ref.current) {
+      const v = ref.current; v.muted = true; v.defaultMuted = true; const p = v.play(); if (p && p.catch) p.catch(() => {});
+    }
+  }, [item]);
+  if (!item) return null;
+  if (item.type === "video") {
+    return (<div className={"pc-media pc-media-video " + className}><video ref={ref} src={item.src} poster={item.poster} muted loop playsInline autoPlay preload="metadata" /></div>);
+  }
+  return (<div className={"pc-media pc-media-image " + className}><div className="pc-media-img" style={{ backgroundImage: `url(${item.src})` }}></div></div>);
+}
+
+/* ─────────────── Nav ─────────────── */
+
+function Nav({ time }) {
+  return (
+    <nav className="nav">
+      <div className="nav-links">
+        <a href="index.html" className="nav-link" data-hover><span className="idx">←</span><span className="lbl"><span className="lbl-inner" data-text="Home">Home</span></span></a>
+        <a href="work.html" className="nav-link" data-hover><span className="lbl"><span className="lbl-inner" data-text="Work">Work</span></span></a>
+      </div>
+      <div className="nav-links">
+        <a href="index.html#contact" className="nav-link" data-hover><span className="lbl"><span className="lbl-inner">{time || "LAS VEGAS"}</span></span></a>
+      </div>
+    </nav>
+  );
+}
+
+/* ─────────────── Sections ─────────────── */
+
+function AboutHero() {
+  const a = ABOUT;
+  return (
+    <header className="ab-hero" id="top">
+      <div className="ab-hero-inner">
+        <div className="ab-hero-text">
+          <div className="ab-eyebrow reveal">— {a.eyebrow}</div>
+          <h1 className="ab-name"><span className="mask-line"><span>{a.name}</span></span></h1>
+          <p className="ab-descriptor reveal reveal-d-1">{a.descriptor}</p>
+        </div>
+        <div className="ab-hero-portrait reveal reveal-d-2">
+          <div className="ab-portrait-frame"><Media item={{ type: "image", src: a.portrait }} /></div>
+        </div>
+      </div>
+      <div className="pc-scrollcue reveal reveal-d-2" aria-hidden="true"><span>Scroll</span><span className="pc-scrollcue-line"></span></div>
+    </header>
+  );
+}
+
+function BioStatement() {
+  return (
+    <section className="ab-bio">
+      <div className="ab-bio-inner">
+        <div className="ab-label reveal">— Who I am</div>
+        <p className="ab-bio-text reveal">{ABOUT.bio}</p>
+      </div>
+    </section>
+  );
+}
+
+function WideBand() {
+  if (!ABOUT.wideImage) return null;
+  return (<section className="ab-wide" aria-hidden="true"><Media item={{ type: "image", src: ABOUT.wideImage }} /></section>);
+}
+
+function Beliefs() {
+  return (
+    <section className="ab-beliefs">
+      <div className="ab-beliefs-inner">
+        <div className="ab-belief reveal">
+          <div className="ab-label">— Philosophy</div>
+          <p className="ab-belief-text">{ABOUT.philosophy}</p>
+        </div>
+        <div className="ab-belief reveal reveal-d-1">
+          <div className="ab-label">— Mission</div>
+          <p className="ab-belief-text ab-mission">{ABOUT.mission}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FunFacts() {
+  const facts = ABOUT.funFacts || [];
+  return (
+    <section className="ab-facts">
+      <div className="ab-facts-inner">
+        {ABOUT.sideImage && (
+          <div className="ab-facts-photo reveal"><div className="ab-facts-photo-frame"><Media item={{ type: "image", src: ABOUT.sideImage }} /></div></div>
+        )}
+        <div className="ab-facts-body">
+          <div className="ab-label reveal">— Off the clock</div>
+          <ul className="ab-facts-list">
+            {facts.map((f, i) => (
+              <li className="ab-fact reveal" style={{ transitionDelay: i * 90 + "ms" }} key={i}>
+                <span className="ab-fact-mark">✦ Fun fact</span>
+                <span className="ab-fact-text">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactCTA({ time }) {
+  const email = ABOUT.email || FALLBACK_ABOUT.email;
+  return (
+    <section className="ab-cta" id="contact">
+      <div className="ab-cta-inner">
+        <div className="ab-label reveal">— Work with me</div>
+        <h2 className="ab-cta-title reveal">Let's build something <span className="reel-em">together</span>.</h2>
+        <a className="ab-cta-email reveal reveal-d-1" href={"mailto:" + email} data-hover>{email}</a>
+        <div className="ab-cta-links reveal reveal-d-2">
+          <a href="work.html" className="ab-cta-link" data-hover><span className="cl-k">Portfolio</span><span className="cl-title">See the Work</span><span className="cl-arrow">→</span></a>
+          <a href="index.html" className="ab-cta-link" data-hover><span className="cl-k">Home</span><span className="cl-title">Back Home</span><span className="cl-arrow">→</span></a>
+        </div>
+      </div>
+      <div className="ab-foot">
+        <a href="index.html" data-hover>← Home</a>
+        <span>© Justin Restaino</span>
+        <span>Las Vegas ✦ {time}</span>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────── App ─────────────── */
+
+const SETTINGS = { font: "unbounded", cursor: true, grain: true, smooth: true };
+
+function App() {
+  const t = SETTINGS;
+  const [time, setTime] = useState("");
+  const [, force] = useState(0);
+
+  useContent("/content/about.json", FALLBACK_ABOUT, (j) => { ABOUT = j; force((x) => x + 1); });
+
+  useEffect(() => {
+    const c = document.body.classList;
+    c.remove("font-unbounded", "font-bigshoulders", "font-bricolage");
+    c.add("font-" + t.font);
+  }, [t.font]);
+
+  useSmoothScroll(t.smooth);
+  useAnchorClicks();
+  useCursor(t.cursor);
+  useHoverDot();
+  useReveal();
+
+  useEffect(() => {
+    const update = () => {
+      try {
+        const fmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", hour: "2-digit", minute: "2-digit", hour12: false });
+        setTime(fmt.format(new Date()) + " PST");
+      } catch (e) {
+        const d = new Date(); setTime(`${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`);
+      }
+    };
+    update(); const id = setInterval(update, 30 * 1000); return () => clearInterval(id);
+  }, []);
+
+  return (
+    <React.Fragment>
+      {t.grain && <div className="grain" aria-hidden="true"></div>}
+      {t.cursor && <div className="cursor-dot" aria-hidden="true"></div>}
+      <Nav time={time} />
+      <main className="ab-page">
+        <AboutHero />
+        <BioStatement />
+        <WideBand />
+        <Beliefs />
+        <FunFacts />
+        <ContactCTA time={time} />
+      </main>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

@@ -8,6 +8,24 @@ media:
   extensions: [jpg, jpeg, png, gif, webp, svg, mp4, webm, mov]
 
 content:
+  # ── About page content ──
+  - name: about
+    label: "About Page"
+    type: file
+    path: content/about.json
+    fields:
+      - { name: eyebrow,    label: "Eyebrow", type: string }
+      - { name: name,       label: "Name", type: string }
+      - { name: descriptor, label: "Descriptor line", type: string }
+      - { name: portrait,   label: "Portrait photo", type: image }
+      - { name: bio,        label: "Bio (intro statement)", type: text }
+      - { name: philosophy, label: "Philosophy", type: text }
+      - { name: mission,    label: "Mission", type: text }
+      - { name: wideImage,  label: "Wide feature photo", type: image }
+      - { name: sideImage,  label: "Off-the-clock photo", type: image }
+      - { name: funFacts,   label: "Fun facts", type: text, list: true }
+      - { name: email,      label: "Email", type: string }
+
   # ── Home page content ──
   - name: home
     label: "Home Page"
