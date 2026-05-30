@@ -97,5 +97,34 @@
       }
     ]
   },
-  "brandLogos": []
+  "brandLogos": [
+    {
+      "image": "/media/RiotGames.png",
+      "name": "Riot Games"
+    },
+    {
+      "image": "/media/RedBull.png",
+      "name": "Red Bull"
+    },
+    {
+      "image": "/media/NHL.png",
+      "name": "NHL"
+    },
+    {
+      "image": "/media/NFL.png",
+      "name": "NFL"
+    },
+    {
+      "image": "/media/MasterCard.png",
+      "name": "Master Card"
+    },
+    {
+      "image": "/media/LouisVuitton.png",
+      "name": "Louis Vuitton"
+    },
+    {
+      "image": "/media/CBS.png",
+      "name": "CBS"
+    }
+  ]
 }
