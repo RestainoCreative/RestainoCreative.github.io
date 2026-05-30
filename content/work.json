@@ -2,6 +2,23 @@
   "projects": [
     {
       "num": "01",
+      "slug": "phish-sphere-2026",
+      "title": "Phish Residency at Sphere - 2026",
+      "client": "Phish",
+      "year": 2026,
+      "tags": [
+        "Concert ",
+        "Creative Direction ",
+        "Show Direction",
+        "Innovation"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/3_PHISH_SPHERE2026_0418_204715-7548_ALIVE-1.jpg"
+      }
+    },
+    {
+      "num": "01",
       "slug": "phish-at-sphere",
       "title": "Phish Residency at Sphere",
       "client": "Moment Factory",
