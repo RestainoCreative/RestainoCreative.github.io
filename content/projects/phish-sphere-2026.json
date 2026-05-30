@@ -1,0 +1,136 @@
+{
+  "slug": "phish-sphere-2026",
+  "title": "Phish Residency at Sphere - 2026",
+  "tagline": "Nine night. Zero Repeats. Reinventing how Sphere is used forever.",
+  "tags": [
+    "Concert ",
+    "Creative Direction ",
+    "Show Direction",
+    "Innovation"
+  ],
+  "hero": {
+    "type": "image",
+    "src": "/media/1_Phish_FURY_042526_0790.jpg"
+  },
+  "challenge": {
+    "body": [
+      "Two years after our first run, Phish returned to Sphere for something far larger: nine shows across three weekends, with not a single song repeated the entire residency. That meant building a real-time creative ecosystem capable of carrying 161 unique songs — more than 27 hours of music — where any jam could stretch from four minutes to thirty, and the visuals had to follow the band wherever they went, live.\n\nThe bar set in 2024 had to be cleared by an order of magnitude. Every song needed its own world, every world had to react to the band in the moment, and all of it had to play flawlessly across nine sold-out nights on the largest high-resolution screen on the planet."
+    ],
+    "media": {
+      "src": "/media/2_Phish_FURY_042326_1102.jpg"
+    }
+  },
+  "feature": {
+    "type": "image",
+    "src": "/media/12_PHISH_SPHERE2026_0418_223933-0161_ALIVE.jpg"
+  },
+  "approach": {
+    "body": [
+      "I led this project end to end as the ultimate creative and delivery lead — accountable for the show that hit the screen every night. I directed a global team of 50+ artists across multiple studios, steering more than 70 distinct visual content pieces from concept through onsite execution, and owning the creative direction, real-time development, and live show direction across all nine nights.\n\nThe centerpiece was a virtual light rig: a real-time engine that recreates the dynamics of a physical light show directly on Sphere's 160,000 sq ft media plane. For over forty years, Phish's lighting has been a core part of the live experience, so we rebuilt it as living, improvisational technology — more than 7,000 virtual DMX lights commanded live by the band's longtime lighting designer with the same fluidity as a physical rig. Around it, we developed a range of real-time worlds — from iridescent spiderwebs to bubblegum universes to a hot-dog spaceship odyssey — each adapting in the moment to the band's evolving setlist, alongside high-resolution capture of the band's Vermont studio, The Barn, to anchor the show in Phish's roots."
+    ],
+    "led": [
+      "01 — Served as the ultimate creative and delivery lead, accountable for the entire project",
+      "02 — Directed a global team of 50+ artists across multiple studios and 70+ content pieces\n",
+      "03 — Led the design and real-time implementation of the virtual light rig and live engine\n",
+      "04 — Oversaw onsite technical innovation and safe show direction across nine nights"
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/media/9_Phish_FURY_041626_1328 (1).jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/9_PHISH_SPHERE2026_0416_220109-5186_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/8_PHISH_SPHERE2026_0425_203238-6592_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/8_PHISH_SPHERE2026_0424_233904-9431_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/7_PHISH_SPHERE2026_0423_231311-_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/6_PHISH_SPHERE2026_0423_220010-0318_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/5_PHISH_SPHERE2026_0418_230708-9200_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/4_PHISH_SPHERE2026_0418_203604-0775_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/3_PHISH_SPHERE2026_0418_204715-7548_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/2_Phish_FURY_042326_1102-1.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/21_PHISH_SPHERE2026_0417_205835-5355_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/20_PHISH_SPHERE2026_0418_201716-0372_ALIVE-2.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/1_Phish_FURY_042526_0790-1.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/16_260418_Phish_Sphere_Las_Vegas_Photo_Rene_Huemer_0782.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/15_PHISH_SPHERE2026_0417_204232-5009_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/14_PHISH_SPHERE2026_0425_221058-0518_ALIVE.jpg"
+    },
+    {
+      "src": "/media/14_PHISH_SPHERE2026_0424_213133-7909_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/13_PHISH_SPHERE2026_0424_225138-0508_ALIVE.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/12_PHISH_SPHERE2026_0418_223933-0161_ALIVE-1.jpg"
+    },
+    {
+      "type": "image",
+      "src": "/media/11_PHISH_SPHERE2026_0417_202000-9872_ALIVE.jpg"
+    }
+  ],
+  "impact": {
+    "metrics": [
+      {
+        "n": "150k+",
+        "suffix": "FANS LIVE IN ATTENDANCE "
+      },
+      {
+        "n": "161",
+        "suffix": "SONGS - NO REPEATS"
+      },
+      {
+        "n": "9",
+        "suffix": "SOLD OUT NIGHTS"
+      }
+    ],
+    "note": "GQ said we \"reinvented Sphere forever.\"\nThe residency was a landmark: nine sold-out nights, 161 songs with not one repeated, and more than 27 hours of music — another world-first for live entertainment."
+  }
+}
