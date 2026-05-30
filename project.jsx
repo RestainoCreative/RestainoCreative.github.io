@@ -393,10 +393,10 @@ function Hero() {
       </div>
       <div className="pc-hero-overlay">
         <div className="pc-hero-tags reveal">
-          {PROJECT.tags.map((t, i) => (
-            <React.Fragment key={t}>
+          {(PROJECT.tags || []).map((t, i) => (
+            <React.Fragment key={i}>
               {i > 0 && <span className="sep">✦</span>}
-              <span>{t}</span>
+              <span>{String(t).trim()}</span>
             </React.Fragment>
           ))}
         </div>
@@ -413,11 +413,13 @@ function Hero() {
 }
 
 function FactsBar() {
+  const facts = PROJECT.facts || [];
+  if (!facts.length) return null;
   return (
     <section className="pc-facts" aria-label="Project facts">
       <div className="pc-facts-inner">
-        {PROJECT.facts.map((f) => (
-          <div className="pc-fact reveal" key={f.k}>
+        {facts.map((f, i) => (
+          <div className="pc-fact reveal" key={i}>
             <div className="pc-fact-k">{f.k}</div>
             <div className="pc-fact-v">{f.v}</div>
           </div>
@@ -428,7 +430,9 @@ function FactsBar() {
 }
 
 function Challenge() {
-  const c = PROJECT.challenge;
+  const c = PROJECT.challenge || {};
+  const body = c.body || [];
+  if (!body.length && !c.media) return null;
   return (
     <section className="pc-breather pc-challenge" id="challenge">
       {c.media && (
@@ -439,7 +443,7 @@ function Challenge() {
       )}
       <div className="pc-breather-inner">
         <div className="pc-breather-label reveal">— The Challenge</div>
-        {c.body.map((p, i) => (
+        {body.map((p, i) => (
           <p className={"pc-breather-p reveal " + (i === 0 ? "is-lead" : "")} key={i}
             style={{ transitionDelay: i * 90 + "ms" }}>{p}</p>
         ))}
