@@ -899,7 +899,7 @@ body.reel-off .name-stage::after { display: none; }
      approaching) runs to p≈0.6. The word-reveal → color-bloom → text-fade
      sequence all lands inside that window, then a beat of the full-color
      photo before the page-turn handoff. */
-  min-height: 250vh;
+  min-height: 210vh;
   overflow: hidden;
   background: #000;
 }
@@ -915,19 +915,17 @@ body.reel-off .name-stage::after { display: none; }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.06); /* hide blurred edges */
-  /* Two-stage bloom keyed to --p:
-     - Phase 1 (p 0 → ~0.3): photo is BLURRED + BLACK-AND-WHITE while the
-       words light up in front of it.
-     - Phase 2 (p ~0.3 → ~0.55): photo sharpens AND blooms into full color.
-     blur:      28px → 0, clears between p 0.3 and 0.55
-     grayscale: 1 → 0,    clears between p 0.3 and 0.55 (color bloom)
-     saturate:  lifts slightly past 1 as it colorizes for extra pop */
+  /* Kinetic image: FULL COLOR throughout, sharpens fast (blur clears by
+     p≈0.18 so the photo reads immediately), a continuous Ken-Burns zoom so
+     it never sits still, and an exit "push-back" (scale down + darken) as
+     the next card rises over it for a dynamic scene-cut handoff. */
+  --si-exit: clamp(0, calc((var(--p, 0) - 0.58) * 2.6), 1);
   filter:
-    blur(calc(clamp(0, calc(1 - (var(--p, 0) - 0.3) * 4), 1) * 28px))
-    grayscale(clamp(0, calc(1 - (var(--p, 0) - 0.3) * 4), 1))
-    saturate(calc(0.9 + clamp(0, calc((var(--p, 0) - 0.3) * 4), 1) * 0.25));
-  will-change: filter;
+    blur(calc(clamp(0, calc(1 - var(--p, 0) * 5.5), 1) * 22px))
+    saturate(1.12)
+    brightness(calc(1 - var(--si-exit) * 0.5));
+  transform: scale(calc(1.08 + var(--p, 0) * 0.14 - var(--si-exit) * 0.22));
+  will-change: filter, transform;
   z-index: 1;
 }
 .si-vignette {
@@ -940,7 +938,8 @@ body.reel-off .name-stage::after { display: none; }
   pointer-events: none;
   background:
     radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.7) 100%);
-  opacity: clamp(0, calc(1 - var(--p, 0) * 1.6), 1);
+  /* Hold the scrim while the text is present (legibility), then clear. */
+  opacity: clamp(0, calc(1 - (var(--p, 0) - 0.42) * 2.4), 1);
 }
 .si-card .container {
   position: relative;
@@ -957,11 +956,11 @@ body.reel-off .name-stage::after { display: none; }
   letter-spacing: -0.035em;
   color: var(--on-d);
   max-width: 18ch;
-  /* Whole-block fade-out begins once the words have landed (~0.26) and
-     clears FAST (p 0.35 → 0.46) — before the photo finishes blooming to
-     color (~0.55), so the text never overlays the full-color photo. */
-  opacity: clamp(0, calc(1 - (var(--p, 0) - 0.35) * 9), 1);
-  will-change: opacity;
+  /* Exit: once the words have landed, the whole block lifts up and fades
+     out quickly — a kinetic exit rather than a flat dissolve. */
+  opacity: clamp(0, calc(1 - (var(--p, 0) - 0.42) * 9), 1);
+  transform: translateY(calc(clamp(0, calc((var(--p, 0) - 0.42) * 6), 1) * -44px));
+  will-change: opacity, transform;
 }
 body.font-bigshoulders .si-text { font-family: var(--display-alt); font-weight: 900; letter-spacing: -0.02em; }
 body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; letter-spacing: -0.045em; }
@@ -983,13 +982,14 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
   color: transparent;
   -webkit-text-fill-color: transparent;
   animation: reelDrift 9s cubic-bezier(.55,.05,.45,.95) infinite alternate;
-  --w-eff: clamp(0, calc((var(--p, 0) - var(--word-idx, 0) * 0.022) / 0.08), 1);
+  /* Punchy write-on: tighter stagger + faster ramp so the line snaps in,
+     and each word POPS up — rising 0.7em while scaling from 0.7 → 1. */
+  --w-eff: clamp(0, calc((var(--p, 0) - var(--word-idx, 0) * 0.016) / 0.055), 1);
+  transform-origin: 50% 100%;
   opacity: var(--w-eff);
-  transform: translateY(calc((1 - var(--w-eff)) * 0.4em));
-  /* Reveal blur + a constant soft shadow (via the text's alpha) for
-     legibility over the photo. */
+  transform: translateY(calc((1 - var(--w-eff)) * 0.7em)) scale(calc(0.7 + var(--w-eff) * 0.3));
   filter:
-    blur(calc((1 - var(--w-eff)) * 12px))
+    blur(calc((1 - var(--w-eff)) * 10px))
     drop-shadow(0 3px 18px rgba(0, 0, 0, 0.55));
   will-change: opacity, transform, filter;
 }
