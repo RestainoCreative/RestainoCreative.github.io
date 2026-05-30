@@ -89,6 +89,13 @@ content:
             fields:
               - { name: label, label: "Label", type: string }
               - { name: url,   label: "URL", type: string }
+      - name: brandLogos
+        label: "Companies I've worked with (logos)"
+        type: object
+        list: true
+        fields:
+          - { name: image, label: "Logo image", type: image }
+          - { name: name,  label: "Company name (for accessibility)", type: string }
 
   # ── Work index: the order + cards of the stacked reel on /work ──
   - name: work

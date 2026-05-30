@@ -1815,9 +1815,31 @@ body.font-bricolage .nstory-num { font-family: var(--body); font-weight: 700; le
   transition: border-color .4s ease, color .4s ease;
 }
 .brand-chip:hover { border-color: var(--stage-1); color: var(--on-d); }
+
+/* Uploaded company logos — normalized to a clean white monochrome wall so
+   any logo reads consistently on the dark background. */
+.brand-logo {
+  flex-shrink: 0;
+  margin: 0 30px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-logo img {
+  max-height: clamp(26px, 3vw, 42px);
+  max-width: 170px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);   /* solid white */
+  opacity: 0.6;
+  transition: opacity .35s ease;
+}
+.brand-marquee:hover .brand-logo img { opacity: 1; }
 @media (max-width: 900px) {
   .brand-ticker { bottom: 14px; }
   .brand-chip { height: 46px; }
+  .brand-logo { height: 46px; margin: 0 20px; }
 }
 
 .metrics-cols {

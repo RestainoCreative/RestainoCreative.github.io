@@ -44,6 +44,7 @@ const FALLBACK_HOME = {
       { label: "Vimeo",     url: "#" },
     ],
   },
+  brandLogos: [],
 };
 let HOME = FALLBACK_HOME;
 
@@ -1202,16 +1203,25 @@ function NumbersSection() {
           </div>
         </div>
 
-        {/* Brand logo ticker (placeholder — replace chips with <img> later). */}
+        {/* Brand logo ticker — renders uploaded logos (HOME.brandLogos), or
+            placeholder chips until logos are added in the CMS. */}
         <div className="brand-ticker" aria-hidden="true">
           <div className="brand-ticker-label">Trusted by</div>
           <div className="brand-marquee-wrap">
             <div className="brand-marquee">
-              {[0, 1].map((dup) =>
-                BRAND_LOGOS.map((b, i) =>
-                  <span className="brand-chip" key={dup + "-" + i}>{b}</span>
-                )
-              )}
+              {(HOME.brandLogos && HOME.brandLogos.length)
+                ? [0, 1].map((dup) =>
+                    HOME.brandLogos.map((b, i) =>
+                      <span className="brand-logo" key={dup + "-" + i}>
+                        <img src={b.image} alt={b.name || ""} />
+                      </span>
+                    )
+                  )
+                : [0, 1].map((dup) =>
+                    BRAND_LOGOS.map((b, i) =>
+                      <span className="brand-chip" key={dup + "-" + i}>{b}</span>
+                    )
+                  )}
             </div>
           </div>
         </div>
