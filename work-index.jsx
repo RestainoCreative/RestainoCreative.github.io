@@ -40,7 +40,7 @@ function useContent(path, fallback) {
   const [data, setData] = useState(fallback);
   useEffect(() => {
     let alive = true;
-    fetch(path)
+    fetch(path + (path.includes("?") ? "&" : "?") + "t=" + Date.now())
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => { if (alive) setData(j); })
       .catch(() => {});

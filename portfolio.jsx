@@ -1410,7 +1410,7 @@ function App() {
 
   // Load editable home content; keep the built-in fallback on any failure.
   useEffect(() => {
-    fetch("/content/home.json")
+    fetch("/content/home.json?t=" + Date.now())
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => { HOME = j; forceHome((x) => x + 1); })
       .catch(() => {});

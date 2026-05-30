@@ -119,7 +119,7 @@ function useAnchorClicks() {
 function useContent(path, fallback, apply) {
   useEffect(() => {
     let alive = true;
-    fetch(path).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((j) => { if (alive) apply(j); }).catch(() => {});
+    fetch(path + (path.includes("?") ? "&" : "?") + "t=" + Date.now()).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((j) => { if (alive) apply(j); }).catch(() => {});
     return () => { alive = false; };
   }, [path]);
 }
