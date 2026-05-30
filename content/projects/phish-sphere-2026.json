@@ -14,7 +14,8 @@
  },
  "challenge": {
   "body": [
-   "Two years after our first run, Phish returned to Sphere for something far larger: nine shows across three weekends, with not a single song repeated the entire residency. That meant building a real-time creative ecosystem capable of carrying 161 unique songs — more than 27 hours of music — where any jam could stretch from four minutes to thirty, and the visuals had to follow the band wherever they went, live.\n\nThe bar set in 2024 had to be cleared by an order of magnitude. Every song needed its own world, every world had to react to the band in the moment, and all of it had to play flawlessly across nine sold-out nights on the largest high-resolution screen on the planet."
+   "Two years after our first run, Phish returned to Sphere for something far bigger: nine shows over three weekends with not one song repeated — 161 unique songs, more than 27 hours of music.",
+   "Any jam could stretch from four minutes to thirty, so the visuals had to follow the band live, in the moment. The 2024 bar had to be cleared by an order of magnitude — every song its own world, reacting in real time, flawless across nine sold-out nights on the largest high-resolution screen on the planet."
   ],
   "media": {
    "src": "/media/2_Phish_FURY_042326_1102.jpg"
@@ -26,13 +27,14 @@
  },
  "approach": {
   "body": [
-   "I led this project end to end as the ultimate creative and delivery lead — accountable for the show that hit the screen every night. I directed a global team of 50+ artists across multiple studios, steering more than 70 distinct visual content pieces from concept through onsite execution, and owning the creative direction, real-time development, and live show direction across all nine nights.\n\nThe centerpiece was a virtual light rig: a real-time engine that recreates the dynamics of a physical light show directly on Sphere's 160,000 sq ft media plane. For over forty years, Phish's lighting has been a core part of the live experience, so we rebuilt it as living, improvisational technology — more than 7,000 virtual DMX lights commanded live by the band's longtime lighting designer with the same fluidity as a physical rig. Around it, we developed a range of real-time worlds — from iridescent spiderwebs to bubblegum universes to a hot-dog spaceship odyssey — each adapting in the moment to the band's evolving setlist, alongside high-resolution capture of the band's Vermont studio, The Barn, to anchor the show in Phish's roots."
+   "I led the project end to end as creative and delivery lead — accountable for the show that hit the screen every night. I directed a global team of 50+ artists across multiple studios, steering 70+ visual content pieces from concept through onsite execution, and owned the creative direction, real-time development, and live show direction across all nine nights.",
+   "The centerpiece was a virtual light rig: a real-time engine that recreated a physical light show on Sphere's 160,000 sq ft media plane, with 7,000+ virtual DMX lights played live by the band's longtime lighting designer. Around it we built real-time worlds — iridescent spiderwebs, bubblegum universes, a hot-dog spaceship odyssey — each adapting to the band's setlist in the moment, anchored by high-resolution capture of The Barn, Phish's Vermont studio."
   ],
   "led": [
-   "01 — Served as the ultimate creative and delivery lead, accountable for the entire project",
-   "02 — Directed a global team of 50+ artists across multiple studios and 70+ content pieces\n",
-   "03 — Led the design and real-time implementation of the virtual light rig and live engine\n",
-   "04 — Oversaw onsite technical innovation and safe show direction across nine nights"
+   "01 — Creative and delivery lead, accountable for the entire show",
+   "02 — Directed 50+ artists across multiple studios and 70+ content pieces",
+   "03 — Designed and built the real-time virtual light rig and live engine",
+   "04 — Led onsite innovation and show direction across nine nights"
   ]
  },
  "gallery": [
@@ -134,6 +136,6 @@
     "k": "Sold-out nights"
    }
   ],
-  "note": "GQ said we \"reinvented Sphere forever.\"\nThe residency was a landmark: nine sold-out nights, 161 songs with not one repeated, and more than 27 hours of music — another world-first for live entertainment."
+  "note": "GQ said we \"reinvented Sphere forever\" — nine sold-out nights, 161 songs without a single repeat, and over 27 hours of music. Another world-first for live entertainment."
  }
 }
