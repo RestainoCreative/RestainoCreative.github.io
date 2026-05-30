@@ -3699,7 +3699,9 @@ main.stack > .contact.stick { padding: clamp(120px, 16vh, 180px) 0 40px; min-hei
 main.stack > .tease.stick { padding: clamp(80px, 12vh, 140px) 0; min-height: 100vh; }
 main.stack > .wid.stick.is-light {
   background: var(--bone);
-  min-height: 100vh;
+  /* Taller than the viewport so the section stays pinned a bit longer
+     before the next section rises over it (a longer "hold"). */
+  min-height: 145vh;
   display: flex;
   align-items: center;
   padding: clamp(80px, 12vh, 120px) 0;
