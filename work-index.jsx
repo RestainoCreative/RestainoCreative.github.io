@@ -248,12 +248,14 @@ function Nav({ time }) {
     <nav className="nav">
       <div className="nav-links">
         <a href="index.html" className="nav-link" data-hover>
-          <span className="idx">←</span>
           <span className="lbl"><span className="lbl-inner" data-text="Home">Home</span></span>
         </a>
         <span className="nav-link is-current" data-hover>
           <span className="lbl"><span className="lbl-inner" data-text="Work">Work</span></span>
         </span>
+        <a href="about.html" className="nav-link" data-hover>
+          <span className="lbl"><span className="lbl-inner" data-text="About Me">About Me</span></span>
+        </a>
       </div>
       <div className="nav-links">
         <a href="index.html#contact" className="nav-link" data-hover>

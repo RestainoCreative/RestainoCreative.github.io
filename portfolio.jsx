@@ -36,7 +36,7 @@ const FALLBACK_HOME = {
     ],
   },
   contact: {
-    email: "hello@justinrestaino.com",
+    email: "jrestaino91@gmail.com",
     location: "Las Vegas, NV\nWorldwide",
     socials: [
       { label: "Instagram", url: "#" },
@@ -683,8 +683,9 @@ function useReveal() {
 /* ───────────────── Nav ───────────────── */
 
 const NAV_ITEMS = [
-{ idx: "01", label: "Work", href: "work.html" },
-{ idx: "02", label: "About", href: "about.html" }];
+{ idx: "01", label: "Home", href: "index.html" },
+{ idx: "02", label: "Work", href: "work.html" },
+{ idx: "03", label: "About Me", href: "about.html" }];
 
 
 function ShutterLink({ idx, label, href }) {

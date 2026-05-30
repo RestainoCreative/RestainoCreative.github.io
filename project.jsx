@@ -620,12 +620,14 @@ function Nav({ time }) {
   return (
     <nav className="nav">
       <div className="nav-links">
-        <a href="work.html" className="nav-link" data-hover>
-          <span className="idx">←</span>
-          <span className="lbl"><span className="lbl-inner" data-text="Work">Work</span></span>
-        </a>
         <a href="index.html" className="nav-link" data-hover>
           <span className="lbl"><span className="lbl-inner" data-text="Home">Home</span></span>
+        </a>
+        <a href="work.html" className="nav-link" data-hover>
+          <span className="lbl"><span className="lbl-inner" data-text="Work">Work</span></span>
+        </a>
+        <a href="about.html" className="nav-link" data-hover>
+          <span className="lbl"><span className="lbl-inner" data-text="About Me">About Me</span></span>
         </a>
       </div>
       <div className="nav-links">
