@@ -3724,6 +3724,11 @@ main.stack > .section:nth-of-type(12) { z-index: 12; }
 main.stack > .section:nth-of-type(13) { z-index: 13; }
 main.stack > .section:nth-of-type(14) { z-index: 14; }
 
+/* The footer must paint ABOVE every sticky section so the tall, light-bg
+   "What I Do" section can't bleed its bone color over the footer at the very
+   bottom of the page. */
+main.stack > .footer { position: relative; z-index: 30; background: var(--ink); }
+
 /* Subtle drifting charcoal gradient on statement cards — adds atmosphere
    behind the type without competing with it. Specificity bumped with the
    .section.statement-card.stick chain so it wins over the generic
