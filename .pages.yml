@@ -19,6 +19,7 @@ content:
       - { name: descriptor, label: "Descriptor line", type: string }
       - { name: portrait,   label: "Portrait photo", type: image }
       - { name: bio,        label: "Bio (intro statement)", type: text }
+      - { name: highlights, label: "Highlight chips", type: string, list: true }
       - { name: philosophy, label: "Philosophy", type: text }
       - { name: mission,    label: "Mission", type: text }
       - { name: wideImage,  label: "Wide feature photo", type: image }

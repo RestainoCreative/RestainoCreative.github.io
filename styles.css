@@ -4960,9 +4960,19 @@ body.font-bigshoulders .ab-name .mask-line > span { font-family: var(--display-a
 .ab-bio { padding: clamp(70px, 12vh, 150px) clamp(24px, 5vw, 96px); }
 .ab-bio-inner { max-width: 1100px; margin: 0 auto; }
 .ab-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stage-1); margin-bottom: 24px; }
-.ab-bio-text { margin: 0; max-width: 30ch;
-  font-family: var(--display); font-weight: 500; font-size: clamp(22px, 2.9vw, 44px); line-height: 1.22; letter-spacing: -0.025em; color: var(--on-d); }
+.ab-bio-text { margin: 0; max-width: 24ch;
+  font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3vw, 42px); line-height: 1.2; letter-spacing: -0.025em; color: var(--on-d); }
 body.font-bigshoulders .ab-bio-text { font-family: var(--display-alt); font-weight: 700; }
+
+/* Highlight chips — scannable proof points under the bio statement. */
+.ab-highlights { margin-top: clamp(28px, 4vw, 44px); display: flex; flex-wrap: wrap; gap: 12px; max-width: 760px; }
+.ab-highlight {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--on-d-dim);
+  padding: 11px 18px; border: 1px solid var(--line-d); border-radius: 999px;
+  transition: border-color .35s ease, color .35s ease;
+}
+.ab-highlight::before { content: "✦ "; color: var(--stage-1); }
+.ab-highlight:hover { border-color: var(--stage-1); color: var(--on-d); }
 
 /* Wide photo band. */
 .ab-wide { position: relative; height: clamp(420px, 78vh, 760px); overflow: hidden; background: #050403; }
