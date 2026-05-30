@@ -27,7 +27,7 @@ const FALLBACK_PROJECT = {
       "A four-night Sphere residency for a jam band means no two performances are alike — songs run anywhere from four to thirty minutes, and the visuals have to follow the music live, in real time, on a 16K wraparound display.",
       "That meant orchestrating over 400 terabytes of content from partners across multiple countries into a single real-time system that could improvise alongside the band — twelve-plus hours of visuals, none of it on a fixed timeline.",
     ],
-    media: { type: "image", src: "/media/IMAGE2.png" },
+    media: { type: "image", src: "/media/IMAGE2.jpg" },
   },
 
   feature: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE3.png",
@@ -48,7 +48,7 @@ const FALLBACK_PROJECT = {
 
   gallery: [
     { type: "image", src: "/media/IMAGE1.jpg", caption: "Cold open — single source, full dome." },
-    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE2.png", caption: "Real-time visuals tracking the jam." },
+    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE2.jpg", caption: "Real-time visuals tracking the jam." },
     { type: "image", src: "/media/IMAGE3.png", caption: "States of matter — liquid sequence." },
     { type: "image", src: "/media/IMAGE4.jpg", caption: "AI-generated transition, called live." },
     { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE1.jpg", caption: "Encore — full rig at 100%." },

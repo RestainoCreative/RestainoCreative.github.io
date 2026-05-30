@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/elpelotazo/hero.png"
+    "src": "/media/elpelotazo/hero.jpg"
   },
   "facts": [
     {
@@ -41,7 +41,7 @@
     ],
     "media": {
       "type": "image",
-      "src": "/media/elpelotazo/g01.png"
+      "src": "/media/elpelotazo/g01.jpg"
     }
   },
   "feature": null,
@@ -59,37 +59,37 @@
   "gallery": [
     {
       "type": "image",
-      "src": "/media/elpelotazo/g01.png",
+      "src": "/media/elpelotazo/g01.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g02.png",
+      "src": "/media/elpelotazo/g02.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g03.png",
+      "src": "/media/elpelotazo/g03.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g04.png",
+      "src": "/media/elpelotazo/g04.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g05.png",
+      "src": "/media/elpelotazo/g05.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g06.png",
+      "src": "/media/elpelotazo/g06.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/elpelotazo/g07.png",
+      "src": "/media/elpelotazo/g07.jpg",
       "caption": ""
     }
   ],

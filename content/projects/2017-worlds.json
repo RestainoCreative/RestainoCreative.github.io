@@ -114,7 +114,7 @@
     },
     {
       "type": "image",
-      "src": "/media/2017-worlds/g12.png",
+      "src": "/media/2017-worlds/g12.jpg",
       "caption": ""
     }
   ],
@@ -152,7 +152,7 @@
     "tagline": "Creating a 100% AI-generated short film.",
     "media": {
       "type": "image",
-      "src": "/media/lost-and-found/hero.png"
+      "src": "/media/lost-and-found/hero.jpg"
     }
   }
 }

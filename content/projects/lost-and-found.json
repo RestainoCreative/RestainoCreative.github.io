@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/lost-and-found/hero.png"
+    "src": "/media/lost-and-found/hero.jpg"
   },
   "facts": [
     {
@@ -41,7 +41,7 @@
     ],
     "media": {
       "type": "image",
-      "src": "/media/lost-and-found/g01.png"
+      "src": "/media/lost-and-found/g01.jpg"
     }
   },
   "feature": null,
@@ -59,17 +59,17 @@
   "gallery": [
     {
       "type": "image",
-      "src": "/media/lost-and-found/g01.png",
+      "src": "/media/lost-and-found/g01.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/lost-and-found/g02.png",
+      "src": "/media/lost-and-found/g02.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/lost-and-found/g03.png",
+      "src": "/media/lost-and-found/g03.jpg",
       "caption": ""
     }
   ],

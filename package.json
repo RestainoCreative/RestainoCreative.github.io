@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-site",
+  "private": true,
+  "scripts": { "build": "./build.sh" },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-react": "^7.0.0"
+  }
+}

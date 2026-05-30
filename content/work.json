@@ -29,7 +29,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/elpelotazo/hero.png"
+        "src": "/media/elpelotazo/hero.jpg"
       }
     },
     {
@@ -61,7 +61,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/pfl-world-tournament-graphics/hero.png"
+        "src": "/media/pfl-world-tournament-graphics/hero.jpg"
       }
     },
     {
@@ -77,7 +77,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/pfl-brand-film/hero.png"
+        "src": "/media/pfl-brand-film/hero.jpg"
       }
     },
     {
@@ -109,7 +109,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/lost-and-found/hero.png"
+        "src": "/media/lost-and-found/hero.jpg"
       }
     },
     {

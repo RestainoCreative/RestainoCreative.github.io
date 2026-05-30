@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/pfl-brand-film/hero.png"
+    "src": "/media/pfl-brand-film/hero.jpg"
   },
   "facts": [
     {
@@ -79,37 +79,37 @@
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g05.png",
+      "src": "/media/pfl-brand-film/g05.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g06.png",
+      "src": "/media/pfl-brand-film/g06.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g07.png",
+      "src": "/media/pfl-brand-film/g07.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g08.png",
+      "src": "/media/pfl-brand-film/g08.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g09.png",
+      "src": "/media/pfl-brand-film/g09.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g10.png",
+      "src": "/media/pfl-brand-film/g10.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-brand-film/g11.png",
+      "src": "/media/pfl-brand-film/g11.jpg",
       "caption": ""
     }
   ],

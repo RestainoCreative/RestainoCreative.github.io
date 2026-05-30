@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/pfl-world-tournament-graphics/hero.png"
+    "src": "/media/pfl-world-tournament-graphics/hero.jpg"
   },
   "facts": [
     {
@@ -74,17 +74,17 @@
     },
     {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/g04.png",
+      "src": "/media/pfl-world-tournament-graphics/g04.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/g05.png",
+      "src": "/media/pfl-world-tournament-graphics/g05.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/g06.png",
+      "src": "/media/pfl-world-tournament-graphics/g06.jpg",
       "caption": ""
     },
     {
@@ -94,12 +94,12 @@
     },
     {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/g08.png",
+      "src": "/media/pfl-world-tournament-graphics/g08.jpg",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/g09.png",
+      "src": "/media/pfl-world-tournament-graphics/g09.jpg",
       "caption": ""
     }
   ],
@@ -133,7 +133,7 @@
     "tagline": "Creating a promotional spot for the Professional Fighters League.",
     "media": {
       "type": "image",
-      "src": "/media/pfl-brand-film/hero.png"
+      "src": "/media/pfl-brand-film/hero.jpg"
     }
   }
 }

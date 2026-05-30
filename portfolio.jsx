@@ -13,7 +13,7 @@ const FALLBACK_HOME = {
   hero: { video: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" },
   statement: [
     { text: "I strive to be at the forefront of creativity and innovation.", image: "/media/IMAGE1.jpg", align: "left" },
-    { text: "To create culturally-relevant, thought-provoking activations that WOW an audience.", image: "/media/IMAGE2.png", align: "center" },
+    { text: "To create culturally-relevant, thought-provoking activations that WOW an audience.", image: "/media/IMAGE2.jpg", align: "center" },
     { text: "...and enhance a brand's identity.", image: "/media/IMAGE3.png", align: "right" },
     { text: "This is what I do.", textRight: "And I love it.", image: "/media/IMAGE4.jpg", align: "split" },
   ],
@@ -757,7 +757,7 @@ function HeroReelVideo() {
     <video
       ref={ref}
       className="reel-video"
-      src={HOME.hero.video}
+      src={(HOME.hero && HOME.hero.loop) || "/media/reel-hero.mp4"}
       loop
       muted
       autoPlay

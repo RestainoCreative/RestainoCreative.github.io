@@ -10,3 +10,4 @@ docs/superpowers/
 node_modules/
 npm-debug.log*
 *.log
+package-lock.json
