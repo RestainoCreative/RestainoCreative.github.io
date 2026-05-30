@@ -8,7 +8,7 @@ const FALLBACK_ABOUT = {
   eyebrow: "About",
   name: "Justin Restaino",
   descriptor: "Dad. Gamer. Sports Fanatic. Creator. Dungeon Master.",
-  portrait: "/media/about/photo-1.jpg",
+  portrait: "/media/about/headshot.jpg",
   bio: "Whether it has been getting engaged backstage at Hamilton on Broadway, creating graphics packages for NFL on CBS, March Madness, and UFC, winning three Emmys for continuing to innovate and build brand experiences, or making fictional dragons and video game characters perform live on stage in front of 30–40k people in arenas and stadiums — my passion for pushing creative forward is unparalleled.",
   philosophy: "From pioneering new technology to using standard techniques in unconventional ways, my experience reflects a desire to push myself and my team to the next level — and to go beyond industry standards.",
   mission: "I want to be at the forefront of creativity and innovation — to create culturally-relevant, thought-provoking activations that WOW an audience and enhance a brand's identity.",
