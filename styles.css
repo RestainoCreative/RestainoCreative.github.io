@@ -902,6 +902,10 @@ body.reel-off .name-stage::after { display: none; }
   min-height: 210vh;
   overflow: hidden;
   background: #000;
+  /* Soft leading-edge shadow: as a card rises to take over, this casts above
+     its top edge onto the card below, feathering the seam into a smooth
+     hand-off instead of a hard horizontal line. Off-screen once pinned. */
+  box-shadow: 0 -22px 70px -10px rgba(0, 0, 0, 0.55);
 }
 /* The visible content (image, vignette, container) all sit in the TOP
    100vh of the 200vh card, so when the card is pinned at top:0 they fill
@@ -923,8 +927,10 @@ body.reel-off .name-stage::after { display: none; }
   filter:
     blur(calc(clamp(0, calc(1 - var(--p, 0) * 5.5), 1) * 22px))
     saturate(1.12)
-    brightness(calc(1 - var(--si-exit) * 0.5));
-  transform: scale(calc(1.08 + var(--p, 0) * 0.14 - var(--si-exit) * 0.22));
+    brightness(calc((1 - var(--si-exit) * 0.5) * (0.7 + var(--enter, 1) * 0.3)));
+  transform:
+    scale(calc(1.08 + var(--p, 0) * 0.14 - var(--si-exit) * 0.22))
+    translateY(calc((1 - var(--enter, 1)) * 2.2vh));
   will-change: filter, transform;
   z-index: 1;
 }

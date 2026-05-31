@@ -414,6 +414,15 @@ function useStatementImageCards() {
         if (p < 0) p = 0;
         if (p > 1) p = 1;
         pos.el.style.setProperty("--p", p.toFixed(4));
+        // Entrance ease: 0 when the card is one screen below the pin, 1 once it
+        // locks in — eased (easeOutCubic) so the incoming card settles in
+        // smoothly instead of hard-cutting. Drives a brightness + lift settle.
+        const vh = window.innerHeight;
+        let e = vh > 0 ? (window.scrollY - pos.top + vh) / vh : 1;
+        if (e < 0) e = 0;
+        if (e > 1) e = 1;
+        e = 1 - Math.pow(1 - e, 3);
+        pos.el.style.setProperty("--enter", e.toFixed(4));
         // Live gack readouts — only rewrite when the value visibly changed.
         const r = Math.round(p * 1000);
         if (r !== pos.lastP) {

@@ -44,7 +44,10 @@ let positions=[];const measure=()=>{if(window.scrollY>4)return;// only re-measur
 positions=cards.map(el=>{const g={x:el.querySelector(".gk-x"),scrubVal:el.querySelector(".gk-scrub-val"),dimVal:el.querySelector(".gk-dim-val")};if(g.dimVal)g.dimVal.textContent=window.innerWidth+" PX";return{el,top:el.offsetTop,h:el.offsetHeight,g,lastP:-1};});};measure();// initial measurement
 const t1=setTimeout(measure,200);// after first paint
 const t2=setTimeout(measure,800);// after fonts / images settle
-window.addEventListener("resize",measure);let raf;const tick=()=>{for(const pos of positions){let p=pos.h>0?(window.scrollY-pos.top)/pos.h:0;if(p<0)p=0;if(p>1)p=1;pos.el.style.setProperty("--p",p.toFixed(4));// Live gack readouts — only rewrite when the value visibly changed.
+window.addEventListener("resize",measure);let raf;const tick=()=>{for(const pos of positions){let p=pos.h>0?(window.scrollY-pos.top)/pos.h:0;if(p<0)p=0;if(p>1)p=1;pos.el.style.setProperty("--p",p.toFixed(4));// Entrance ease: 0 when the card is one screen below the pin, 1 once it
+// locks in — eased (easeOutCubic) so the incoming card settles in
+// smoothly instead of hard-cutting. Drives a brightness + lift settle.
+const vh=window.innerHeight;let e=vh>0?(window.scrollY-pos.top+vh)/vh:1;if(e<0)e=0;if(e>1)e=1;e=1-Math.pow(1-e,3);pos.el.style.setProperty("--enter",e.toFixed(4));// Live gack readouts — only rewrite when the value visibly changed.
 const r=Math.round(p*1000);if(r!==pos.lastP){pos.lastP=r;const s=Math.min(1,p/0.6);// sweep completes over the active pin window
 if(pos.g.x)pos.g.x.textContent=s.toFixed(3);if(pos.g.scrubVal)pos.g.scrubVal.textContent=Math.round(s*100)+"%";}}raf=requestAnimationFrame(tick);};tick();return()=>{cancelAnimationFrame(raf);clearTimeout(t1);clearTimeout(t2);window.removeEventListener("resize",measure);};},[]);}/* ───────────────── Numbers scroll progress ─────────────────
    Writes --p (0 at pin start → 1 at pin end) on the Numbers section based
