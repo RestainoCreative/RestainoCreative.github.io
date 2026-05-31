@@ -418,8 +418,9 @@ function useStatementImageCards() {
         const r = Math.round(p * 1000);
         if (r !== pos.lastP) {
           pos.lastP = r;
-          if (pos.g.x) pos.g.x.textContent = p.toFixed(3);
-          if (pos.g.scrubVal) pos.g.scrubVal.textContent = Math.round(p * 100) + "%";
+          const s = Math.min(1, p / 0.6); // sweep completes over the active pin window
+          if (pos.g.x) pos.g.x.textContent = s.toFixed(3);
+          if (pos.g.scrubVal) pos.g.scrubVal.textContent = Math.round(s * 100) + "%";
         }
       }
       raf = requestAnimationFrame(tick);
@@ -945,10 +946,16 @@ function Hero({ onPlayReel }) {
    (see .si-word in CSS). baseIdx lets multi-line cards keep one continuous
    reveal sequence across lines. */
 function RevealText({ text, baseIdx = 0 }) {
-  const words = text.split(" ");
-  return words.map((w, i) => (
+  // *important* segments render as "key" words (light-show gradient + bold);
+  // every other word stays clean white. Asterisks toggle the key state.
+  const words = [];
+  String(text).split("*").forEach((seg, si) => {
+    const isKey = si % 2 === 1;
+    seg.split(" ").forEach((w) => { if (w.length) words.push({ w, isKey }); });
+  });
+  return words.map((it, i) => (
     <React.Fragment key={i}>
-      <span className="si-word" style={{ "--word-idx": baseIdx + i }}>{w}</span>
+      <span className={it.isKey ? "si-word si-key" : "si-word"} style={{ "--word-idx": baseIdx + i }}>{it.w}</span>
       {i < words.length - 1 ? " " : null}
     </React.Fragment>
   ));
@@ -1005,7 +1012,7 @@ function StatementImageCard({ src, align = "left", text, idx = 0, total = 1 }) {
 }
 
 function StatementImageCardSplit({ src, left, right, idx = 0, total = 1 }) {
-  const leftCount = left.split(" ").length;
+  const leftCount = left.replace(/\*/g, "").trim().split(/\s+/).filter(Boolean).length;
   return (
     <section className="si-card section stick">
       <div

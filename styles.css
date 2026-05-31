@@ -950,11 +950,11 @@ body.reel-off .name-stage::after { display: none; }
 }
 .si-text {
   font-family: var(--display);
-  font-weight: 700;                      /* bolder for impact */
+  font-weight: 400;                      /* clean weight; key words carry the bold */
   font-size: clamp(36px, 6vw, 104px);    /* much bigger */
   line-height: 1.05;
   letter-spacing: -0.035em;
-  color: var(--on-d);
+  color: #fff;
   max-width: 18ch;
   /* Exit: once the words have landed, the whole block lifts up and fades
      out quickly — a kinetic exit rather than a flat dissolve. */
@@ -970,6 +970,21 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
    0.08 of --p, so the line "writes on" left→right early in the pin. */
 .si-word {
   display: inline-block;
+  /* Per-word write-on reveal — kept for every word (plain or key): each word
+     POPS up, rising 0.7em while scaling 0.7 → 1 and un-blurring. */
+  --w-eff: clamp(0, calc((var(--p, 0) - var(--word-idx, 0) * 0.016) / 0.055), 1);
+  transform-origin: 50% 100%;
+  opacity: var(--w-eff);
+  transform: translateY(calc((1 - var(--w-eff)) * 0.7em)) scale(calc(0.7 + var(--w-eff) * 0.3));
+  filter:
+    blur(calc((1 - var(--w-eff)) * 10px))
+    drop-shadow(0 3px 18px rgba(0, 0, 0, 0.55));
+  will-change: opacity, transform, filter;
+}
+/* Important words — animated light-show gradient + heavier weight, so the key
+   words carry the color while the rest of the line stays clean white. */
+.si-key {
+  font-weight: 700;
   background-image:
     radial-gradient(circle at 18% 45%, var(--stage-1) 0%, transparent 38%),
     radial-gradient(circle at 68% 22%, var(--stage-2) 0%, transparent 36%),
@@ -982,16 +997,6 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
   color: transparent;
   -webkit-text-fill-color: transparent;
   animation: reelDrift 9s cubic-bezier(.55,.05,.45,.95) infinite alternate;
-  /* Punchy write-on: tighter stagger + faster ramp so the line snaps in,
-     and each word POPS up — rising 0.7em while scaling from 0.7 → 1. */
-  --w-eff: clamp(0, calc((var(--p, 0) - var(--word-idx, 0) * 0.016) / 0.055), 1);
-  transform-origin: 50% 100%;
-  opacity: var(--w-eff);
-  transform: translateY(calc((1 - var(--w-eff)) * 0.7em)) scale(calc(0.7 + var(--w-eff) * 0.3));
-  filter:
-    blur(calc((1 - var(--w-eff)) * 10px))
-    drop-shadow(0 3px 18px rgba(0, 0, 0, 0.55));
-  will-change: opacity, transform, filter;
 }
 
 /* Alignment modifiers — same convention as before. */
@@ -1022,9 +1027,14 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
   --gk-top: clamp(76px, 10vh, 110px);
   --gk-line: rgba(244, 240, 231, 0.42);
   --gk-acc: var(--stage-1);
-  /* Envelope: fade in fast as the card pins, hold, then clear before the page-turn. */
-  --gk-in:  clamp(0, calc(var(--p, 0) / 0.05), 1);
-  --gk-out: clamp(0, calc((var(--p, 0) - 0.5) * 4), 1);
+  /* Sweep: the reticle + scrub complete their full left→right travel over the
+     card's active pin window (p 0→0.6), so the reticle reaches the far side
+     instead of stalling mid-screen. */
+  --gk-sweep: clamp(0, calc(var(--p, 0) / 0.6), 1);
+  /* Envelope: appear WITH the image (first few %), hold while the photo is on
+     screen, then clear as the image pushes back for the page-turn (~p 0.6). */
+  --gk-in:  clamp(0, calc(var(--p, 0) / 0.04), 1);
+  --gk-out: clamp(0, calc((var(--p, 0) - 0.6) * 6), 1);
   opacity: calc(var(--gk-in) * (1 - var(--gk-out)));
 }
 @media (hover: none) { .si-gack { display: none; } } /* keep touch clean + fast */
@@ -1076,7 +1086,7 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
 
 /* Scanning reticle — rides a faint vertical line that sweeps left→right with --p */
 .gk-scan { position: absolute; top: 0; bottom: 0; width: 1px;
-  left: calc(var(--gk-pad) + var(--p, 0) * (100% - var(--gk-pad) * 2));
+  left: calc(var(--gk-pad) + var(--gk-sweep) * (100% - var(--gk-pad) * 2));
   background: linear-gradient(to bottom, transparent, rgba(244, 240, 231, 0.16) 16%, rgba(244, 240, 231, 0.16) 84%, transparent); }
 .gk-reticle { position: absolute; top: 17%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; }
 .gk-reticle::before, .gk-reticle::after { content: ""; position: absolute; background: var(--gk-acc); }
@@ -1089,7 +1099,7 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
   background-image: repeating-linear-gradient(to right, var(--gk-line) 0 1px, transparent 1px 30px);
   background-position: 0 50%; background-size: 100% 6px; background-repeat: repeat-x; }
 .gk-scrub-fill { position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  height: 2px; width: calc(var(--p, 0) * 100%); background: var(--gk-acc); }
+  height: 2px; width: calc(var(--gk-sweep) * 100%); background: var(--gk-acc); }
 .gk-scrub-fill::after { content: ""; position: absolute; right: -3px; top: 50%; transform: translateY(-50%);
   width: 6px; height: 6px; border-radius: 50%; background: var(--gk-acc); }
 .gk-scrub-val { position: absolute; right: 0; bottom: 13px; font-size: 10px; letter-spacing: 0.18em;
