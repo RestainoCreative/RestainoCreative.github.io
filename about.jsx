@@ -163,6 +163,7 @@ function Nav() {
     const on = () => {
       const y = window.scrollY;
       setHidden(y > last.current && y > 200);
+      document.body.classList.toggle("nav-solid", y > 80);
       last.current = y;
     };
     window.addEventListener("scroll", on, { passive: true });
@@ -322,6 +323,9 @@ function App() {
       {t.grain && <div className="grain" aria-hidden="true"></div>}
       {t.cursor && <div className="cursor-dot" aria-hidden="true"></div>}
       <Nav time={time} />
+      <a className="brandmark" href="index.html" data-hover>
+        <span className="name-text name-reel"><span>Justin</span><span>Restaino</span></span>
+      </a>
       <main className="ab-page">
         <AboutHero />
         <BioStatement />
