@@ -1010,6 +1010,91 @@ body.font-bricolage .si-text { font-family: var(--body); font-weight: 700; lette
 .stmt-split-line.stmt-left  { text-align: left; }
 .stmt-split-line.stmt-right { text-align: right; }
 
+/* ───────────────── Statement "gack" (print-registration overlay) ─────────────────
+   Technical garnish framing each pinned statement card. Inherits the card's --p
+   (0→1 across the pin) to sweep the reticle, fill the scrub bar and tick the live
+   readouts. Sits above the photo/vignette (z-2) but below the headline (z-3). */
+.si-gack {
+  position: absolute; top: 0; left: 0; right: 0; height: 100vh;
+  z-index: 2; pointer-events: none;
+  font-family: var(--mono);
+  --gk-pad: clamp(22px, 3.5vw, 56px);
+  --gk-top: clamp(76px, 10vh, 110px);
+  --gk-line: rgba(244, 240, 231, 0.42);
+  --gk-acc: var(--stage-1);
+  /* Envelope: fade in fast as the card pins, hold, then clear before the page-turn. */
+  --gk-in:  clamp(0, calc(var(--p, 0) / 0.05), 1);
+  --gk-out: clamp(0, calc((var(--p, 0) - 0.5) * 4), 1);
+  opacity: calc(var(--gk-in) * (1 - var(--gk-out)));
+}
+@media (hover: none) { .si-gack { display: none; } } /* keep touch clean + fast */
+
+/* Corner crop marks */
+.gk-corner { position: absolute; width: 15px; height: 15px; }
+.gk-corner::before, .gk-corner::after { content: ""; position: absolute; background: var(--gk-line); }
+.gk-corner::before { width: 15px; height: 1.5px; }
+.gk-corner::after  { width: 1.5px; height: 15px; }
+.gk-tl { top: var(--gk-top);   left: var(--gk-pad); }
+.gk-tl::before, .gk-tl::after { top: 0; left: 0; }
+.gk-tr { top: var(--gk-top);   right: var(--gk-pad); }
+.gk-tr::before, .gk-tr::after { top: 0; right: 0; }
+.gk-bl { bottom: var(--gk-pad); left: var(--gk-pad); }
+.gk-bl::before, .gk-bl::after { bottom: 0; left: 0; }
+.gk-br { bottom: var(--gk-pad); right: var(--gk-pad); }
+.gk-br::before, .gk-br::after { bottom: 0; right: 0; }
+
+/* Registration targets ⊕ */
+.gk-reg { position: absolute; width: 19px; height: 19px; border-radius: 50%; border: 1px solid var(--gk-line); }
+.gk-reg::before, .gk-reg::after { content: ""; position: absolute; background: var(--gk-line); }
+.gk-reg::before { left: 50%; top: -6px; bottom: -6px; width: 1px; transform: translateX(-50%); }
+.gk-reg::after  { top: 50%; left: -6px; right: -6px; height: 1px; transform: translateY(-50%); }
+.gk-reg-a { top: calc(var(--gk-top) + 30px); left: calc(var(--gk-pad) + 1px);
+  border-color: color-mix(in srgb, var(--gk-acc) 65%, transparent); }
+.gk-reg-a::before, .gk-reg-a::after { background: color-mix(in srgb, var(--gk-acc) 65%, transparent); }
+.gk-reg-b { bottom: calc(var(--gk-pad) + 30px); right: calc(var(--gk-pad) + 1px); }
+
+/* Top-row labels */
+.gk-index { position: absolute; top: var(--gk-top); left: calc(var(--gk-pad) + 28px);
+  font-size: 11px; letter-spacing: 0.22em; color: var(--bone);
+  display: flex; gap: 5px; align-items: baseline; }
+.gk-index i { font-style: normal; color: rgba(244, 240, 231, 0.45); }
+.gk-coord { position: absolute; top: var(--gk-top); right: calc(var(--gk-pad) + 28px);
+  font-size: 11px; letter-spacing: 0.16em; font-variant-numeric: tabular-nums;
+  color: rgba(244, 240, 231, 0.7); }
+.gk-coord b { font-weight: 500; margin: 0 12px 0 5px; }
+.gk-coord b:last-child { margin-right: 0; }
+.gk-coord .gk-x { color: var(--gk-acc); }
+
+/* Dimension line + measurement (top-center) */
+.gk-dim { position: absolute; top: calc(var(--gk-top) + 1px); left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.2em; color: rgba(244, 240, 231, 0.5); }
+.gk-dim i { width: clamp(48px, 7vw, 110px); height: 1px; background: var(--gk-line); position: relative; }
+.gk-dim i::before, .gk-dim i::after { content: ""; position: absolute; top: -3px; width: 1px; height: 7px; background: var(--gk-line); }
+.gk-dim i::before { left: 0; } .gk-dim i::after { right: 0; }
+.gk-dim b { font-weight: 500; white-space: nowrap; }
+
+/* Scanning reticle — rides a faint vertical line that sweeps left→right with --p */
+.gk-scan { position: absolute; top: 0; bottom: 0; width: 1px;
+  left: calc(var(--gk-pad) + var(--p, 0) * (100% - var(--gk-pad) * 2));
+  background: linear-gradient(to bottom, transparent, rgba(244, 240, 231, 0.16) 16%, rgba(244, 240, 231, 0.16) 84%, transparent); }
+.gk-reticle { position: absolute; top: 17%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; }
+.gk-reticle::before, .gk-reticle::after { content: ""; position: absolute; background: var(--gk-acc); }
+.gk-reticle::before { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+.gk-reticle::after  { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+
+/* Scrub bar (bottom edge) */
+.gk-scrub { position: absolute; left: calc(var(--gk-pad) + 28px); right: calc(var(--gk-pad) + 28px);
+  bottom: calc(var(--gk-pad) + 6px); height: 8px;
+  background-image: repeating-linear-gradient(to right, var(--gk-line) 0 1px, transparent 1px 30px);
+  background-position: 0 50%; background-size: 100% 6px; background-repeat: repeat-x; }
+.gk-scrub-fill { position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  height: 2px; width: calc(var(--p, 0) * 100%); background: var(--gk-acc); }
+.gk-scrub-fill::after { content: ""; position: absolute; right: -3px; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 6px; border-radius: 50%; background: var(--gk-acc); }
+.gk-scrub-val { position: absolute; right: 0; bottom: 13px; font-size: 10px; letter-spacing: 0.18em;
+  color: rgba(244, 240, 231, 0.6); font-variant-numeric: tabular-nums; }
+
 /* Generic .reel-em — animated stage-light gradient inside chosen text. */
 .reel-em {
   background-image:

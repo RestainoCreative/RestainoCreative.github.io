@@ -392,11 +392,15 @@ function useStatementImageCards() {
     let positions = [];
     const measure = () => {
       if (window.scrollY > 4) return; // only re-measure when no sticky is active
-      positions = cards.map((el) => ({
-        el,
-        top: el.offsetTop,
-        h: el.offsetHeight
-      }));
+      positions = cards.map((el) => {
+        const g = {
+          x: el.querySelector(".gk-x"),
+          scrubVal: el.querySelector(".gk-scrub-val"),
+          dimVal: el.querySelector(".gk-dim-val"),
+        };
+        if (g.dimVal) g.dimVal.textContent = window.innerWidth + " PX";
+        return { el, top: el.offsetTop, h: el.offsetHeight, g, lastP: -1 };
+      });
     };
     measure();                          // initial measurement
     const t1 = setTimeout(measure, 200); // after first paint
@@ -405,11 +409,18 @@ function useStatementImageCards() {
 
     let raf;
     const tick = () => {
-      for (const { el, top, h } of positions) {
-        let p = h > 0 ? (window.scrollY - top) / h : 0;
+      for (const pos of positions) {
+        let p = pos.h > 0 ? (window.scrollY - pos.top) / pos.h : 0;
         if (p < 0) p = 0;
         if (p > 1) p = 1;
-        el.style.setProperty("--p", p.toFixed(4));
+        pos.el.style.setProperty("--p", p.toFixed(4));
+        // Live gack readouts — only rewrite when the value visibly changed.
+        const r = Math.round(p * 1000);
+        if (r !== pos.lastP) {
+          pos.lastP = r;
+          if (pos.g.x) pos.g.x.textContent = p.toFixed(3);
+          if (pos.g.scrubVal) pos.g.scrubVal.textContent = Math.round(p * 100) + "%";
+        }
       }
       raf = requestAnimationFrame(tick);
     };
@@ -943,6 +954,31 @@ function RevealText({ text, baseIdx = 0 }) {
   ));
 }
 
+/* Print-registration "gack" — technical garnish framing each statement card:
+   corner crop marks, registration targets (⊕), a reticle that sweeps with
+   scroll, a dimension line, and live coordinate / scrub readouts. Everything
+   inherits the card's --p (written by useStatementImageCards), so the marks and
+   numbers react to scroll. Sits above the photo (z-2) but below the headline. */
+function Gack({ idx, total }) {
+  const pad = (x) => String(x).padStart(2, "0");
+  const y = (0.25 + idx * 0.137).toFixed(3); // stable per-card pseudo coordinate
+  return (
+    <div className="si-gack" aria-hidden="true">
+      <span className="gk-corner gk-tl"></span>
+      <span className="gk-corner gk-tr"></span>
+      <span className="gk-corner gk-bl"></span>
+      <span className="gk-corner gk-br"></span>
+      <span className="gk-reg gk-reg-a"></span>
+      <span className="gk-reg gk-reg-b"></span>
+      <span className="gk-index">STMT&nbsp;{pad(idx + 1)}<i>/{pad(total)}</i></span>
+      <span className="gk-coord">X<b className="gk-x">0.000</b>Y<b>{y}</b></span>
+      <span className="gk-dim"><i></i><b className="gk-dim-val">—</b><i></i></span>
+      <span className="gk-scan"><i className="gk-reticle"></i></span>
+      <span className="gk-scrub"><i className="gk-scrub-fill"></i><b className="gk-scrub-val">0%</b></span>
+    </div>
+  );
+}
+
 /* Combined text-over-blurred-image card.
    As you scroll: (1) the statement reveals word-by-word in the colorful
    light-show gradient over a blurred B&W photo, (2) the photo sharpens
@@ -950,7 +986,7 @@ function RevealText({ text, baseIdx = 0 }) {
    out so the color photo is the closing beat. Driven by --p (written by
    useStatementImageCards). The next card overtakes from below via the
    standard sticky page-turn. */
-function StatementImageCard({ src, align = "left", text }) {
+function StatementImageCard({ src, align = "left", text, idx = 0, total = 1 }) {
   return (
     <section className="si-card section stick">
       <div
@@ -959,6 +995,7 @@ function StatementImageCard({ src, align = "left", text }) {
         aria-hidden="true">
       </div>
       <div className="si-vignette" aria-hidden="true"></div>
+      <Gack idx={idx} total={total} />
       <div className="container">
         <div className={"si-text stmt-" + align}>
           <RevealText text={text} />
@@ -967,7 +1004,7 @@ function StatementImageCard({ src, align = "left", text }) {
     </section>);
 }
 
-function StatementImageCardSplit({ src, left, right }) {
+function StatementImageCardSplit({ src, left, right, idx = 0, total = 1 }) {
   const leftCount = left.split(" ").length;
   return (
     <section className="si-card section stick">
@@ -977,6 +1014,7 @@ function StatementImageCardSplit({ src, left, right }) {
         aria-hidden="true">
       </div>
       <div className="si-vignette" aria-hidden="true"></div>
+      <Gack idx={idx} total={total} />
       <div className="container">
         <div className="si-text si-split">
           <div className="stmt-split-line stmt-left"><RevealText text={left} baseIdx={0} /></div>
@@ -992,8 +1030,8 @@ function StatementSection() {
     <React.Fragment>
       {cards.map((c, i) =>
         c.align === "split"
-          ? <StatementImageCardSplit key={i} src={c.image} left={c.text} right={c.textRight} />
-          : <StatementImageCard key={i} src={c.image} align={c.align || "left"} text={c.text} />
+          ? <StatementImageCardSplit key={i} src={c.image} left={c.text} right={c.textRight} idx={i} total={cards.length} />
+          : <StatementImageCard key={i} src={c.image} align={c.align || "left"} text={c.text} idx={i} total={cards.length} />
       )}
     </React.Fragment>);
 
