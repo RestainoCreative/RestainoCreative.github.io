@@ -678,7 +678,7 @@ function App() {
     try { slug = new URLSearchParams(window.location.search).get("p") || slug; } catch (e) {}
     fetch("/content/projects/" + slug + ".json?t=" + Date.now())
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((j) => { PROJECT = j; forceRender((x) => x + 1); })
+      .then((j) => { PROJECT = j; if (j && j.title) document.title = j.title + " — Justin Restaino"; forceRender((x) => x + 1); })
       .catch(() => {});
   }, []);
 
