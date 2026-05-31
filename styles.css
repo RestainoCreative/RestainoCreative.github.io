@@ -61,32 +61,25 @@ body {
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--stage-1); color: #fff; }
 
-/* ─── Page-to-page transition: light-show color curtain ───
-   A full-screen panel of the stage-light gradient sweeps across on navigation
-   (managed by transition.js). Parked off-screen left by default; .is-cover
-   slides it over the viewport; .is-revealing sweeps it off to the right. */
-.page-curtain {
-  position: fixed;
-  inset: 0;
-  z-index: 2147483000;
-  pointer-events: none;
-  background-color: var(--ink);
-  background-image:
-    radial-gradient(circle at 14% 26%, var(--stage-1) 0%, transparent 46%),
-    radial-gradient(circle at 80% 18%, var(--stage-2) 0%, transparent 44%),
-    radial-gradient(circle at 64% 84%, var(--stage-3) 0%, transparent 46%),
-    radial-gradient(circle at 22% 82%, var(--stage-4) 0%, transparent 44%),
-    radial-gradient(circle at 92% 64%, var(--stage-6) 0%, transparent 42%);
-  background-size: 200% 200%;
-  animation: reelDrift 5s cubic-bezier(.55,.05,.45,.95) infinite alternate;
-  transform: translateX(-100%);
-  transition: transform .48s cubic-bezier(.76, 0, .24, 1);
-  will-change: transform;
+/* ─── Page-to-page transition: the new page slides UP over the old ───
+   Uses the native cross-document View Transitions API (no JS). The incoming
+   page rises from the bottom while the outgoing page holds and dims beneath —
+   echoing the homepage's vertical page-turn. Falls back to an instant load on
+   browsers without support. */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(.76, 0, .24, 1);
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
 }
-.page-curtain.is-cover     { transform: translateX(0); }
-.page-curtain.is-revealing { transform: translateX(100%); }
+::view-transition-old(root) { animation-name: vtPageRecede; z-index: 1; }
+::view-transition-new(root) { animation-name: vtPageUp;     z-index: 2; }
+@keyframes vtPageUp     { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes vtPageRecede { from { opacity: 1; } to { opacity: 0.55; } }
 @media (prefers-reduced-motion: reduce) {
-  .page-curtain { transition-duration: .2s; animation: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01s; }
 }
 
 /* ─── Sticky stack "page-turn" sections ─── */
