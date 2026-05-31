@@ -243,27 +243,38 @@ function Media({ item, className = "", fit = "cover" }) {
 
 /* ─────────────── Nav ─────────────── */
 
-function Nav({ time }) {
+const NAV_ITEMS = [
+  { idx: "01", label: "Home", href: "index.html" },
+  { idx: "02", label: "Work", href: "work.html" },
+  { idx: "03", label: "About Me", href: "about.html" },
+];
+
+function ShutterLink({ idx, label, href }) {
   return (
-    <nav className="nav">
+    <a href={href} className="nav-link" data-hover>
+      <span className="idx">{idx}</span>
+      <span className="lbl"><span className="lbl-inner" data-text={label}>{label}</span></span>
+    </a>);
+}
+
+function Nav() {
+  const [hidden, setHidden] = useState(false);
+  const last = useRef(0);
+  useEffect(() => {
+    const on = () => {
+      const y = window.scrollY;
+      setHidden(y > last.current && y > 200);
+      last.current = y;
+    };
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+  return (
+    <nav className={"nav " + (hidden ? "hide" : "")}>
       <div className="nav-links">
-        <a href="index.html" className="nav-link" data-hover>
-          <span className="lbl"><span className="lbl-inner" data-text="Home">Home</span></span>
-        </a>
-        <span className="nav-link is-current" data-hover>
-          <span className="lbl"><span className="lbl-inner" data-text="Work">Work</span></span>
-        </span>
-        <a href="about.html" className="nav-link" data-hover>
-          <span className="lbl"><span className="lbl-inner" data-text="About Me">About Me</span></span>
-        </a>
+        {NAV_ITEMS.map((it) => <ShutterLink key={it.idx} {...it} />)}
       </div>
-      <div className="nav-links">
-        <a href="index.html#contact" className="nav-link" data-hover>
-          <span className="lbl"><span className="lbl-inner">{time || "LAS VEGAS"}</span></span>
-        </a>
-      </div>
-    </nav>
-  );
+    </nav>);
 }
 
 /* ─────────────── Header ─────────────── */
