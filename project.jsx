@@ -261,8 +261,15 @@ function useHorizontalGallery() {
     let pos = null;
     const measure = () => {
       if (window.scrollY > 4) return;
+      const vh = window.innerHeight;
       const extra = Math.max(0, track.scrollWidth - window.innerWidth);
-      section.style.height = (window.innerHeight + extra) + "px";
+      // Vertical scroll distance needed to pan the whole reel. Keep ~1:1 for
+      // short galleries (a deliberate, cinematic pan), but compress the overflow
+      // for long ones so a 20-image reel doesn't take ~20 screen-heights to get
+      // past. The track still pans across every image — only the scroll cost shrinks.
+      const comfort = vh * 3.5;
+      const region = extra <= comfort ? extra : comfort + (extra - comfort) * 0.3;
+      section.style.height = (vh + region) + "px";
       pos = { top: section.offsetTop, extra };
     };
     measure();
