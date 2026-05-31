@@ -21,11 +21,12 @@ const panel=el.closest(".hscroll-panel");const hscroll=el.closest(".hscroll");le
    As you scroll through the first viewport, it shrinks and translates to
    the top-left nav-bar position, where it stays as a permanent home link. */function useNameMorph(){useEffect(()=>{const name=document.getElementById("name-morph");const sub=document.getElementById("name-sub");if(!name)return;let raf;let lastY=null,lastVH=null;const invalidate=()=>{lastY=null;};const ti1=setTimeout(invalidate,250);// recompute after first paint
 const ti2=setTimeout(invalidate,900);// and after fonts settle (width shifts)
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(invalidate);window.addEventListener("resize",invalidate);const S=12;// scale factor at hero state (bigger = more dramatic hero)
-const navY=22;// final top position
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(invalidate);window.addEventListener("resize",invalidate);const navY=22;// final top position
 const subGap=28;// px gap below name's bottom edge (display size)
 const tick=()=>{const vh=window.innerHeight;const sy=window.scrollY;if(sy===lastY&&vh===lastVH){raf=requestAnimationFrame(tick);return;}lastY=sy;lastVH=vh;const p=Math.min(1,Math.max(0,sy/vh));const morph=1-p;// 1 = hero (big centered), 0 = nav (small top center)
-const w=name.offsetWidth;const h=name.offsetHeight;const scale=1+(S-1)*morph;const tx=-w*scale/2;const heroTy=vh/2-navY-h*S/2;const ty=heroTy*morph;name.style.transform=`translate(${tx}px, ${ty}px) scale(${scale})`;name.style.setProperty("--morph",morph.toFixed(4));// Expose morph globally so the hero gack marks can fade with the hero.
+const w=name.offsetWidth;const h=name.offsetHeight;// Hero scale factor: big on desktop (cap 12×), but never wider than the
+// viewport on small screens so the name doesn't overflow on mobile.
+const S=Math.min(12,window.innerWidth*0.9/(w||1));const scale=1+(S-1)*morph;const tx=-w*scale/2;const heroTy=vh/2-navY-h*S/2;const ty=heroTy*morph;name.style.transform=`translate(${tx}px, ${ty}px) scale(${scale})`;name.style.setProperty("--morph",morph.toFixed(4));// Expose morph globally so the hero gack marks can fade with the hero.
 document.body.style.setProperty("--hero-morph",morph.toFixed(4));// Sub is a SEPARATE fixed element so it doesn't scale with the name.
 // It tracks the visual bottom of the name (so it moves up with it as
 // morph decreases), and its opacity fades with morph.

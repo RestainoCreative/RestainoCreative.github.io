@@ -525,7 +525,16 @@ body.custom-cursor a, body.custom-cursor button, body.custom-cursor [data-hover]
 .nav-link:hover .lbl-inner { transform: translateY(-100%); }
 .nav-link:hover { background: rgba(255,255,255,0.08); }
 
-@media (max-width: 800px) { .nav { padding: 18px 22px; } .nav-links { display: none; } }
+@media (max-width: 800px) {
+  /* Safety net against stray horizontal scroll on phones. `clip` (not `hidden`)
+     so it doesn't create a scroll container that would break the sticky pages. */
+  html { overflow-x: clip; }
+  /* Keep the nav usable on phones: compact links, drop the index numbers. */
+  .nav { padding: 14px 16px; gap: 2px; }
+  .nav-links { display: flex; }
+  .nav-link { padding: 7px 9px; font-size: 10px; letter-spacing: 0.1em; gap: 0; }
+  .nav-link .idx { display: none; }
+}
 body.nav-hidden .nav.hide { transform: translateY(-100%); opacity: 0; }
 body.nav-numerals .nav-link .lbl { display: none; }
 body.nav-numerals .nav-link .idx { opacity: 1; }

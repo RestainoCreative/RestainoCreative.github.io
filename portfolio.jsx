@@ -350,7 +350,6 @@ function useNameMorph() {
     const ti2 = setTimeout(invalidate, 900);   // and after fonts settle (width shifts)
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(invalidate);
     window.addEventListener("resize", invalidate);
-    const S = 12;       // scale factor at hero state (bigger = more dramatic hero)
     const navY = 22;    // final top position
     const subGap = 28;  // px gap below name's bottom edge (display size)
     const tick = () => {
@@ -362,6 +361,9 @@ function useNameMorph() {
       const morph = 1 - p; // 1 = hero (big centered), 0 = nav (small top center)
       const w = name.offsetWidth;
       const h = name.offsetHeight;
+      // Hero scale factor: big on desktop (cap 12×), but never wider than the
+      // viewport on small screens so the name doesn't overflow on mobile.
+      const S = Math.min(12, (window.innerWidth * 0.9) / (w || 1));
       const scale = 1 + (S - 1) * morph;
       const tx = -w * scale / 2;
       const heroTy = vh / 2 - navY - h * S / 2;
