@@ -756,7 +756,6 @@ function Nav() {
     const on = () => {
       const y = window.scrollY;
       setHidden(y > last.current && y > 200);
-      document.body.classList.toggle("nav-solid", y > 80);
       last.current = y;
     };
     window.addEventListener("scroll", on, { passive: true });
