@@ -180,17 +180,24 @@ function useScrollFX() {
   useEffect(() => {
     let els = [];
     let cards = [];
+    let lastY = null, lastVH = null;
     const refresh = () => {
       els = Array.from(document.querySelectorAll("[data-fx]"));
       cards = Array.from(document.querySelectorAll(".stick-card"));
+      lastY = null;
     };
     refresh();
     const ro = new MutationObserver(refresh);
     ro.observe(document.body, { childList: true, subtree: true });
+    const invalidate = () => { lastY = null; };
+    window.addEventListener("resize", invalidate);
 
     let raf;
     const tick = () => {
       const vh = window.innerHeight;
+      const sy = window.scrollY;
+      if (sy === lastY && vh === lastVH) { raf = requestAnimationFrame(tick); return; }
+      lastY = sy; lastVH = vh;
 
       // 1) Per-element progress for data-fx
       for (const el of els) {
@@ -233,7 +240,7 @@ function useScrollFX() {
       raf = requestAnimationFrame(tick);
     };
     tick();
-    return () => {cancelAnimationFrame(raf);ro.disconnect();};
+    return () => {cancelAnimationFrame(raf);ro.disconnect();window.removeEventListener("resize", invalidate);};
   }, []);
 }
 
@@ -337,12 +344,21 @@ function useNameMorph() {
     const sub = document.getElementById("name-sub");
     if (!name) return;
     let raf;
+    let lastY = null, lastVH = null;
+    const invalidate = () => { lastY = null; };
+    const ti1 = setTimeout(invalidate, 250);   // recompute after first paint
+    const ti2 = setTimeout(invalidate, 900);   // and after fonts settle (width shifts)
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(invalidate);
+    window.addEventListener("resize", invalidate);
     const S = 12;       // scale factor at hero state (bigger = more dramatic hero)
     const navY = 22;    // final top position
     const subGap = 28;  // px gap below name's bottom edge (display size)
     const tick = () => {
       const vh = window.innerHeight;
-      const p = Math.min(1, Math.max(0, window.scrollY / vh));
+      const sy = window.scrollY;
+      if (sy === lastY && vh === lastVH) { raf = requestAnimationFrame(tick); return; }
+      lastY = sy; lastVH = vh;
+      const p = Math.min(1, Math.max(0, sy / vh));
       const morph = 1 - p; // 1 = hero (big centered), 0 = nav (small top center)
       const w = name.offsetWidth;
       const h = name.offsetHeight;
@@ -366,7 +382,7 @@ function useNameMorph() {
       raf = requestAnimationFrame(tick);
     };
     tick();
-    return () => cancelAnimationFrame(raf);
+    return () => { cancelAnimationFrame(raf); clearTimeout(ti1); clearTimeout(ti2); window.removeEventListener("resize", invalidate); };
   }, []);
 }
 
@@ -390,6 +406,7 @@ function useStatementImageCards() {
     // Measure positions while scrolled to top + on resize so cached values
     // reflect the natural document layout, not the sticky-pinned state.
     let positions = [];
+    let lastY = null, lastVH = null;
     const measure = () => {
       if (window.scrollY > 4) return; // only re-measure when no sticky is active
       positions = cards.map((el) => {
@@ -401,6 +418,7 @@ function useStatementImageCards() {
         if (g.dimVal) g.dimVal.textContent = window.innerWidth + " PX";
         return { el, top: el.offsetTop, h: el.offsetHeight, g, lastP: -1 };
       });
+      lastY = null; // force the gated tick to recompute after a re-measure
     };
     measure();                          // initial measurement
     const t1 = setTimeout(measure, 200); // after first paint
@@ -409,6 +427,11 @@ function useStatementImageCards() {
 
     let raf;
     const tick = () => {
+      const sy = window.scrollY, ih = window.innerHeight;
+      // Idle frames are free: only recompute when the scroll position or
+      // viewport actually changed (re-measure/resize reset lastY).
+      if (sy === lastY && ih === lastVH) { raf = requestAnimationFrame(tick); return; }
+      lastY = sy; lastVH = ih;
       for (const pos of positions) {
         let p = pos.h > 0 ? (window.scrollY - pos.top) / pos.h : 0;
         if (p < 0) p = 0;
@@ -455,9 +478,11 @@ function useNumbersProgress() {
     const el = document.getElementById("numbers");
     if (!el) return;
     let pos = null;
+    let lastY = null, lastVH = null;
     const measure = () => {
       if (window.scrollY > 4) return;
       pos = { top: el.offsetTop, h: el.offsetHeight };
+      lastY = null;
     };
     measure();
     const t1 = setTimeout(measure, 200);
@@ -466,6 +491,9 @@ function useNumbersProgress() {
 
     let raf;
     const tick = () => {
+      const sy = window.scrollY, ih = window.innerHeight;
+      if (sy === lastY && ih === lastVH) { raf = requestAnimationFrame(tick); return; }
+      lastY = sy; lastVH = ih;
       if (pos && pos.h > 0) {
         let p = (window.scrollY - pos.top) / (pos.h - window.innerHeight);
         if (p < 0) p = 0;
@@ -1430,6 +1458,7 @@ function Footer({ time }) {
 function ReelPreview({ project }) {
   const [tc, setTc] = useState("00:00:00:00");
   useEffect(() => {
+    if (!project) return; // only run the REC timecode while a preview is on screen
     let f = 0;
     const id = setInterval(() => {
       f++;
@@ -1439,7 +1468,7 @@ function ReelPreview({ project }) {
       setTc(`00:${String(mn).padStart(2, "0")}:${String(sec).padStart(2, "0")}:${String(fr).padStart(2, "0")}`);
     }, 1000 / 24);
     return () => clearInterval(id);
-  }, []);
+  }, [project]);
   return (
     <div className={"reel-preview " + (project ? "is-on" : "")}>
       <div className={"frame " + (project ? project.swatch : "")}>
