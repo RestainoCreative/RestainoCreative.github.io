@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Scene Not Found · Justin Restaino</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+  <meta name="theme-color" content="#0c0a08" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- absolute path: 404 is served at the unknown URL -->
+  <link rel="stylesheet" href="/styles.css?v=17" />
+
+  <style>
+    html, body { background: #0c0a08; color: #ede4d0; }
+    .nf {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 48px 22px; overflow: hidden;
+    }
+    /* film-slate strip */
+    .nf-slate {
+      display: flex; flex-wrap: wrap; gap: 14px 22px; justify-content: center; align-items: center;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--on-d-mute); margin-bottom: 30px;
+    }
+    .nf-rec { color: var(--stage-1); display: inline-flex; align-items: center; gap: 8px; }
+    .nf-rec .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--stage-1); animation: nfPulse 1.4s ease-in-out infinite; }
+    @keyframes nfPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+    .nf-code {
+      font-family: var(--display); font-weight: 900; line-height: 0.86; letter-spacing: -0.045em;
+      font-size: clamp(116px, 33vw, 360px);
+    }
+    .nf-msg {
+      font-family: var(--display); font-weight: 500; letter-spacing: -0.02em;
+      font-size: clamp(22px, 4vw, 40px); margin: 26px 0 10px;
+    }
+    .nf-sub {
+      font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; line-height: 1.7;
+      color: var(--on-d-dim); max-width: 46ch; margin: 0 auto;
+    }
+    .nf-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 42px; }
+    .nf-btn {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; color: var(--on-d);
+      padding: 15px 30px; border: 1px solid rgba(237,228,208,0.28); border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: border-color .35s ease, color .35s ease, background .35s ease, transform .35s ease;
+    }
+    .nf-btn:hover { border-color: var(--stage-1); color: #fff; background: var(--stage-1); transform: translateY(-2px); }
+    .nf-btn.ghost:hover { background: transparent; color: var(--stage-1); border-color: var(--stage-1); }
+    /* corner crop marks for the editorial frame */
+    .nf-corner { position: fixed; width: 14px; height: 14px; color: var(--on-d-faint); pointer-events: none; }
+    .nf-corner::before, .nf-corner::after { content: ""; position: absolute; background: currentColor; }
+    .nf-corner::before { left: 0; top: 0; width: 14px; height: 1px; }
+    .nf-corner::after  { left: 0; top: 0; width: 1px; height: 14px; }
+    .nf-tl { top: 26px; left: 26px; }
+    .nf-tr { top: 26px; right: 26px; transform: scaleX(-1); }
+    .nf-bl { bottom: 26px; left: 26px; transform: scaleY(-1); }
+    .nf-br { bottom: 26px; right: 26px; transform: scale(-1); }
+    @media (max-width: 600px) { .nf-corner { display: none; } }
+  </style>
+</head>
+<body class="font-unbounded">
+  <div class="grain" aria-hidden="true"></div>
+  <span class="nf-corner nf-tl"></span><span class="nf-corner nf-tr"></span>
+  <span class="nf-corner nf-bl"></span><span class="nf-corner nf-br"></span>
+
+  <main class="nf">
+    <div class="nf-slate">
+      <span class="nf-rec"><span class="dot"></span>REC</span>
+      <span>Scene 404</span>
+      <span>Take 01</span>
+      <span>TC 00:04:04:04</span>
+    </div>
+
+    <div class="nf-code reel-em">404</div>
+
+    <h1 class="nf-msg">This take didn&rsquo;t make the cut.</h1>
+    <p class="nf-sub">The page you&rsquo;re looking for rolled off the edit&nbsp;&mdash; wrong reel, or it never existed. Let&rsquo;s get you back to the show.</p>
+
+    <div class="nf-actions">
+      <a class="nf-btn" href="/">&larr; Back to the reel</a>
+      <a class="nf-btn ghost" href="/work.html">See the work</a>
+    </div>
+  </main>
+</body>
+</html>
