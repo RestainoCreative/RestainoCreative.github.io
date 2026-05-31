@@ -18,51 +18,19 @@
       }
     },
     {
-      "num": "01",
-      "slug": "phish-at-sphere",
-      "title": "Phish Residency at Sphere",
-      "client": "Moment Factory",
-      "year": 2024,
-      "tags": [
-        "Concert",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/phish-at-sphere/hero.jpeg"
-      }
-    },
-    {
-      "num": "02",
-      "slug": "elpelotazo",
-      "title": "Telemundo: El Pelotazo",
-      "client": "Telemundo Deportes",
+      "num": "07",
+      "slug": "lost-and-found",
+      "title": "Lost and Found",
+      "client": "Self-initiated",
       "year": 2025,
       "tags": [
-        "Brand Identity",
+        "AI",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/elpelotazo/hero.jpg"
-      }
-    },
-    {
-      "num": "03",
-      "slug": "2019-worlds",
-      "title": "Paris World Championship",
-      "client": "Riot Games",
-      "year": 2019,
-      "tags": [
-        "Opening Ceremony",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2019-worlds/hero.jpg"
+        "src": "/media/lost-and-found/hero.jpg"
       }
     },
     {
@@ -98,51 +66,35 @@
       }
     },
     {
-      "num": "06",
-      "slug": "2017-worlds",
-      "title": "AR Elder Dragon",
-      "client": "Riot Games",
-      "year": 2017,
-      "tags": [
-        "Opening Ceremony",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2017-worlds/hero.jpeg"
-      }
-    },
-    {
-      "num": "07",
-      "slug": "lost-and-found",
-      "title": "Lost and Found",
-      "client": "Self-initiated",
+      "num": "02",
+      "slug": "elpelotazo",
+      "title": "Telemundo: El Pelotazo",
+      "client": "Telemundo Deportes",
       "year": 2025,
       "tags": [
-        "AI",
+        "Brand Identity",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/lost-and-found/hero.jpg"
+        "src": "/media/elpelotazo/hero.jpg"
       }
     },
     {
-      "num": "08",
-      "slug": "tomorrow-we-fight",
-      "title": "Tomorrow We Fight",
-      "client": "Riot Games",
-      "year": 2022,
+      "num": "01",
+      "slug": "phish-at-sphere",
+      "title": "Phish Residency at Sphere",
+      "client": "Moment Factory",
+      "year": 2024,
       "tags": [
-        "Promotional Film",
+        "Concert",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/tomorrow-we-fight/hero.jpg"
+        "src": "/media/phish-at-sphere/hero.jpeg"
       }
     },
     {
@@ -162,19 +114,19 @@
       }
     },
     {
-      "num": "10",
-      "slug": "2018-worlds",
-      "title": "2018 World Championship",
+      "num": "08",
+      "slug": "tomorrow-we-fight",
+      "title": "Tomorrow We Fight",
       "client": "Riot Games",
-      "year": 2018,
+      "year": 2022,
       "tags": [
-        "AR Concert",
+        "Promotional Film",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/2018-worlds/hero.jpg"
+        "src": "/media/tomorrow-we-fight/hero.jpg"
       }
     },
     {
@@ -207,6 +159,54 @@
       "media": {
         "type": "image",
         "src": "/media/2020-worlds/hero.jpg"
+      }
+    },
+    {
+      "num": "03",
+      "slug": "2019-worlds",
+      "title": "Paris World Championship",
+      "client": "Riot Games",
+      "year": 2019,
+      "tags": [
+        "Opening Ceremony",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2019-worlds/hero.jpg"
+      }
+    },
+    {
+      "num": "10",
+      "slug": "2018-worlds",
+      "title": "2018 World Championship",
+      "client": "Riot Games",
+      "year": 2018,
+      "tags": [
+        "AR Concert",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2018-worlds/hero.jpg"
+      }
+    },
+    {
+      "num": "06",
+      "slug": "2017-worlds",
+      "title": "AR Elder Dragon",
+      "client": "Riot Games",
+      "year": 2017,
+      "tags": [
+        "Opening Ceremony",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2017-worlds/hero.jpeg"
       }
     }
   ]
