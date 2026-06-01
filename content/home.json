@@ -1,7 +1,8 @@
 {
  "hero": {
   "video": "/media/reel.mp4?v=2",
-  "poster": "/media/IMAGE1.jpg"
+  "poster": "/media/IMAGE1.jpg",
+  "loop": "/media/reel-hero-2024.mp4"
  },
  "statement": [
   {

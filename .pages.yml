@@ -37,7 +37,8 @@ content:
         label: Hero reel
         type: object
         fields:
-          - { name: video,  label: "Hero video", type: file }
+          - { name: loop,   label: "Background loop video (muted, autoplays)", type: file }
+          - { name: video,  label: "Hero video (click-to-watch full reel)", type: file }
           - { name: poster, label: "Poster image (fallback frame)", type: image }
       - name: statement
         label: "Statement cards (intro sequence)"
