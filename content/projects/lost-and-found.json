@@ -1,110 +1,115 @@
 {
-  "slug": "lost-and-found",
-  "title": "Lost and Found",
-  "tagline": "Creating a 100% AI-generated short film.",
-  "tags": [
-    "AI",
-    "Creative Direction",
-    "Creative Producer",
-    "Innovation"
-  ],
-  "hero": {
-    "type": "image",
-    "src": "/media/lost-and-found/hero.jpg"
+ "slug": "lost-and-found",
+ "title": "Lost and Found",
+ "tagline": "Creating a 100% AI-generated short film.",
+ "tags": [
+  "AI",
+  "Creative Direction",
+  "Creative Producer",
+  "Innovation"
+ ],
+ "hero": {
+  "type": "image",
+  "src": "/media/lost-and-found/hero.jpg"
+ },
+ "facts": [
+  {
+   "k": "Client",
+   "v": "Self-initiated"
   },
-  "facts": [
-    {
-      "k": "Client",
-      "v": "Self-initiated"
-    },
-    {
-      "k": "Role",
-      "v": "Director, Creative Producer"
-    },
-    {
-      "k": "Discipline",
-      "v": "100% AI Short Film"
-    },
-    {
-      "k": "Year",
-      "v": "2025"
-    },
-    {
-      "k": "Timeframe",
-      "v": "6 days"
-    }
-  ],
-  "challenge": {
-    "body": [
-      "AI has often carried a stigma — people think it can't look good, and that it's limited to slow zooms and wide sci-fi landscapes. The challenge I gave myself was to break that perception by creating camera movements that felt natural and cinematic, all while telling a story that felt grounded and real.",
-      "Most AI content online tends to be short clips without much depth or meaning. I set out to go further — building a real story and fully realized world using nothing but text-to-video prompting."
-    ],
-    "media": {
-      "type": "image",
-      "src": "/media/lost-and-found/g01.jpg"
-    }
+  {
+   "k": "Role",
+   "v": "Director, Creative Producer"
   },
-  "feature": null,
-  "approach": {
-    "body": [
-      "I challenged myself to create a 100% AI-generated short film in just six days — to learn the tools firsthand, explore the limits of what AI was capable of, and see how far I could push the technology creatively.",
-      "I wrote and storyboarded a post-apocalyptic thriller following a dog, a robot, and a little girl on a haunting journey. Using a range of tools — primarily Google's Veo 2 — I generated every single clip, with a huge part of the process being R&D on prompt engineering to achieve the right visual fidelity and consistency across environments and characters."
-    ],
-    "led": [
-      "Wrote, storyboarded, and directed the film",
-      "Generated every clip via text-to-video",
-      "Led prompt-engineering R&D for consistency"
-    ]
+  {
+   "k": "Discipline",
+   "v": "100% AI Short Film"
   },
-  "gallery": [
-    {
-      "type": "image",
-      "src": "/media/lost-and-found/g01.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/lost-and-found/g02.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/lost-and-found/g03.jpg",
-      "caption": ""
-    }
-  ],
-  "impact": {
-    "metrics": [
-      {
-        "n": "1",
-        "suffix": "M+",
-        "k": "Impressions"
-      },
-      {
-        "n": "100",
-        "suffix": "+",
-        "k": "Shares & reposts"
-      }
-    ],
-    "note": "After posting on LinkedIn, the film quickly gained traction — over a million impressions, 100+ shares and reposts, and several new job opportunities within the week. The lessons learned continue to shape how I approach AI-driven storytelling."
+  {
+   "k": "Year",
+   "v": "2025"
   },
-  "credits": [
-    {
-      "k": "Direction & Story",
-      "v": "Justin Restaino"
-    },
-    {
-      "k": "Primary Tool",
-      "v": "Google Veo 2"
-    }
-  ],
-  "next": {
-    "slug": "tomorrow-we-fight",
-    "title": "Tomorrow We Fight",
-    "tagline": "Using legends to usher in the next generation of League of Legends Esports.",
-    "media": {
-      "type": "image",
-      "src": "/media/tomorrow-we-fight/hero.jpg"
-    }
+  {
+   "k": "Timeframe",
+   "v": "6 days"
   }
+ ],
+ "challenge": {
+  "body": [
+   "AI has often carried a stigma — people think it can't look good, and that it's limited to slow zooms and wide sci-fi landscapes. The challenge I gave myself was to break that perception by creating camera movements that felt natural and cinematic, all while telling a story that felt grounded and real.",
+   "Most AI content online tends to be short clips without much depth or meaning. I set out to go further — building a real story and fully realized world using nothing but text-to-video prompting."
+  ],
+  "media": {
+   "type": "image",
+   "src": "/media/lost-and-found/g01.jpg"
+  }
+ },
+ "feature": {
+  "type": "video",
+  "src": "/media/lost-and-found/lostandfound-film.mp4",
+  "poster": "/media/lost-and-found/hero.jpg",
+  "caption": "Lost and Found — AI short film."
+ },
+ "approach": {
+  "body": [
+   "I challenged myself to create a 100% AI-generated short film in just six days — to learn the tools firsthand, explore the limits of what AI was capable of, and see how far I could push the technology creatively.",
+   "I wrote and storyboarded a post-apocalyptic thriller following a dog, a robot, and a little girl on a haunting journey. Using a range of tools — primarily Google's Veo 2 — I generated every single clip, with a huge part of the process being R&D on prompt engineering to achieve the right visual fidelity and consistency across environments and characters."
+  ],
+  "led": [
+   "Wrote, storyboarded, and directed the film",
+   "Generated every clip via text-to-video",
+   "Led prompt-engineering R&D for consistency"
+  ]
+ },
+ "gallery": [
+  {
+   "type": "image",
+   "src": "/media/lost-and-found/g01.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/lost-and-found/g02.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/lost-and-found/g03.jpg",
+   "caption": ""
+  }
+ ],
+ "impact": {
+  "metrics": [
+   {
+    "n": "1",
+    "suffix": "M+",
+    "k": "Impressions"
+   },
+   {
+    "n": "100",
+    "suffix": "+",
+    "k": "Shares & reposts"
+   }
+  ],
+  "note": "After posting on LinkedIn, the film quickly gained traction — over a million impressions, 100+ shares and reposts, and several new job opportunities within the week. The lessons learned continue to shape how I approach AI-driven storytelling."
+ },
+ "credits": [
+  {
+   "k": "Direction & Story",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Primary Tool",
+   "v": "Google Veo 2"
+  }
+ ],
+ "next": {
+  "slug": "tomorrow-we-fight",
+  "title": "Tomorrow We Fight",
+  "tagline": "Using legends to usher in the next generation of League of Legends Esports.",
+  "media": {
+   "type": "image",
+   "src": "/media/tomorrow-we-fight/hero.jpg"
+  }
+ }
 }
