@@ -22,8 +22,10 @@
   }
  },
  "feature": {
-  "type": "image",
-  "src": "/media/12_PHISH_SPHERE2026_0418_223933-0161_ALIVE.jpg"
+  "type": "video",
+  "src": "/media/sigma-oasis-cutdown.mp4",
+  "poster": "/media/12_PHISH_SPHERE2026_0418_223933-0161_ALIVE.jpg",
+  "caption": "Sigma Oasis — live at Sphere."
  },
  "approach": {
   "body": [
