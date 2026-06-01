@@ -1,158 +1,163 @@
 {
-  "slug": "2017-worlds",
-  "title": "AR Elder Dragon",
-  "tagline": "Summoning an AR dragon into the stadium.",
-  "tags": [
-    "Opening Ceremony",
-    "Creative Direction",
-    "Creative Producer",
-    "Innovation"
-  ],
-  "hero": {
-    "type": "image",
-    "src": "/media/2017-worlds/hero.jpeg"
+ "slug": "2017-worlds",
+ "title": "AR Elder Dragon",
+ "tagline": "Summoning an AR dragon into the stadium.",
+ "tags": [
+  "Opening Ceremony",
+  "Creative Direction",
+  "Creative Producer",
+  "Innovation"
+ ],
+ "hero": {
+  "type": "image",
+  "src": "/media/2017-worlds/hero.jpeg"
+ },
+ "facts": [
+  {
+   "k": "Client",
+   "v": "Riot Games"
   },
-  "facts": [
-    {
-      "k": "Client",
-      "v": "Riot Games"
-    },
-    {
-      "k": "Role",
-      "v": "Creative Director, Creative Producer"
-    },
-    {
-      "k": "Discipline",
-      "v": "Opening Ceremony"
-    },
-    {
-      "k": "Year",
-      "v": "2017"
-    },
-    {
-      "k": "Timeframe",
-      "v": "6 months"
-    }
-  ],
-  "challenge": {
-    "body": [
-      "League of Legends is one of the most popular gaming IPs in the world, and we wanted to use it in the most awe-inspiring way possible. We also knew the Beijing Olympic Stadium was one of the most iconic, massive venues in the world — how could we use its size as a character?",
-      "Augmented reality at this size, scope, and scale had yet to be accomplished. Traditional live AR for broadcast had always been normal fullscreens put into 3D space. This was something new, requiring custom character design, animation, and software development."
-    ],
-    "media": {
-      "type": "image",
-      "src": "/media/2017-worlds/g01.jpeg"
-    }
+  {
+   "k": "Role",
+   "v": "Creative Director, Creative Producer"
   },
-  "feature": null,
-  "approach": {
-    "body": [
-      "I pitched and led the creative ideation, development, and execution of the AR Dragon that flew into the stadium during the 2017 Worlds Opening Ceremony — working alongside composers, artists, choreographers, and art directors to oversee the entire creative implementation of the dragon within the show.",
-      "The project was treated as an R&D execution until it could be proven possible. I sourced the technical and creative partners: Zero Density as the render engine for its unique ability to integrate live shadows across 3D geometry via a port of Unreal Engine, and Passion Republic as the animation and design partner for their expertise in real-time character optimization."
-    ],
-    "led": [
-      "Pitched and led creative ideation and execution",
-      "Sourced technical and creative partners",
-      "Led all onsite execution and day-to-day artist feedback"
-    ]
+  {
+   "k": "Discipline",
+   "v": "Opening Ceremony"
   },
-  "gallery": [
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g01.jpeg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g02.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g03.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g04.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g05.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g06.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g07.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g08.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g09.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g10.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g11.jpg",
-      "caption": ""
-    },
-    {
-      "type": "image",
-      "src": "/media/2017-worlds/g12.jpg",
-      "caption": ""
-    }
-  ],
-  "impact": {
-    "metrics": [
-      {
-        "n": "1",
-        "suffix": "st",
-        "k": "Sports Emmy for Live Graphic Design"
-      }
-    ],
-    "note": "Immediately after its debut, the dragon became a cultural phenomenon — covered by all major news outlets, posted by LeBron James, and ultimately winning Riot Games its first-ever Sports Emmy. It set the standard for real-time graphics that the industry still follows."
+  {
+   "k": "Year",
+   "v": "2017"
   },
-  "credits": [
-    {
-      "k": "Creative Direction",
-      "v": "Justin Restaino"
-    },
-    {
-      "k": "Client",
-      "v": "Riot Games"
-    },
-    {
-      "k": "Render Engine",
-      "v": "Zero Density"
-    },
-    {
-      "k": "Animation & Design",
-      "v": "Passion Republic"
-    }
-  ],
-  "next": {
-    "slug": "lost-and-found",
-    "title": "Lost and Found",
-    "tagline": "Creating a 100% AI-generated short film.",
-    "media": {
-      "type": "image",
-      "src": "/media/lost-and-found/hero.jpg"
-    }
+  {
+   "k": "Timeframe",
+   "v": "6 months"
   }
+ ],
+ "challenge": {
+  "body": [
+   "League of Legends is one of the most popular gaming IPs in the world, and we wanted to use it in the most awe-inspiring way possible. We also knew the Beijing Olympic Stadium was one of the most iconic, massive venues in the world — how could we use its size as a character?",
+   "Augmented reality at this size, scope, and scale had yet to be accomplished. Traditional live AR for broadcast had always been normal fullscreens put into 3D space. This was something new, requiring custom character design, animation, and software development."
+  ],
+  "media": {
+   "type": "image",
+   "src": "/media/2017-worlds/g01.jpeg"
+  }
+ },
+ "feature": {
+  "type": "video",
+  "src": "/media/2017-worlds/dragon.mp4",
+  "poster": "/media/2017-worlds/hero.jpeg",
+  "caption": "The Elder Dragon, conjured in AR over the arena."
+ },
+ "approach": {
+  "body": [
+   "I pitched and led the creative ideation, development, and execution of the AR Dragon that flew into the stadium during the 2017 Worlds Opening Ceremony — working alongside composers, artists, choreographers, and art directors to oversee the entire creative implementation of the dragon within the show.",
+   "The project was treated as an R&D execution until it could be proven possible. I sourced the technical and creative partners: Zero Density as the render engine for its unique ability to integrate live shadows across 3D geometry via a port of Unreal Engine, and Passion Republic as the animation and design partner for their expertise in real-time character optimization."
+  ],
+  "led": [
+   "Pitched and led creative ideation and execution",
+   "Sourced technical and creative partners",
+   "Led all onsite execution and day-to-day artist feedback"
+  ]
+ },
+ "gallery": [
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g01.jpeg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g02.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g03.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g04.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g05.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g06.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g07.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g08.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g09.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g10.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g11.jpg",
+   "caption": ""
+  },
+  {
+   "type": "image",
+   "src": "/media/2017-worlds/g12.jpg",
+   "caption": ""
+  }
+ ],
+ "impact": {
+  "metrics": [
+   {
+    "n": "1",
+    "suffix": "st",
+    "k": "Sports Emmy for Live Graphic Design"
+   }
+  ],
+  "note": "Immediately after its debut, the dragon became a cultural phenomenon — covered by all major news outlets, posted by LeBron James, and ultimately winning Riot Games its first-ever Sports Emmy. It set the standard for real-time graphics that the industry still follows."
+ },
+ "credits": [
+  {
+   "k": "Creative Direction",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Client",
+   "v": "Riot Games"
+  },
+  {
+   "k": "Render Engine",
+   "v": "Zero Density"
+  },
+  {
+   "k": "Animation & Design",
+   "v": "Passion Republic"
+  }
+ ],
+ "next": {
+  "slug": "lost-and-found",
+  "title": "Lost and Found",
+  "tagline": "Creating a 100% AI-generated short film.",
+  "media": {
+   "type": "image",
+   "src": "/media/lost-and-found/hero.jpg"
+  }
+ }
 }
