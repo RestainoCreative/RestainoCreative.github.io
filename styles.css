@@ -535,6 +535,70 @@ body.custom-cursor a, body.custom-cursor button, body.custom-cursor [data-hover]
   .nav-link { padding: 7px 9px; font-size: 10px; letter-spacing: 0.1em; gap: 0; }
   .nav-link .idx { display: none; }
 }
+
+/* ─────────────── Mobile home (phones) — clean & straight to the point ─────────────── */
+.m-home { background: var(--ink); color: var(--on-d); }
+
+/* Top: reel-backed, name + title + reel button */
+.m-top {
+  position: relative; min-height: 90vh; min-height: 90svh;
+  display: flex; align-items: flex-end; overflow: hidden;
+}
+.m-top-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.m-top-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(12,10,8,0.97) 2%, rgba(12,10,8,0.55) 44%, rgba(12,10,8,0.22) 100%);
+}
+.m-top-inner { position: relative; z-index: 2; padding: 0 22px 44px; }
+.m-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--on-d-mute); margin-bottom: 14px;
+}
+.m-headline {
+  font-family: var(--display); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(46px, 16vw, 88px); line-height: 0.9; letter-spacing: -0.03em;
+  margin: 0 0 16px; color: #fff;
+}
+.m-sub {
+  font-family: var(--body); font-size: 15px; line-height: 1.55; color: var(--on-d-dim);
+  max-width: 32ch; margin: 0 0 26px;
+}
+.m-reel {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--on-d); background: transparent; border: 1px solid rgba(237,228,208,0.42);
+  border-radius: 999px; padding: 14px 26px; appearance: none; -webkit-appearance: none;
+}
+.m-reel:active { background: var(--stage-1); border-color: var(--stage-1); color: #fff; }
+
+/* Selected Work — plain vertical list of tappable cards */
+.m-work { padding: 42px 22px 8px; }
+.m-work-head {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--on-d-mute); padding-bottom: 18px; border-bottom: 1px solid var(--line-d); margin-bottom: 24px;
+}
+.m-work-list { display: flex; flex-direction: column; gap: 32px; }
+.m-card { display: block; text-decoration: none; color: inherit; }
+.m-card-media {
+  width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden;
+  background-color: #18130f; background-position: center; background-size: cover; background-repeat: no-repeat;
+}
+.m-card-info { padding: 13px 2px 0; }
+.m-card-meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--on-d-mute); margin-bottom: 6px; }
+.m-card-meta span { opacity: 0.55; }
+.m-card-title { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.08; letter-spacing: -0.01em; color: var(--on-d); margin-bottom: 7px; }
+.m-card-tags { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-d-dim); }
+
+/* Contact footer — minimal */
+.m-foot { padding: 60px 22px 44px; border-top: 1px solid var(--line-d); margin-top: 52px; }
+.m-foot-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-d-mute); margin-bottom: 16px; }
+.m-foot-email {
+  font-family: var(--display); font-weight: 600; font-size: clamp(26px, 8.5vw, 42px); letter-spacing: -0.02em;
+  color: #fff; text-decoration: none; display: inline-block; word-break: break-word;
+}
+.m-foot-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+.m-foot-links a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-d-dim); text-decoration: none; }
+.m-foot-copy { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--on-d-faint); margin-top: 42px; }
+
 body.nav-hidden .nav.hide { transform: translateY(-100%); opacity: 0; }
 body.nav-numerals .nav-link .lbl { display: none; }
 body.nav-numerals .nav-link .idx { opacity: 1; }

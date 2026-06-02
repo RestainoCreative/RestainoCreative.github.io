@@ -1498,6 +1498,61 @@ const SETTINGS = {
   smooth: true,
 };
 
+/* ───────────────── Mobile home — stripped, straight to the point ─────────────────
+   Phones (≤768px) get this instead of the kinetic desktop layout: a clean
+   reel-backed top, a plain Selected Work list, and a minimal contact footer.
+   No statement cards, no numbers theatre, no gack, no grain. */
+function MobileHome({ work, onPlayReel }) {
+  const c = HOME.contact || {};
+  const email = c.email || "jrestaino91@gmail.com";
+  const socials = c.socials || [];
+  return (
+    <main className="m-home">
+      <section className="m-top">
+        <video className="m-top-video" autoPlay muted loop playsInline preload="metadata"
+          poster={(HOME.hero && HOME.hero.poster) || "/media/IMAGE1.jpg"}
+          src={(HOME.hero && HOME.hero.loop) || "/media/hero-loop.mp4"} />
+        <div className="m-top-scrim" aria-hidden="true"></div>
+        <div className="m-top-inner">
+          <div className="m-eyebrow">Justin Restaino</div>
+          <h1 className="m-headline">Creative<br />Director</h1>
+          <p className="m-sub">3&times; Emmy&ndash;winning creative direction for live shows, sports, concerts &amp; immersive &mdash; including the Sphere.</p>
+          <button type="button" className="m-reel" onClick={onPlayReel}>&#9654;&nbsp;&nbsp;Watch the reel</button>
+        </div>
+      </section>
+
+      <section className="m-work" id="work">
+        <div className="m-work-head">Selected Work</div>
+        <div className="m-work-list">
+          {(work || []).map((p, i) => {
+            const img = p.media && (p.media.poster || p.media.src);
+            return (
+              <a className="m-card" key={p.slug || i} href={"project.html?p=" + p.slug}>
+                <div className="m-card-media" style={img ? { backgroundImage: "url(" + img + ")" } : null}></div>
+                <div className="m-card-info">
+                  <div className="m-card-meta">{String(i + 1).padStart(2, "0")} <span>/ {p.year}</span></div>
+                  <div className="m-card-title">{p.title}</div>
+                  <div className="m-card-tags">{(p.tags || []).slice(0, 3).map((t) => String(t).trim()).join("  ·  ")}</div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
+      <footer className="m-foot" id="contact">
+        <div className="m-foot-eyebrow">Let&rsquo;s work together</div>
+        <a className="m-foot-email" href={"mailto:" + email}>{email}</a>
+        <div className="m-foot-links">
+          {socials.map((s, i) => <a key={i} href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>)}
+          <a href="about.html">About</a>
+        </div>
+        <div className="m-foot-copy">&copy; Justin Restaino &middot; Creative Director &amp; Producer</div>
+      </footer>
+    </main>
+  );
+}
+
 function App() {
   const t = SETTINGS;
   const [preview, setPreview] = useState(null);
@@ -1505,6 +1560,26 @@ function App() {
   const [time, setTime] = useState("");
   const [activeId, setActiveId] = useState("top");
   const [, forceHome] = useState(0);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches
+  );
+  const [work, setWork] = useState([]);
+
+  // Phones get the stripped-down MobileHome; desktop keeps the full layout.
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const on = () => setIsMobile(mq.matches);
+    mq.addEventListener ? mq.addEventListener("change", on) : mq.addListener(on);
+    return () => (mq.removeEventListener ? mq.removeEventListener("change", on) : mq.removeListener(on));
+  }, []);
+
+  // Selected-work list (used by the mobile home).
+  useEffect(() => {
+    fetch("/content/work.json?t=" + Date.now())
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => setWork(j.projects || []))
+      .catch(() => {});
+  }, []);
 
   // Load editable home content; keep the built-in fallback on any failure.
   useEffect(() => {
@@ -1523,10 +1598,10 @@ function App() {
     c.toggle("reel-off", !t.nameReel);
   }, [t.font, t.nav, t.nameReel]);
 
-  useSmoothScroll(t.smooth);
+  useSmoothScroll(t.smooth && !isMobile);
   useScrollFX();
   useAnchorClicks();
-  useCursor(t.cursor);
+  useCursor(t.cursor && !isMobile);
   useHoverDot();
   useReveal();
   useNameMorph();
@@ -1577,10 +1652,14 @@ function App() {
 
   return (
     <React.Fragment>
-      {t.grain && <div className="grain" aria-hidden="true"></div>}
-      {t.cursor && <div className="cursor-dot" aria-hidden="true"></div>}
+      {t.grain && !isMobile && <div className="grain" aria-hidden="true"></div>}
+      {t.cursor && !isMobile && <div className="cursor-dot" aria-hidden="true"></div>}
 
       <Nav />
+
+      {isMobile && <MobileHome work={work} onPlayReel={() => setReelOpen(true)} />}
+
+      {!isMobile && <React.Fragment>
       <div className="hero-gack" aria-hidden="true">
         {/* Corners */}
         <span className="gack-plus gack-tl"></span>
@@ -1622,6 +1701,7 @@ function App() {
         <ContactSection />
         <Footer time={time} />
       </main>
+      </React.Fragment>}
 
       <ReelPreview project={preview} />
       <ReelModal open={reelOpen} onClose={() => setReelOpen(false)} />
