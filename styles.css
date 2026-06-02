@@ -534,6 +534,9 @@ body.custom-cursor a, body.custom-cursor button, body.custom-cursor [data-hover]
   .nav-links { display: flex; }
   .nav-link { padding: 7px 9px; font-size: 10px; letter-spacing: 0.1em; gap: 0; }
   .nav-link .idx { display: none; }
+  /* Hide the nav while scrolling down so it never overlaps content; the Nav
+     component toggles .hide. Reappears on scroll up. */
+  .nav.hide { transform: translateY(-100%); opacity: 0; }
 }
 
 /* ─────────────── Mobile home (phones) — clean & straight to the point ─────────────── */
@@ -556,8 +559,8 @@ body.custom-cursor a, body.custom-cursor button, body.custom-cursor [data-hover]
 }
 .m-headline {
   font-family: var(--display); font-weight: 900; text-transform: uppercase;
-  font-size: clamp(46px, 16vw, 88px); line-height: 0.9; letter-spacing: -0.03em;
-  margin: 0 0 16px; color: #fff;
+  font-size: clamp(30px, 11vw, 62px); line-height: 0.94; letter-spacing: -0.04em;
+  margin: 0 0 16px; color: #fff; overflow-wrap: break-word;
 }
 .m-sub {
   font-family: var(--body); font-size: 15px; line-height: 1.55; color: var(--on-d-dim);
