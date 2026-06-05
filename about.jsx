@@ -275,7 +275,6 @@ function ContactCTA({ time }) {
       </div>
       <div className="ab-foot">
         <a href="index.html" data-hover>← Home</a>
-        <span>© Justin Restaino</span>
         <span>Las Vegas ✦ {time}</span>
       </div>
     </section>

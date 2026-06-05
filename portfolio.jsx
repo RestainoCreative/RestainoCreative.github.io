@@ -1448,7 +1448,6 @@ function Footer({ time }) {
   return (
     <footer className="footer">
       <div className="container">
-        <div>© Justin Restaino — All Worlds Reserved</div>
         <div>Las Vegas ✦ <span className="numeral">{time}</span> ✦ MMXXVI</div>
       </div>
     </footer>);
@@ -1547,7 +1546,6 @@ function MobileHome({ work, onPlayReel }) {
           {socials.map((s, i) => <a key={i} href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>)}
           <a href="about.html">About</a>
         </div>
-        <div className="m-foot-copy">&copy; Justin Restaino &middot; Creative Director &amp; Producer</div>
       </footer>
     </main>
   );

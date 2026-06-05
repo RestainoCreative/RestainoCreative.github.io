@@ -347,7 +347,6 @@ function Footer({ time }) {
   return (
     <footer className="wi-foot" id="footer">
       <a href="index.html" data-hover>← Back home</a>
-      <span>© Justin Restaino</span>
       <a href="index.html#contact" data-hover>Contact ✦ {time}</a>
     </footer>
   );

@@ -618,7 +618,6 @@ function NextProject({ time }) {
       </a>
       <div className="pc-next-foot">
         <a href="work.html" data-hover>← Back to Work</a>
-        <span>© Justin Restaino</span>
         <a href="index.html#contact" data-hover>Contact ✦ {time}</a>
       </div>
     </section>
