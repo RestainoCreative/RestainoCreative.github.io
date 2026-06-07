@@ -4915,24 +4915,23 @@ body.font-bigshoulders .pc-breather-p.is-lead { font-family: var(--display-alt);
 
 /* Selected work — horizontal reel. Section height is set in JS; the pin stays
    fixed at viewport top while the track translates left as you scroll. */
-.pc-gallery { position: relative; background: var(--ink-1); }
-.pc-gallery-pin {
-  position: sticky; top: 0; height: 100vh; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center;
-}
+.pc-gallery { position: relative; background: var(--ink-1); padding: clamp(48px, 8vh, 92px) 0; overflow: hidden; }
 .pc-gallery-head {
-  position: absolute; top: clamp(28px, 5vh, 56px); left: clamp(24px, 5vw, 96px);
-  right: clamp(24px, 5vw, 96px); z-index: 4; display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0 clamp(24px, 5vw, 96px); margin-bottom: clamp(22px, 4vh, 40px);
 }
 .pc-gallery-hint { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--on-d-mute); }
+/* Draggable, auto-scrolling, infinite marquee (driven by useHorizontalGallery JS). */
+.pc-gallery-viewport { overflow: hidden; cursor: grab; touch-action: pan-y; }
+.pc-gallery-viewport.is-dragging { cursor: grabbing; }
 .pc-gallery-track {
-  display: flex; gap: clamp(16px, 2vw, 32px); padding: 0 clamp(24px, 5vw, 96px);
-  width: max-content; will-change: transform;
+  display: flex; gap: clamp(16px, 2vw, 32px); width: max-content;
+  will-change: transform; user-select: none; -webkit-user-select: none;
 }
-.pc-gallery-item { margin: 0; flex-shrink: 0; cursor: zoom-in; }
+.pc-gallery-item { margin: 0; flex-shrink: 0; cursor: pointer; }
 .pc-gallery-media {
-  position: relative; width: clamp(320px, 56vw, 880px); height: clamp(280px, 62vh, 620px);
+  position: relative; width: clamp(260px, 42vw, 600px); height: clamp(200px, 46vh, 430px);
   border-radius: 12px; overflow: hidden; background: #050403;
   transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;
 }
@@ -4993,12 +4992,9 @@ body.font-bigshoulders .pc-breather-p.is-lead { font-family: var(--display-alt);
 body.custom-cursor .pc-gallery-item,
 body.custom-cursor .pc-lightbox,
 body.custom-cursor .pc-lightbox-close { cursor: none; }
-@media (hover: none) {
-  /* Touch devices: fall back to native horizontal scroll, no pin. */
-  .pc-gallery { height: auto !important; }
-  .pc-gallery-pin { position: relative; height: auto; padding: clamp(64px,10vh,96px) 0; }
-  .pc-gallery-track { overflow-x: auto; transform: none !important; scroll-snap-type: x mandatory; }
-  .pc-gallery-item { scroll-snap-align: center; }
+/* Touch devices use the same JS marquee (drag to pan, auto-scroll loops). */
+@media (max-width: 640px) {
+  .pc-gallery-media { width: clamp(220px, 78vw, 360px); height: clamp(180px, 46vh, 300px); }
 }
 
 /* Impact — big light-up metric numbers + an outcome note. */

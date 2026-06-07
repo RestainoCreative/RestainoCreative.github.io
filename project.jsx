@@ -252,47 +252,91 @@ function useAnchorClicks() {
    translate of the track. Section height = viewport + trackWidth overflow, so
    the whole reel scrolls through while pinned. offsetTop is cached while at the
    top of the page to avoid the sticky-pin offsetTop quirk. */
+/* Gallery as a draggable, auto-scrolling, infinite marquee. The track holds the
+   gallery duplicated N times (data-copies); the position wraps by one set so it
+   loops seamlessly. Click-to-zoom still works — a click that moved >6px is
+   treated as a drag and swallowed so it doesn't open the lightbox. */
 function useHorizontalGallery() {
   useEffect(() => {
-    const section = document.querySelector(".pc-gallery");
+    const viewport = document.querySelector(".pc-gallery-viewport");
     const track = document.querySelector(".pc-gallery-track");
-    if (!section || !track) return;
+    if (!viewport || !track) return;
 
-    let pos = null;
+    const copies = parseInt(track.dataset.copies || "3", 10);
+    // Exact width of one set: the distance from set 0's first item to set 1's
+    // first item (includes the inter-item gap). Using scrollWidth/copies would
+    // be short by ~gap/copies and make the loop visibly hitch at each wrap.
+    let oneSet = track.scrollWidth / copies;
     const measure = () => {
-      if (window.scrollY > 4) return;
-      const vh = window.innerHeight;
-      const extra = Math.max(0, track.scrollWidth - window.innerWidth);
-      // Vertical scroll distance needed to pan the whole reel. Keep ~1:1 for
-      // short galleries (a deliberate, cinematic pan), but compress the overflow
-      // for long ones so a 20-image reel doesn't take ~20 screen-heights to get
-      // past. The track still pans across every image — only the scroll cost shrinks.
-      const comfort = vh * 3.5;
-      const region = extra <= comfort ? extra : comfort + (extra - comfort) * 0.3;
-      section.style.height = (vh + region) + "px";
-      pos = { top: section.offsetTop, extra };
+      const kids = track.children;
+      const n = Math.floor(kids.length / copies);
+      oneSet = (n >= 1 && kids.length > n)
+        ? kids[n].offsetLeft - kids[0].offsetLeft
+        : track.scrollWidth / copies;
     };
     measure();
-    const t1 = setTimeout(measure, 200);
-    const t2 = setTimeout(measure, 800);
+    const t1 = setTimeout(measure, 300);
+    const t2 = setTimeout(measure, 1000);   // re-measure once images set their widths
     window.addEventListener("resize", measure);
+
+    let pos = 0;
+    const SPEED = 0.5;                       // auto-scroll px/frame (~30px/s)
+    let dragging = false, startX = 0, startPos = 0, lastX = 0, vel = 0, moved = 0;
+
+    const wrap = () => {
+      if (oneSet > 0) {
+        while (pos <= -oneSet) pos += oneSet;
+        while (pos > 0) pos -= oneSet;
+      }
+    };
 
     let raf;
     const tick = () => {
-      if (pos) {
-        const h = section.offsetHeight - window.innerHeight;
-        let p = h > 0 ? (window.scrollY - pos.top) / h : 0;
-        if (p < 0) p = 0;
-        if (p > 1) p = 1;
-        track.style.transform = `translate3d(${(-p * pos.extra).toFixed(2)}px,0,0)`;
+      if (!dragging) {
+        pos -= SPEED;
+        if (Math.abs(vel) > 0.25) { pos += vel; vel *= 0.92; }   // flick momentum
       }
+      wrap();
+      track.style.transform = "translate3d(" + pos.toFixed(2) + "px,0,0)";
       raf = requestAnimationFrame(tick);
     };
     tick();
+
+    const px = (e) => e.clientX;
+    const down = (e) => {
+      dragging = true; moved = 0; vel = 0;
+      startX = lastX = px(e); startPos = pos;
+      viewport.classList.add("is-dragging");
+    };
+    const move = (e) => {
+      if (!dragging) return;
+      const x = px(e);
+      vel = x - lastX; moved += Math.abs(vel); lastX = x;
+      pos = startPos + (x - startX);
+      wrap();
+    };
+    const up = () => {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove("is-dragging");
+    };
+    const clickGuard = (e) => { if (moved > 6) { e.stopPropagation(); e.preventDefault(); } };
+
+    viewport.addEventListener("pointerdown", down);
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+    window.addEventListener("pointercancel", up);
+    viewport.addEventListener("click", clickGuard, true);
+
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(t1); clearTimeout(t2);
       window.removeEventListener("resize", measure);
+      viewport.removeEventListener("pointerdown", down);
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+      window.removeEventListener("pointercancel", up);
+      viewport.removeEventListener("click", clickGuard, true);
     };
   }, []);
 }
@@ -501,17 +545,21 @@ function Approach() {
 }
 
 function Gallery({ onZoom }) {
-  if (!PROJECT.gallery || !PROJECT.gallery.length) return null;
+  const gallery = PROJECT.gallery;
+  if (!gallery || !gallery.length) return null;
+  const COPIES = 3;
+  const reel = [];
+  for (let d = 0; d < COPIES; d++) gallery.forEach((m, i) => reel.push({ m, key: d + "-" + i }));
   return (
     <section className="pc-gallery" id="work">
-      <div className="pc-gallery-pin">
-        <div className="pc-gallery-head">
-          <span className="pc-breather-label">— Selected work</span>
-          <span className="pc-gallery-hint">Scroll →&nbsp;&nbsp;Click to enlarge</span>
-        </div>
-        <div className="pc-gallery-track">
-          {PROJECT.gallery.map((m, i) => (
-            <figure className="pc-gallery-item" key={i}
+      <div className="pc-gallery-head">
+        <span className="pc-breather-label">— Selected work</span>
+        <span className="pc-gallery-hint">Drag&nbsp;&nbsp;·&nbsp;&nbsp;Click to enlarge</span>
+      </div>
+      <div className="pc-gallery-viewport">
+        <div className="pc-gallery-track" data-copies={COPIES}>
+          {reel.map(({ m, key }) => (
+            <figure className="pc-gallery-item" key={key}
               data-hover onClick={() => onZoom && onZoom(m)}>
               <div className="pc-gallery-media">
                 <Media item={m} />
