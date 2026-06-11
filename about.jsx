@@ -8,7 +8,7 @@ const FALLBACK_ABOUT = {
   eyebrow: "About",
   name: "Justin Restaino",
   descriptor: "Dad. Gamer. Sports Fanatic. Creator. Dungeon Master.",
-  portrait: "/media/about/headshot.jpg",
+  portrait: "/media/about/headshot.webp",
   bio: "My passion for pushing creative forward is unparalleled — blending bold ideas with emerging technology to build moments audiences never forget.",
   highlights: [
     "3× Emmy Award winner",
@@ -18,8 +18,8 @@ const FALLBACK_ABOUT = {
   ],
   philosophy: "From pioneering new technology to using standard techniques in unconventional ways, my experience reflects a desire to push myself and my team to the next level — and to go beyond industry standards.",
   mission: "I want to be at the forefront of creativity and innovation — to create culturally-relevant, thought-provoking activations that WOW an audience and enhance a brand's identity.",
-  wideImage: "/media/about/photo-wide.jpg",
-  sideImage: "/media/about/photo-2.jpg",
+  wideImage: "/media/about/photo-wide.webp",
+  sideImage: "/media/about/photo-2.webp",
   funFacts: [
     "I got engaged in Lin-Manuel Miranda's dressing room at the Broadway musical, Hamilton.",
     "I am a national champion public speaker.",
@@ -119,7 +119,7 @@ function useAnchorClicks() {
 function useContent(path, fallback, apply) {
   useEffect(() => {
     let alive = true;
-    fetch(path + (path.includes("?") ? "&" : "?") + "t=" + Date.now()).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((j) => { if (alive) apply(j); }).catch(() => {});
+    fetch(path).then((r) => (r.ok ? r.json() : Promise.reject(r.status))).then((j) => { if (alive) apply(j); }).catch(() => {});
     return () => { alive = false; };
   }, [path]);
 }
@@ -142,6 +142,7 @@ function Media({ item, className = "" }) {
 
 /* ─────────────── Nav ─────────────── */
 
+const ACTIVE_NAV = "About Me";  // which nav item this page lights up
 const NAV_ITEMS = [
   { idx: "01", label: "Home", href: "index.html" },
   { idx: "02", label: "Work", href: "work.html" },
@@ -149,8 +150,10 @@ const NAV_ITEMS = [
 ];
 
 function ShutterLink({ idx, label, href }) {
+  const active = label === ACTIVE_NAV;
   return (
-    <a href={href} className="nav-link" data-hover>
+    <a href={href} className={"nav-link" + (active ? " is-active" : "")} data-hover
+      aria-current={active ? "page" : undefined}>
       <span className="idx">{idx}</span>
       <span className="lbl"><span className="lbl-inner" data-text={label}>{label}</span></span>
     </a>);

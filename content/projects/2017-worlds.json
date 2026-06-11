@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/2017-worlds/hero.jpeg"
+  "src": "/media/2017-worlds/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/2017-worlds/g01.jpeg"
+   "src": "/media/2017-worlds/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/2017-worlds/dragon.mp4",
-  "poster": "/media/2017-worlds/hero.jpeg",
+  "poster": "/media/2017-worlds/hero.webp",
   "caption": "The Elder Dragon, conjured in AR over the arena."
  },
  "approach": {
@@ -64,62 +64,62 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/2017-worlds/g01.jpeg",
+   "src": "/media/2017-worlds/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g02.jpg",
+   "src": "/media/2017-worlds/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g03.jpg",
+   "src": "/media/2017-worlds/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g04.jpg",
+   "src": "/media/2017-worlds/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g05.jpg",
+   "src": "/media/2017-worlds/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g06.jpg",
+   "src": "/media/2017-worlds/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g07.jpg",
+   "src": "/media/2017-worlds/g07.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g08.jpg",
+   "src": "/media/2017-worlds/g08.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g09.jpg",
+   "src": "/media/2017-worlds/g09.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g10.jpg",
+   "src": "/media/2017-worlds/g10.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g11.jpg",
+   "src": "/media/2017-worlds/g11.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2017-worlds/g12.jpg",
+   "src": "/media/2017-worlds/g12.webp",
    "caption": ""
   }
  ],
@@ -157,7 +157,7 @@
   "tagline": "Creating a 100% AI-generated short film.",
   "media": {
    "type": "image",
-   "src": "/media/lost-and-found/hero.jpg"
+   "src": "/media/lost-and-found/hero.webp"
   }
  }
 }

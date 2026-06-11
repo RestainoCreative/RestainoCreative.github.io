@@ -10,28 +10,28 @@ const { useState, useEffect, useRef } = React;
 const FALLBACK_WORKS = [
   { num: "01", slug: "phish-at-sphere",     title: "Phish at Sphere",     client: "Moment Factory",       year: 2024,
     tags: ["Concert", "Creative Direction", "Innovation"],
-    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" } },
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.webp" } },
   { num: "02", slug: "field-of-echoes",     title: "Field of Echoes",     client: "Sports Broadcast",     year: 2024,
     tags: ["Sports", "Broadcast", "Cinematic Open"],
-    media: { type: "image", src: "/media/IMAGE2.jpg" } },
+    media: { type: "image", src: "/media/IMAGE2.webp" } },
   { num: "03", slug: "pulse-atlas",         title: "Pulse Atlas",         client: "League Broadcast",     year: 2023,
     tags: ["Sports", "Identity", "Campaign Strategy"],
-    media: { type: "image", src: "/media/IMAGE3.png" } },
+    media: { type: "image", src: "/media/IMAGE3.webp" } },
   { num: "04", slug: "hollow-city",         title: "Hollow City",         client: "Cultural Institution", year: 2023,
     tags: ["Immersive", "AR / XR", "Innovation"],
-    media: { type: "image", src: "/media/IMAGE4.jpg" } },
+    media: { type: "image", src: "/media/IMAGE4.webp" } },
   { num: "05", slug: "signal-drift",        title: "Signal Drift",        client: "Telecom",              year: 2023,
     tags: ["Campaign", "AR / XR", "Strategy"],
-    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE2.jpg" } },
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE2.webp" } },
   { num: "06", slug: "slow-cathedral",      title: "Slow Cathedral",      client: "Touring Artist",       year: 2022,
     tags: ["Concert", "Production Design", "Tour"],
-    media: { type: "image", src: "/media/IMAGE1.jpg" } },
+    media: { type: "image", src: "/media/IMAGE1.webp" } },
   { num: "07", slug: "the-long-take",       title: "The Long Take",       client: "Fashion House",        year: 2022,
     tags: ["Campaign", "Film", "Direction"],
-    media: { type: "image", src: "/media/IMAGE3.png" } },
+    media: { type: "image", src: "/media/IMAGE3.webp" } },
   { num: "08", slug: "lighthouse-protocol", title: "Lighthouse Protocol", client: "Tech Startup",         year: 2022,
     tags: ["Innovation", "AI", "Launch Campaign"],
-    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE4.jpg" } },
+    media: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE4.webp" } },
 ];
 
 /* Fetch JSON content with an instant fallback (renders immediately, then
@@ -40,7 +40,7 @@ function useContent(path, fallback) {
   const [data, setData] = useState(fallback);
   useEffect(() => {
     let alive = true;
-    fetch(path + (path.includes("?") ? "&" : "?") + "t=" + Date.now())
+    fetch(path)
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => { if (alive) setData(j); })
       .catch(() => {});
@@ -243,6 +243,7 @@ function Media({ item, className = "", fit = "cover" }) {
 
 /* ─────────────── Nav ─────────────── */
 
+const ACTIVE_NAV = "Work";  // which nav item this page lights up
 const NAV_ITEMS = [
   { idx: "01", label: "Home", href: "index.html" },
   { idx: "02", label: "Work", href: "work.html" },
@@ -250,8 +251,10 @@ const NAV_ITEMS = [
 ];
 
 function ShutterLink({ idx, label, href }) {
+  const active = label === ACTIVE_NAV;
   return (
-    <a href={href} className="nav-link" data-hover>
+    <a href={href} className={"nav-link" + (active ? " is-active" : "")} data-hover
+      aria-current={active ? "page" : undefined}>
       <span className="idx">{idx}</span>
       <span className="lbl"><span className="lbl-inner" data-text={label}>{label}</span></span>
     </a>);
@@ -305,7 +308,7 @@ function WorkHeader({ count }) {
 /* ─────────────── Reel band ─────────────── */
 
 function ReelBand({ project, idx, total }) {
-  const href = "project.html?p=" + (project.slug || "phish-at-sphere");
+  const href = "/project/" + (project.slug || "phish-at-sphere") + "/";
   // Number auto-derives from the project's position in the CMS reel order.
   const num = String(idx + 1).padStart(2, "0");
   return (

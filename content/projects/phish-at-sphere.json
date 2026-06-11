@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/phish-at-sphere/hero.jpeg"
+    "src": "/media/phish-at-sphere/hero.webp"
   },
   "facts": [
     {
@@ -41,7 +41,7 @@
     ],
     "media": {
       "type": "image",
-      "src": "/media/phish-at-sphere/g01.jpg"
+      "src": "/media/phish-at-sphere/g01.webp"
     }
   },
   "feature": null,
@@ -59,52 +59,52 @@
   "gallery": [
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g01.jpg",
+      "src": "/media/phish-at-sphere/g01.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g02.jpg",
+      "src": "/media/phish-at-sphere/g02.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g03.jpg",
+      "src": "/media/phish-at-sphere/g03.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g04.jpg",
+      "src": "/media/phish-at-sphere/g04.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g05.jpg",
+      "src": "/media/phish-at-sphere/g05.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g06.jpg",
+      "src": "/media/phish-at-sphere/g06.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g07.jpg",
+      "src": "/media/phish-at-sphere/g07.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g08.jpg",
+      "src": "/media/phish-at-sphere/g08.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g09.jpg",
+      "src": "/media/phish-at-sphere/g09.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/phish-at-sphere/g10.jpg",
+      "src": "/media/phish-at-sphere/g10.webp",
       "caption": ""
     }
   ],
@@ -165,7 +165,7 @@
     "tagline": "Designing the brand identity for a new Telemundo talk show.",
     "media": {
       "type": "image",
-      "src": "/media/elpelotazo/hero.jpg"
+      "src": "/media/elpelotazo/hero.webp"
     }
   }
 }

@@ -12,7 +12,7 @@ const FALLBACK_PROJECT = {
   title: "Phish at Sphere",
   tagline: "Reimagining real-time visuals for concerts.",
   tags: ["Concert", "Creative Direction", "Creative Producer", "Innovation", "AI"],
-  hero: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" },
+  hero: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE1.webp" },
 
   facts: [
     { k: "Client",       v: "Moment Factory" },
@@ -27,10 +27,10 @@ const FALLBACK_PROJECT = {
       "A four-night Sphere residency for a jam band means no two performances are alike — songs run anywhere from four to thirty minutes, and the visuals have to follow the music live, in real time, on a 16K wraparound display.",
       "That meant orchestrating over 400 terabytes of content from partners across multiple countries into a single real-time system that could improvise alongside the band — twelve-plus hours of visuals, none of it on a fixed timeline.",
     ],
-    media: { type: "image", src: "/media/IMAGE2.jpg" },
+    media: { type: "image", src: "/media/IMAGE2.webp" },
   },
 
-  feature: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE3.png",
+  feature: { type: "video", src: "/media/reel.mp4", poster: "/media/IMAGE3.webp",
     caption: "Encore — full rig, real-time generative visuals across the dome." },
 
   approach: {
@@ -47,11 +47,11 @@ const FALLBACK_PROJECT = {
   },
 
   gallery: [
-    { type: "image", src: "/media/IMAGE1.jpg", caption: "Cold open — single source, full dome." },
-    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE2.jpg", caption: "Real-time visuals tracking the jam." },
-    { type: "image", src: "/media/IMAGE3.png", caption: "States of matter — liquid sequence." },
-    { type: "image", src: "/media/IMAGE4.jpg", caption: "AI-generated transition, called live." },
-    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE1.jpg", caption: "Encore — full rig at 100%." },
+    { type: "image", src: "/media/IMAGE1.webp", caption: "Cold open — single source, full dome." },
+    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE2.webp", caption: "Real-time visuals tracking the jam." },
+    { type: "image", src: "/media/IMAGE3.webp", caption: "States of matter — liquid sequence." },
+    { type: "image", src: "/media/IMAGE4.webp", caption: "AI-generated transition, called live." },
+    { type: "video", src: "/media/reel.mp4",  poster: "/media/IMAGE1.webp", caption: "Encore — full rig at 100%." },
   ],
 
   impact: {
@@ -77,7 +77,7 @@ const FALLBACK_PROJECT = {
     slug: "index.html#work",
     title: "More work",
     tagline: "See the full index.",
-    media: { type: "image", src: "/media/IMAGE4.jpg" },
+    media: { type: "image", src: "/media/IMAGE4.webp" },
   },
 };
 
@@ -281,7 +281,9 @@ function useHorizontalGallery() {
 
     let pos = 0;
     const SPEED = 0.5;                       // auto-scroll px/frame (~30px/s)
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let dragging = false, startX = 0, startPos = 0, lastX = 0, vel = 0, moved = 0;
+    let hovering = false, onscreen = true;
 
     const wrap = () => {
       if (oneSet > 0) {
@@ -292,8 +294,10 @@ function useHorizontalGallery() {
 
     let raf;
     const tick = () => {
-      if (!dragging) {
-        pos -= SPEED;
+      if (!dragging && onscreen) {
+        // Auto-drift pauses on hover (so items are clickable targets) and is
+        // skipped entirely under prefers-reduced-motion; drag still works.
+        if (!hovering && !reducedMotion) pos -= SPEED;
         if (Math.abs(vel) > 0.25) { pos += vel; vel *= 0.92; }   // flick momentum
       }
       wrap();
@@ -301,6 +305,19 @@ function useHorizontalGallery() {
       raf = requestAnimationFrame(tick);
     };
     tick();
+
+    const enter = () => { hovering = true; };
+    const leave = () => { hovering = false; };
+    viewport.addEventListener("mouseenter", enter);
+    viewport.addEventListener("mouseleave", leave);
+    // Keyboard parity: pause drift while a tile has focus so it can't drift
+    // out from under the focus ring.
+    viewport.addEventListener("focusin", enter);
+    viewport.addEventListener("focusout", leave);
+
+    // Stop drifting (and burning battery) while the gallery is offscreen.
+    const io = new IntersectionObserver(([entry]) => { onscreen = entry.isIntersecting; });
+    io.observe(viewport);
 
     const px = (e) => e.clientX;
     const down = (e) => {
@@ -331,7 +348,12 @@ function useHorizontalGallery() {
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(t1); clearTimeout(t2);
+      io.disconnect();
       window.removeEventListener("resize", measure);
+      viewport.removeEventListener("mouseenter", enter);
+      viewport.removeEventListener("mouseleave", leave);
+      viewport.removeEventListener("focusin", enter);
+      viewport.removeEventListener("focusout", leave);
       viewport.removeEventListener("pointerdown", down);
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", up);
@@ -408,6 +430,7 @@ function Media({ item, className = "", fit = "cover" }) {
       <div className={"pc-media pc-media-video " + className}>
         <video ref={ref} src={item.src} poster={item.poster}
           muted loop playsInline autoPlay preload="metadata"
+          aria-label={item.alt || item.caption || undefined}
           style={{ objectFit: fit }} />
         <div className="pc-media-controls">
           <button type="button" className={"pc-mc-btn " + (muted ? "" : "is-on")} data-hover
@@ -427,7 +450,7 @@ function Media({ item, className = "", fit = "cover" }) {
   return (
     <div className={"pc-media pc-media-image " + className}>
       <div className="pc-media-img" style={{ backgroundImage: `url(${item.src})`, backgroundSize: fit }}
-        role="img" aria-label={item.caption || ""}></div>
+        role="img" aria-label={item.alt || item.caption || ""}></div>
       {item.caption && <div className="pc-media-cap">{item.caption}</div>}
     </div>
   );
@@ -549,7 +572,9 @@ function Gallery({ onZoom }) {
   if (!gallery || !gallery.length) return null;
   const COPIES = 3;
   const reel = [];
-  for (let d = 0; d < COPIES; d++) gallery.forEach((m, i) => reel.push({ m, key: d + "-" + i }));
+  // Only the first copy is in the tab order / accessibility tree — the other
+  // two exist purely to make the loop seamless and would be duplicate stops.
+  for (let d = 0; d < COPIES; d++) gallery.forEach((m, i) => reel.push({ m, key: d + "-" + i, real: d === 0 }));
   return (
     <section className="pc-gallery" id="work">
       <div className="pc-gallery-head">
@@ -558,9 +583,16 @@ function Gallery({ onZoom }) {
       </div>
       <div className="pc-gallery-viewport">
         <div className="pc-gallery-track" data-copies={COPIES}>
-          {reel.map(({ m, key }) => (
+          {reel.map(({ m, key, real }) => (
             <figure className="pc-gallery-item" key={key}
-              data-hover onClick={() => onZoom && onZoom(m)}>
+              data-hover onClick={() => onZoom && onZoom(m)}
+              role={real ? "button" : undefined}
+              tabIndex={real ? 0 : undefined}
+              aria-hidden={real ? undefined : "true"}
+              aria-label={real ? ("Enlarge: " + (m.caption || m.alt || "gallery item")) : undefined}
+              onKeyDown={real ? (e) => {
+                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onZoom && onZoom(m); }
+              } : undefined}>
               <div className="pc-gallery-media">
                 <Media item={m} />
                 <div className="pc-gallery-zoom" aria-hidden="true">
@@ -578,23 +610,44 @@ function Gallery({ onZoom }) {
 
 /* Fullscreen image/video lightbox — opened by clicking a gallery item. */
 function Lightbox({ item, onClose }) {
+  const boxRef = useRef(null);
   useEffect(() => {
     if (!item) return;
     window.__scrollLocked = true;
-    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    // Move focus into the dialog; put it back where it came from on close.
+    const opener = document.activeElement;
+    const box = boxRef.current;
+    const closeBtn = box && box.querySelector(".pc-lightbox-close");
+    if (closeBtn) closeBtn.focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") { onClose(); return; }
+      if (e.key === "Tab" && box) {
+        // Trap Tab inside the dialog (close button + video controls if any).
+        const focusables = box.querySelectorAll("button, video, [tabindex]");
+        if (!focusables.length) return;
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
     window.addEventListener("keydown", onKey);
-    return () => { window.__scrollLocked = false; window.removeEventListener("keydown", onKey); };
+    return () => {
+      window.__scrollLocked = false;
+      window.removeEventListener("keydown", onKey);
+      if (opener && opener.focus) opener.focus();
+    };
   }, [item, onClose]);
   if (!item) return null;
   // Full-screen takeover. Click anywhere to dismiss (for video, clicks on the
   // element are swallowed so its controls work — close with ✕ or Esc).
   return (
-    <div className="pc-lightbox is-on" onClick={onClose}>
+    <div className="pc-lightbox is-on" onClick={onClose} ref={boxRef}
+      role="dialog" aria-modal="true" aria-label={item.caption || "Enlarged media"}>
       <button className="pc-lightbox-close" onClick={onClose} data-hover aria-label="Close">✕</button>
       {item.type === "video"
         ? <video className="pc-lightbox-media" src={item.src} poster={item.poster}
             controls autoPlay loop playsInline onClick={(e) => e.stopPropagation()} />
-        : <img className="pc-lightbox-media" src={item.src} alt="" />}
+        : <img className="pc-lightbox-media" src={item.src} alt={item.alt || item.caption || ""} />}
     </div>
   );
 }
@@ -653,7 +706,7 @@ function NextProject({ time }) {
   if (!n) return null;
   return (
     <section className="pc-next" id="next">
-      <a className="pc-next-link" href={n.slug ? ("project.html?p=" + n.slug) : "work.html"} data-hover>
+      <a className="pc-next-link" href={n.slug ? ("/project/" + n.slug + "/") : "work.html"} data-hover>
         <div className="pc-next-media" aria-hidden="true">
           <Media item={n.media} />
           <div className="pc-next-scrim"></div>
@@ -674,6 +727,7 @@ function NextProject({ time }) {
 
 /* ─────────────── Nav ─────────────── */
 
+const ACTIVE_NAV = "Work";  // which nav item this page lights up
 const NAV_ITEMS = [
   { idx: "01", label: "Home", href: "index.html" },
   { idx: "02", label: "Work", href: "work.html" },
@@ -681,8 +735,10 @@ const NAV_ITEMS = [
 ];
 
 function ShutterLink({ idx, label, href }) {
+  const active = label === ACTIVE_NAV;
   return (
-    <a href={href} className="nav-link" data-hover>
+    <a href={href} className={"nav-link" + (active ? " is-active" : "")} data-hover
+      aria-current={active ? "page" : undefined}>
       <span className="idx">{idx}</span>
       <span className="lbl"><span className="lbl-inner" data-text={label}>{label}</span></span>
     </a>);
@@ -722,8 +778,15 @@ function App() {
   // On any failure we keep the built-in fallback (the default project).
   useEffect(() => {
     let slug = "phish-at-sphere";
-    try { slug = new URLSearchParams(window.location.search).get("p") || slug; } catch (e) {}
-    fetch("/content/projects/" + slug + ".json?t=" + Date.now())
+    try {
+      // Prefer ?p=<slug>; otherwise the static per-project URL /project/<slug>/
+      // (those pages are generated by build.sh so shared links get real OG meta).
+      const fromPath = (window.location.pathname.match(/^\/project\/([^/]+)\/?$/) || [])[1];
+      slug = new URLSearchParams(window.location.search).get("p")
+        || (fromPath && fromPath !== "index.html" ? fromPath : "")
+        || slug;
+    } catch (e) {}
+    fetch("/content/projects/" + slug + ".json")
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => { PROJECT = j; if (j && j.title) document.title = j.title + " — Justin Restaino"; forceRender((x) => x + 1); })
       .catch(() => {});

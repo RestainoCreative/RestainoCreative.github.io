@@ -524,6 +524,9 @@ body.custom-cursor a, body.custom-cursor button, body.custom-cursor [data-hover]
 }
 .nav-link:hover .lbl-inner { transform: translateY(-100%); }
 .nav-link:hover { background: rgba(255,255,255,0.08); }
+/* Current page: pill stays lit, index number at full strength. */
+.nav-link.is-active { background: rgba(255,255,255,0.1); }
+.nav-link.is-active .idx { opacity: 1; color: var(--stage-1); }
 
 @media (max-width: 800px) {
   /* Safety net against stray horizontal scroll on phones. `clip` (not `hidden`)
@@ -4930,6 +4933,11 @@ body.font-bigshoulders .pc-breather-p.is-lead { font-family: var(--display-alt);
   will-change: transform; user-select: none; -webkit-user-select: none;
 }
 .pc-gallery-item { margin: 0; flex-shrink: 0; cursor: pointer; }
+.pc-gallery-item:focus-visible { outline: none; }
+.pc-gallery-item:focus-visible .pc-gallery-media {
+  outline: 2px solid var(--stage-1); outline-offset: 4px;
+}
+.pc-gallery-item:focus-visible .pc-gallery-zoom { opacity: 1; transform: scale(1); }
 .pc-gallery-media {
   position: relative; width: clamp(260px, 42vw, 600px); height: clamp(200px, 46vh, 430px);
   border-radius: 12px; overflow: hidden; background: #050403;
@@ -5247,3 +5255,16 @@ body.font-bigshoulders .ab-cta-link .cl-title { font-family: var(--display-alt);
 .ab-foot a { color: var(--on-d-mute); text-decoration: none; }
 .ab-foot a:hover { color: var(--on-d); }
 
+
+/* ── Reduced motion: collapse all CSS animation/transition to near-instant.
+   JS-driven motion (marquee drift, name morph, smooth scroll) checks the same
+   media query and disables itself. Reveal-style transitions still end in their
+   final visible state — they just get there immediately. ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

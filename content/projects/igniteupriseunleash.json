@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/igniteupriseunleash/hero.jpg"
+  "src": "/media/igniteupriseunleash/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g01.jpg"
+   "src": "/media/igniteupriseunleash/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/igniteupriseunleash/feature.mp4",
-  "poster": "/media/igniteupriseunleash/hero.jpg",
+  "poster": "/media/igniteupriseunleash/hero.webp",
   "caption": "Ignite. Uprise. Unleash."
  },
  "approach": {
@@ -64,37 +64,37 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g01.jpg",
+   "src": "/media/igniteupriseunleash/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g02.jpg",
+   "src": "/media/igniteupriseunleash/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g03.jpg",
+   "src": "/media/igniteupriseunleash/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g04.jpg",
+   "src": "/media/igniteupriseunleash/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g05.jpg",
+   "src": "/media/igniteupriseunleash/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g06.jpg",
+   "src": "/media/igniteupriseunleash/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/igniteupriseunleash/g07.jpg",
+   "src": "/media/igniteupriseunleash/g07.webp",
    "caption": ""
   }
  ],
@@ -138,7 +138,7 @@
   "tagline": "Debuting a virtual band live on stage.",
   "media": {
    "type": "image",
-   "src": "/media/2018-worlds/hero.jpg"
+   "src": "/media/2018-worlds/hero.webp"
   }
  }
 }

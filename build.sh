@@ -10,3 +10,6 @@ const b=require('@babel/core'),fs=require('fs');
   fs.writeFileSync(n+'.js',o);
   console.log('built '+n+'.js ('+(o.length/1024|0)+'KB)');
 });"
+
+# Regenerate the static per-project pages (per-slug OG/meta for link previews).
+python3 scripts/gen_project_pages.py

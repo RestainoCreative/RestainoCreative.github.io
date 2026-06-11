@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/2019-worlds/hero.jpg"
+    "src": "/media/2019-worlds/hero.webp"
   },
   "facts": [
     {
@@ -41,7 +41,7 @@
     ],
     "media": {
       "type": "image",
-      "src": "/media/2019-worlds/g01.jpg"
+      "src": "/media/2019-worlds/g01.webp"
     }
   },
   "feature": null,
@@ -59,62 +59,62 @@
   "gallery": [
     {
       "type": "image",
-      "src": "/media/2019-worlds/g01.jpg",
+      "src": "/media/2019-worlds/g01.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g02.jpg",
+      "src": "/media/2019-worlds/g02.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g03.jpg",
+      "src": "/media/2019-worlds/g03.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g04.jpg",
+      "src": "/media/2019-worlds/g04.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g05.jpg",
+      "src": "/media/2019-worlds/g05.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g06.jpg",
+      "src": "/media/2019-worlds/g06.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g07.jpg",
+      "src": "/media/2019-worlds/g07.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g08.jpg",
+      "src": "/media/2019-worlds/g08.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g09.jpg",
+      "src": "/media/2019-worlds/g09.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g10.jpg",
+      "src": "/media/2019-worlds/g10.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g11.jpg",
+      "src": "/media/2019-worlds/g11.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2019-worlds/g12.jpg",
+      "src": "/media/2019-worlds/g12.webp",
       "caption": ""
     }
   ],
@@ -158,7 +158,7 @@
     "tagline": "Creating the visual future for the Professional Fighters League.",
     "media": {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/hero.jpg"
+      "src": "/media/pfl-world-tournament-graphics/hero.webp"
     }
   }
 }

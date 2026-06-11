@@ -10,12 +10,12 @@ const { useState, useEffect, useRef, useCallback } = React;
    fetch fails. `HOME` is reassigned when the JSON arrives, then App forces
    a re-render; components read HOME directly. */
 const FALLBACK_HOME = {
-  hero: { video: "/media/reel.mp4", poster: "/media/IMAGE1.jpg" },
+  hero: { video: "/media/reel.mp4", poster: "/media/IMAGE1.webp" },
   statement: [
-    { text: "I strive to be at the forefront of creativity and innovation.", image: "/media/IMAGE1.jpg", align: "left" },
-    { text: "To create culturally-relevant, thought-provoking activations that WOW an audience.", image: "/media/IMAGE2.jpg", align: "center" },
-    { text: "...and enhance a brand's identity.", image: "/media/IMAGE3.png", align: "right" },
-    { text: "This is what I do.", textRight: "And I love it.", image: "/media/IMAGE4.jpg", align: "split" },
+    { text: "I strive to be at the forefront of creativity and innovation.", image: "/media/IMAGE1.webp", align: "left" },
+    { text: "To create culturally-relevant, thought-provoking activations that WOW an audience.", image: "/media/IMAGE2.webp", align: "center" },
+    { text: "...and enhance a brand's identity.", image: "/media/IMAGE3.webp", align: "right" },
+    { text: "This is what I do.", textRight: "And I love it.", image: "/media/IMAGE4.webp", align: "split" },
   ],
   numbers: {
     headline: "A creative career, distilled into five digits.",
@@ -736,6 +736,7 @@ function useReveal() {
 
 /* ───────────────── Nav ───────────────── */
 
+const ACTIVE_NAV = "Home";  // which nav item this page lights up
 const NAV_ITEMS = [
 { idx: "01", label: "Home", href: "index.html" },
 { idx: "02", label: "Work", href: "work.html" },
@@ -743,12 +744,13 @@ const NAV_ITEMS = [
 
 
 function ShutterLink({ idx, label, href }) {
+  const active = label === ACTIVE_NAV;
   return (
-    <a href={href} className="nav-link" data-hover>
+    <a href={href} className={"nav-link" + (active ? " is-active" : "")} data-hover
+      aria-current={active ? "page" : undefined}>
       <span className="idx">{idx}</span>
       <span className="lbl"><span className="lbl-inner" data-text={label}>{label}</span></span>
     </a>);
-
 }
 
 function Nav() {
@@ -1505,12 +1507,18 @@ function MobileHome({ work, onPlayReel }) {
   const c = HOME.contact || {};
   const email = c.email || "jrestaino91@gmail.com";
   const socials = c.socials || [];
+  // Phones get the 720p rendition (~4MB vs ~10MB). Convention: "<name>-720.mp4"
+  // next to the full loop; onError falls back to the original so a CMS-swapped
+  // loop without a -720 sibling still plays.
+  const loop = (HOME.hero && HOME.hero.loop) || "/media/hero-loop.mp4";
+  const loop720 = loop.replace(/\.mp4$/, "-720.mp4");
   return (
     <main className="m-home">
       <section className="m-top">
         <video className="m-top-video" autoPlay muted loop playsInline preload="metadata"
-          poster={(HOME.hero && HOME.hero.poster) || "/media/IMAGE1.jpg"}
-          src={(HOME.hero && HOME.hero.loop) || "/media/hero-loop.mp4"} />
+          poster={(HOME.hero && HOME.hero.poster) || "/media/IMAGE1.webp"}
+          src={loop720}
+          onError={(e) => { if (e.currentTarget.src.indexOf("-720.mp4") !== -1) e.currentTarget.src = loop; }} />
         <div className="m-top-scrim" aria-hidden="true"></div>
         <div className="m-top-inner">
           <div className="m-eyebrow">Justin Restaino</div>
@@ -1526,7 +1534,7 @@ function MobileHome({ work, onPlayReel }) {
           {(work || []).map((p, i) => {
             const img = p.media && (p.media.poster || p.media.src);
             return (
-              <a className="m-card" key={p.slug || i} href={"project.html?p=" + p.slug}>
+              <a className="m-card" key={p.slug || i} href={"/project/" + p.slug + "/"}>
                 <div className="m-card-media" style={img ? { backgroundImage: "url(" + img + ")" } : null}></div>
                 <div className="m-card-info">
                   <div className="m-card-meta">{String(i + 1).padStart(2, "0")} <span>/ {p.year}</span></div>
@@ -1573,7 +1581,7 @@ function App() {
 
   // Selected-work list (used by the mobile home).
   useEffect(() => {
-    fetch("/content/work.json?t=" + Date.now())
+    fetch("/content/work.json")
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => setWork(j.projects || []))
       .catch(() => {});
@@ -1581,7 +1589,7 @@ function App() {
 
   // Load editable home content; keep the built-in fallback on any failure.
   useEffect(() => {
-    fetch("/content/home.json?t=" + Date.now())
+    fetch("/content/home.json")
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((j) => { HOME = j; forceHome((x) => x + 1); })
       .catch(() => {});
@@ -1596,7 +1604,9 @@ function App() {
     c.toggle("reel-off", !t.nameReel);
   }, [t.font, t.nav, t.nameReel]);
 
-  useSmoothScroll(t.smooth && !isMobile);
+  const reducedMotion = typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  useSmoothScroll(t.smooth && !isMobile && !reducedMotion);
   useScrollFX();
   useAnchorClicks();
   useCursor(t.cursor && !isMobile);

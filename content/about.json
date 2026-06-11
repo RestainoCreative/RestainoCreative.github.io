@@ -2,7 +2,7 @@
   "eyebrow": "About",
   "name": "Justin Restaino",
   "descriptor": "Dad. Gamer. Sports Fanatic. Creator. Dungeon Master.",
-  "portrait": "/media/about/headshot.jpg",
+  "portrait": "/media/about/headshot.webp",
   "bio": "My passion for pushing creative forward is unparalleled — blending bold ideas with emerging technology to build moments audiences never forget.",
   "highlights": [
     "3× Emmy Award winner",
@@ -12,8 +12,8 @@
   ],
   "philosophy": "From pioneering new technology to using standard techniques in unconventional ways, my experience reflects a desire to push myself and my team to the next level — and to go beyond industry standards.",
   "mission": "I want to be at the forefront of creativity and innovation — to create culturally-relevant, thought-provoking activations that WOW an audience and enhance a brand's identity.",
-  "wideImage": "/media/about/photo-wide.jpg",
-  "sideImage": "/media/about/photo-2.jpg",
+  "wideImage": "/media/about/photo-wide.webp",
+  "sideImage": "/media/about/photo-2.webp",
   "funFacts": [
     "I got engaged in Lin-Manuel Miranda's dressing room at the Broadway musical, Hamilton.",
     "I am a national champion public speaker."

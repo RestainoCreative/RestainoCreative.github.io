@@ -145,6 +145,7 @@ content:
           - { name: type,   label: Type, type: select, options: { values: [image, video] } }
           - { name: src,    label: "Image or video", type: file }
           - { name: poster, label: "Poster image (for video)", type: image }
+          - { name: alt,    label: "Alt text (describe for screen readers)", type: string }
 
       - name: facts
         label: Facts bar
@@ -174,6 +175,7 @@ content:
           - { name: src,     label: "Image or video", type: file }
           - { name: poster,  label: "Poster image (for video)", type: image }
           - { name: caption, label: Caption, type: string }
+          - { name: alt,     label: "Alt text (describe for screen readers)", type: string }
 
       - name: approach
         label: The Approach
@@ -191,6 +193,7 @@ content:
           - { name: src,     label: "Image or video", type: file }
           - { name: poster,  label: "Poster image (for video)", type: image }
           - { name: caption, label: Caption, type: string }
+          - { name: alt,     label: "Alt text (describe for screen readers)", type: string }
 
       - name: impact
         label: The Impact

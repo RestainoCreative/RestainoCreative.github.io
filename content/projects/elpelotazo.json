@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/elpelotazo/hero.jpg"
+  "src": "/media/elpelotazo/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/elpelotazo/g01.jpg"
+   "src": "/media/elpelotazo/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/elpelotazo/feature.mp4",
-  "poster": "/media/elpelotazo/hero.jpg",
+  "poster": "/media/elpelotazo/hero.webp",
   "caption": "Telemundo · El Pelotazo."
  },
  "approach": {
@@ -64,37 +64,37 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/elpelotazo/g01.jpg",
+   "src": "/media/elpelotazo/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g02.jpg",
+   "src": "/media/elpelotazo/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g03.jpg",
+   "src": "/media/elpelotazo/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g04.jpg",
+   "src": "/media/elpelotazo/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g05.jpg",
+   "src": "/media/elpelotazo/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g06.jpg",
+   "src": "/media/elpelotazo/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/elpelotazo/g07.jpg",
+   "src": "/media/elpelotazo/g07.webp",
    "caption": ""
   }
  ],
@@ -122,7 +122,7 @@
   "tagline": "Creating a spectacle for the Riot Games World Championship using holograms.",
   "media": {
    "type": "image",
-   "src": "/media/2019-worlds/hero.jpg"
+   "src": "/media/2019-worlds/hero.webp"
   }
  }
 }

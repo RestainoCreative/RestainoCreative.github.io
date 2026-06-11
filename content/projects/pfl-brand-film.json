@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/pfl-brand-film/hero.jpg"
+  "src": "/media/pfl-brand-film/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/pfl-brand-film/g01.jpg"
+   "src": "/media/pfl-brand-film/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/pfl-brand-film/brand-spot.mp4",
-  "poster": "/media/pfl-brand-film/hero.jpg",
+  "poster": "/media/pfl-brand-film/hero.webp",
   "caption": "PFL World Tournament — brand spot."
  },
  "approach": {
@@ -64,57 +64,57 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g01.jpg",
+   "src": "/media/pfl-brand-film/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g02.jpg",
+   "src": "/media/pfl-brand-film/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g03.jpg",
+   "src": "/media/pfl-brand-film/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g04.jpg",
+   "src": "/media/pfl-brand-film/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g05.jpg",
+   "src": "/media/pfl-brand-film/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g06.jpg",
+   "src": "/media/pfl-brand-film/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g07.jpg",
+   "src": "/media/pfl-brand-film/g07.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g08.jpg",
+   "src": "/media/pfl-brand-film/g08.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g09.jpg",
+   "src": "/media/pfl-brand-film/g09.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g10.jpg",
+   "src": "/media/pfl-brand-film/g10.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/pfl-brand-film/g11.jpg",
+   "src": "/media/pfl-brand-film/g11.webp",
    "caption": ""
   }
  ],
@@ -142,7 +142,7 @@
   "tagline": "Summoning an AR dragon into the stadium.",
   "media": {
    "type": "image",
-   "src": "/media/2017-worlds/hero.jpeg"
+   "src": "/media/2017-worlds/hero.webp"
   }
  }
 }

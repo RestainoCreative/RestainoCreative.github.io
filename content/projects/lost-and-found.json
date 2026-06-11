@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/lost-and-found/hero.jpg"
+  "src": "/media/lost-and-found/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/lost-and-found/g01.jpg"
+   "src": "/media/lost-and-found/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/lost-and-found/lostandfound-film.mp4",
-  "poster": "/media/lost-and-found/hero.jpg",
+  "poster": "/media/lost-and-found/hero.webp",
   "caption": "Lost and Found — AI short film."
  },
  "approach": {
@@ -64,17 +64,17 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/lost-and-found/g01.jpg",
+   "src": "/media/lost-and-found/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/lost-and-found/g02.jpg",
+   "src": "/media/lost-and-found/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/lost-and-found/g03.jpg",
+   "src": "/media/lost-and-found/g03.webp",
    "caption": ""
   }
  ],
@@ -109,7 +109,7 @@
   "tagline": "Using legends to usher in the next generation of League of Legends Esports.",
   "media": {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/hero.jpg"
+   "src": "/media/tomorrow-we-fight/hero.webp"
   }
  }
 }

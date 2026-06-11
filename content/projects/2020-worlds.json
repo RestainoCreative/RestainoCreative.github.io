@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/2020-worlds/hero.jpg"
+  "src": "/media/2020-worlds/hero.webp"
  },
  "facts": [
   {
@@ -41,13 +41,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/2020-worlds/g01.jpg"
+   "src": "/media/2020-worlds/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/2020-worlds/feature.mp4",
-  "poster": "/media/2020-worlds/hero.jpg",
+  "poster": "/media/2020-worlds/hero.webp",
   "caption": "Worlds 2020 — opening ceremony."
  },
  "approach": {
@@ -64,37 +64,37 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/2020-worlds/g01.jpg",
+   "src": "/media/2020-worlds/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g02.jpg",
+   "src": "/media/2020-worlds/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g03.jpg",
+   "src": "/media/2020-worlds/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g04.jpg",
+   "src": "/media/2020-worlds/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g05.jpg",
+   "src": "/media/2020-worlds/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g06.jpg",
+   "src": "/media/2020-worlds/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/2020-worlds/g07.jpg",
+   "src": "/media/2020-worlds/g07.webp",
    "caption": ""
   }
  ],
@@ -129,7 +129,7 @@
   "tagline": "Reimagining real-time visuals for concerts.",
   "media": {
    "type": "image",
-   "src": "/media/phish-at-sphere/hero.jpeg"
+   "src": "/media/phish-at-sphere/hero.webp"
   }
  }
 }

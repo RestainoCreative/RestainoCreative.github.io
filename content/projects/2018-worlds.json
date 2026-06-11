@@ -10,7 +10,7 @@
   ],
   "hero": {
     "type": "image",
-    "src": "/media/2018-worlds/hero.jpg"
+    "src": "/media/2018-worlds/hero.webp"
   },
   "facts": [
     {
@@ -41,7 +41,7 @@
     ],
     "media": {
       "type": "image",
-      "src": "/media/2018-worlds/g01.jpg"
+      "src": "/media/2018-worlds/g01.webp"
     }
   },
   "feature": null,
@@ -59,42 +59,42 @@
   "gallery": [
     {
       "type": "image",
-      "src": "/media/2018-worlds/g01.jpg",
+      "src": "/media/2018-worlds/g01.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g02.jpg",
+      "src": "/media/2018-worlds/g02.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g03.jpg",
+      "src": "/media/2018-worlds/g03.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g04.jpg",
+      "src": "/media/2018-worlds/g04.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g05.jpg",
+      "src": "/media/2018-worlds/g05.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g06.jpg",
+      "src": "/media/2018-worlds/g06.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g07.jpg",
+      "src": "/media/2018-worlds/g07.webp",
       "caption": ""
     },
     {
       "type": "image",
-      "src": "/media/2018-worlds/g08.jpg",
+      "src": "/media/2018-worlds/g08.webp",
       "caption": ""
     }
   ],
@@ -129,7 +129,7 @@
     "tagline": "Teaming up with League's biggest influencer to bring fans back from the pandemic.",
     "media": {
       "type": "image",
-      "src": "/media/2022-spring-finals/hero.jpg"
+      "src": "/media/2022-spring-finals/hero.webp"
     }
   }
 }

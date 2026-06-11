@@ -1,29 +1,29 @@
 {
  "hero": {
   "video": "/media/reel.mp4?v=2",
-  "poster": "/media/IMAGE1.jpg",
+  "poster": "/media/IMAGE1.webp",
   "loop": "/media/hero-loop.mp4"
  },
  "statement": [
   {
    "text": "I strive to be at the *forefront* of *creativity and innovation.*",
-   "image": "/media/IMAGE1.jpg",
+   "image": "/media/IMAGE1.webp",
    "align": "left"
   },
   {
    "text": "To create culturally-relevant, *thought-provoking* activations that *WOW* an audience.",
-   "image": "/media/IMAGE2.jpg",
+   "image": "/media/IMAGE2.webp",
    "align": "center"
   },
   {
    "text": "...and enhance a *brand's identity.*",
-   "image": "/media/IMAGE3.png",
+   "image": "/media/IMAGE3.webp",
    "align": "right"
   },
   {
    "text": "This is *what I do.*",
    "textRight": "And I *love* it.",
-   "image": "/media/IMAGE4.jpg",
+   "image": "/media/IMAGE4.webp",
    "align": "split"
   }
  ],
@@ -102,31 +102,31 @@
  },
  "brandLogos": [
   {
-   "image": "/media/RiotGames.png",
+   "image": "/media/RiotGames.webp",
    "name": "Riot Games"
   },
   {
-   "image": "/media/RedBull.png",
+   "image": "/media/RedBull.webp",
    "name": "Red Bull"
   },
   {
-   "image": "/media/NHL-mono.png",
+   "image": "/media/NHL-mono.webp",
    "name": "NHL"
   },
   {
-   "image": "/media/NFL.png",
+   "image": "/media/NFL.webp",
    "name": "NFL"
   },
   {
-   "image": "/media/MasterCard-mono.png",
+   "image": "/media/MasterCard-mono.webp",
    "name": "Master Card"
   },
   {
-   "image": "/media/LouisVuitton.png",
+   "image": "/media/LouisVuitton.webp",
    "name": "Louis Vuitton"
   },
   {
-   "image": "/media/CBS.png",
+   "image": "/media/CBS.webp",
    "name": "CBS"
   }
  ]

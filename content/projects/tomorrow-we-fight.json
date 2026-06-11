@@ -10,7 +10,7 @@
  ],
  "hero": {
   "type": "image",
-  "src": "/media/tomorrow-we-fight/hero.jpg"
+  "src": "/media/tomorrow-we-fight/hero.webp"
  },
  "facts": [
   {
@@ -40,13 +40,13 @@
   ],
   "media": {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g01.jpg"
+   "src": "/media/tomorrow-we-fight/g01.webp"
   }
  },
  "feature": {
   "type": "video",
   "src": "/media/tomorrow-we-fight/feature.mp4",
-  "poster": "/media/tomorrow-we-fight/hero.jpg",
+  "poster": "/media/tomorrow-we-fight/hero.webp",
   "caption": "Tomorrow We Fight — 2022 LCS Summer."
  },
  "approach": {
@@ -63,57 +63,57 @@
  "gallery": [
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g01.jpg",
+   "src": "/media/tomorrow-we-fight/g01.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g02.jpg",
+   "src": "/media/tomorrow-we-fight/g02.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g03.jpg",
+   "src": "/media/tomorrow-we-fight/g03.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g04.jpg",
+   "src": "/media/tomorrow-we-fight/g04.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g05.jpg",
+   "src": "/media/tomorrow-we-fight/g05.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g06.jpg",
+   "src": "/media/tomorrow-we-fight/g06.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g07.jpg",
+   "src": "/media/tomorrow-we-fight/g07.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g08.jpg",
+   "src": "/media/tomorrow-we-fight/g08.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g09.jpg",
+   "src": "/media/tomorrow-we-fight/g09.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g10.jpg",
+   "src": "/media/tomorrow-we-fight/g10.webp",
    "caption": ""
   },
   {
    "type": "image",
-   "src": "/media/tomorrow-we-fight/g11.jpg",
+   "src": "/media/tomorrow-we-fight/g11.webp",
    "caption": ""
   }
  ],
@@ -152,7 +152,7 @@
   "tagline": "Changing the tone and voice for the League Championship Series.",
   "media": {
    "type": "image",
-   "src": "/media/igniteupriseunleash/hero.jpg"
+   "src": "/media/igniteupriseunleash/hero.webp"
   }
  }
 }
