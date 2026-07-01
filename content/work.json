@@ -82,6 +82,23 @@
       }
     },
     {
+      "num": "13",
+      "slug": "lcs-rebrand",
+      "title": "League Championship Series: 2024 Rebrand",
+      "client": "Riot Games — LCS",
+      "year": 2024,
+      "tags": [
+        "Brand Development",
+        "Creative Direction",
+        "Design System",
+        "Esports"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/lcs-rebrand/hero.webp"
+      }
+    },
+    {
       "num": "01",
       "slug": "phish-at-sphere",
       "title": "Phish Residency at Sphere",

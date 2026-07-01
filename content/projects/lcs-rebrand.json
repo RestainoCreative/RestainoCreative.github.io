@@ -1,0 +1,94 @@
+{
+ "slug": "lcs-rebrand",
+ "title": "League Championship Series: 2024 Rebrand",
+ "tagline": "Rebuilding North America's premier League of Legends league into a brand where players make their name.",
+ "tags": [
+  "Brand Development",
+  "Creative Direction",
+  "Design System",
+  "Esports"
+ ],
+ "hero": {
+  "type": "image",
+  "src": "/media/lcs-rebrand/hero.webp",
+  "alt": "LCS reflective apparel lit by a single spotlight against black — the brand's core idea of shining a light on all-star players."
+ },
+ "facts": [
+  { "k": "Client", "v": "Riot Games — LCS" },
+  { "k": "Role", "v": "Creative Director" },
+  { "k": "Discipline", "v": "Brand Identity ✦ Design System" },
+  { "k": "Year", "v": "2024" },
+  { "k": "Scope", "v": "Strategy → broadcast, 148-page system" }
+ ],
+ "challenge": {
+  "body": [
+   "The LCS is North America's top League of Legends competition, but its identity no longer matched its ambition. It needed to stand shoulder to shoulder with traditional sports leagues while feeling unmistakably native to gaming — and it had to hold up everywhere, from a stadium finals stage to a phone screen mid-match.",
+   "The hardest part: ten pro teams, each with fierce fan bases and loud color palettes, all living under one league brand. The system had to unify them without flattening them — and keep the players, not the logo, as the stars of the show."
+  ],
+  "media": {
+   "type": "image",
+   "src": "/media/lcs-rebrand/cover.webp"
+  }
+ },
+ "feature": {
+  "type": "image",
+  "src": "/media/lcs-rebrand/feature.webp",
+  "caption": "Out-of-home — the identity carried into the physical world.",
+  "alt": "LCS out-of-home poster panels installed in a concrete concourse."
+ },
+ "approach": {
+  "body": [
+   "We built the brand around a single organizing idea: the LCS is a spotlight illuminating the all-star characters who fuel the league — 'where you make your name.' That concept drove everything, starting with a new logo mark that reads as both a rising arrow and a beam of light pointing to the top.",
+   "From there I directed a full, end-to-end system: a bold PP Formula Condensed typographic voice, a neutral core palette engineered so the ten team colors could always be the loudest thing on screen, a 'Superstar Energy' art-direction and photography language, a modular grid, a broadcast graphics package with a signature live ticker device, and extensions across apparel, out-of-home, social, and digital.",
+   "The result is a 148-page brand system covering strategy, tone of voice, logo, type, color, art direction, graphic language, broadcast, and brand extensions — a single source of truth the whole league could build on."
+  ],
+  "led": [
+   "Owned creative direction across the entire brand development",
+   "Defined brand strategy, tone of voice, and the core 'make your name' concept",
+   "Directed the logo suite, typography, and team-inclusive color system",
+   "Set the 'Superstar Energy' art direction and photography language",
+   "Designed the broadcast graphics package and live ticker device",
+   "Extended the system into apparel, OOH, social, and digital"
+  ]
+ },
+ "gallery": [
+  { "type": "image", "src": "/media/lcs-rebrand/logo.webp", "caption": "The mark — a rising spotlight pointing to the top.", "alt": "LCS logo lockup." },
+  { "type": "image", "src": "/media/lcs-rebrand/color.webp", "caption": "A neutral core palette that lets ten team colors be the stars.", "alt": "LCS color system with league neutrals and team colors." },
+  { "type": "image", "src": "/media/lcs-rebrand/type.webp", "caption": "PP Formula Condensed — the league's bold typographic voice.", "alt": "PP Formula Condensed type specimen." },
+  { "type": "image", "src": "/media/lcs-rebrand/superstar.webp", "caption": "'Superstar Energy' — the art-direction principle.", "alt": "Superstar Energy art direction title slide." },
+  { "type": "image", "src": "/media/lcs-rebrand/campaign.webp", "caption": "A photography language built around the all-star cast.", "alt": "LCS campaign photography of players." },
+  { "type": "image", "src": "/media/lcs-rebrand/grid.webp", "caption": "A modular grid that keeps every layout on-system.", "alt": "The LCS layout grid applied to a player portrait." },
+  { "type": "image", "src": "/media/lcs-rebrand/standings.webp", "caption": "Broadcast graphics — standings, built for live.", "alt": "LCS summer split standings broadcast graphic." },
+  { "type": "image", "src": "/media/lcs-rebrand/broadcast.webp", "caption": "The system on air, live from the studio.", "alt": "LCS broadcast lower-third in a live studio." },
+  { "type": "image", "src": "/media/lcs-rebrand/finals.webp", "caption": "LCS Finals — event identity at scale.", "alt": "LCS Finals NYC event screens." },
+  { "type": "image", "src": "/media/lcs-rebrand/laptop.webp", "caption": "Hardware partnership branding.", "alt": "Gaming laptop with LCS branding." },
+  { "type": "image", "src": "/media/lcs-rebrand/cap.webp", "caption": "Apparel — the brand as a badge of belonging.", "alt": "Person wearing an LCS cap." },
+  { "type": "image", "src": "/media/lcs-rebrand/caps.webp", "caption": "Headwear across league and team colorways.", "alt": "Three LCS caps in different colorways." },
+  { "type": "image", "src": "/media/lcs-rebrand/tote.webp", "caption": "Merch — the mark as pure graphic language.", "alt": "LCS tote bag." },
+  { "type": "image", "src": "/media/lcs-rebrand/keycaps.webp", "caption": "Collectible details for the community.", "alt": "LCS keycaps and jewelry." },
+  { "type": "image", "src": "/media/lcs-rebrand/phones.webp", "caption": "Social-first templates for every team.", "alt": "LCS social stories on phones." },
+  { "type": "image", "src": "/media/lcs-rebrand/desk.webp", "caption": "Player spotlight, from broadcast to second screen.", "alt": "LCS player spotlight on a desktop monitor." }
+ ],
+ "impact": {
+  "metrics": [
+   { "n": "148", "suffix": "", "k": "Page brand system" },
+   { "n": "10", "suffix": "", "k": "Team identities unified" },
+   { "n": "15", "suffix": "", "k": "Sections, strategy to broadcast" }
+  ],
+  "note": "A complete, end-to-end identity — strategy, logo, type, color, art direction, broadcast, apparel, and out-of-home — built so the league's all-star players are always the stars of the show."
+ },
+ "credits": [
+  { "k": "Creative Direction", "v": "Justin Restaino" },
+  { "k": "Brand Development", "v": "Justin Restaino" },
+  { "k": "Client", "v": "Riot Games — LCS" }
+ ],
+ "next": {
+  "slug": "2022-spring-finals",
+  "title": "Tyler1 LCS Promo",
+  "tagline": "A hype spot for the LCS's biggest personality.",
+  "media": {
+   "type": "image",
+   "src": "/media/2022-spring-finals/hero.webp"
+  }
+ }
+}
