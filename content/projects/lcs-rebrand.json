@@ -14,11 +14,26 @@
   "alt": "LCS reflective apparel lit by a single spotlight against black — the brand's core idea of shining a light on all-star players."
  },
  "facts": [
-  { "k": "Client", "v": "Riot Games — LCS" },
-  { "k": "Role", "v": "Creative Director" },
-  { "k": "Discipline", "v": "Brand Identity ✦ Design System" },
-  { "k": "Year", "v": "2024" },
-  { "k": "Scope", "v": "Strategy → broadcast, 148-page system" }
+  {
+   "k": "Client",
+   "v": "Riot Games — LCS"
+  },
+  {
+   "k": "Role",
+   "v": "Creative Director"
+  },
+  {
+   "k": "Discipline",
+   "v": "Brand Identity ✦ Design System"
+  },
+  {
+   "k": "Year",
+   "v": "2024"
+  },
+  {
+   "k": "Scope",
+   "v": "Strategy → broadcast, 148-page system"
+  }
  ],
  "challenge": {
   "body": [
@@ -52,35 +67,136 @@
   ]
  },
  "gallery": [
-  { "type": "image", "src": "/media/lcs-rebrand/logo.webp", "caption": "The mark — a rising spotlight pointing to the top.", "alt": "LCS logo lockup." },
-  { "type": "image", "src": "/media/lcs-rebrand/color.webp", "caption": "A neutral core palette that lets ten team colors be the stars.", "alt": "LCS color system with league neutrals and team colors." },
-  { "type": "image", "src": "/media/lcs-rebrand/type.webp", "caption": "PP Formula Condensed — the league's bold typographic voice.", "alt": "PP Formula Condensed type specimen." },
-  { "type": "image", "src": "/media/lcs-rebrand/superstar.webp", "caption": "'Superstar Energy' — the art-direction principle.", "alt": "Superstar Energy art direction title slide." },
-  { "type": "image", "src": "/media/lcs-rebrand/campaign.webp", "caption": "A photography language built around the all-star cast.", "alt": "LCS campaign photography of players." },
-  { "type": "image", "src": "/media/lcs-rebrand/grid.webp", "caption": "A modular grid that keeps every layout on-system.", "alt": "The LCS layout grid applied to a player portrait." },
-  { "type": "image", "src": "/media/lcs-rebrand/standings.webp", "caption": "Broadcast graphics — standings, built for live.", "alt": "LCS summer split standings broadcast graphic." },
-  { "type": "image", "src": "/media/lcs-rebrand/broadcast.webp", "caption": "The system on air, live from the studio.", "alt": "LCS broadcast lower-third in a live studio." },
-  { "type": "image", "src": "/media/lcs-rebrand/finals.webp", "caption": "LCS Finals — event identity at scale.", "alt": "LCS Finals NYC event screens." },
-  { "type": "image", "src": "/media/lcs-rebrand/laptop.webp", "caption": "Hardware partnership branding.", "alt": "Gaming laptop with LCS branding." },
-  { "type": "image", "src": "/media/lcs-rebrand/cap.webp", "caption": "Apparel — the brand as a badge of belonging.", "alt": "Person wearing an LCS cap." },
-  { "type": "image", "src": "/media/lcs-rebrand/caps.webp", "caption": "Headwear across league and team colorways.", "alt": "Three LCS caps in different colorways." },
-  { "type": "image", "src": "/media/lcs-rebrand/tote.webp", "caption": "Merch — the mark as pure graphic language.", "alt": "LCS tote bag." },
-  { "type": "image", "src": "/media/lcs-rebrand/keycaps.webp", "caption": "Collectible details for the community.", "alt": "LCS keycaps and jewelry." },
-  { "type": "image", "src": "/media/lcs-rebrand/phones.webp", "caption": "Social-first templates for every team.", "alt": "LCS social stories on phones." },
-  { "type": "image", "src": "/media/lcs-rebrand/desk.webp", "caption": "Player spotlight, from broadcast to second screen.", "alt": "LCS player spotlight on a desktop monitor." }
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/logo.webp",
+   "caption": "The mark — a rising spotlight pointing to the top.",
+   "alt": "LCS logo lockup."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/color.webp",
+   "caption": "A neutral core palette that lets ten team colors be the stars.",
+   "alt": "LCS color system with league neutrals and team colors."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/type.webp",
+   "caption": "PP Formula Condensed — the league's bold typographic voice.",
+   "alt": "PP Formula Condensed type specimen."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/superstar.webp",
+   "caption": "'Superstar Energy' — the art-direction principle.",
+   "alt": "Superstar Energy art direction title slide."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/campaign.webp",
+   "caption": "A photography language built around the all-star cast.",
+   "alt": "LCS campaign photography of players."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/grid.webp",
+   "caption": "A modular grid that keeps every layout on-system.",
+   "alt": "The LCS layout grid applied to a player portrait."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/standings.webp",
+   "caption": "Broadcast graphics — standings, built for live.",
+   "alt": "LCS summer split standings broadcast graphic."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/broadcast.webp",
+   "caption": "The system on air, live from the studio.",
+   "alt": "LCS broadcast lower-third in a live studio."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/finals.webp",
+   "caption": "LCS Finals — event identity at scale.",
+   "alt": "LCS Finals NYC event screens."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/laptop.webp",
+   "caption": "Hardware partnership branding.",
+   "alt": "Gaming laptop with LCS branding."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/cap.webp",
+   "caption": "Apparel — the brand as a badge of belonging.",
+   "alt": "Person wearing an LCS cap."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/caps.webp",
+   "caption": "Headwear across league and team colorways.",
+   "alt": "Three LCS caps in different colorways."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/tote.webp",
+   "caption": "Merch — the mark as pure graphic language.",
+   "alt": "LCS tote bag."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/keycaps.webp",
+   "caption": "Collectible details for the community.",
+   "alt": "LCS keycaps and jewelry."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/phones.webp",
+   "caption": "Social-first templates for every team.",
+   "alt": "LCS social stories on phones."
+  },
+  {
+   "type": "image",
+   "src": "/media/lcs-rebrand/desk.webp",
+   "caption": "Player spotlight, from broadcast to second screen.",
+   "alt": "LCS player spotlight on a desktop monitor."
+  }
  ],
  "impact": {
   "metrics": [
-   { "n": "148", "suffix": "", "k": "Page brand system" },
-   { "n": "10", "suffix": "", "k": "Team identities unified" },
-   { "n": "15", "suffix": "", "k": "Sections, strategy to broadcast" }
+   {
+    "n": "148",
+    "suffix": "",
+    "k": "Page brand system"
+   },
+   {
+    "n": "10",
+    "suffix": "",
+    "k": "Team identities unified"
+   },
+   {
+    "n": "15",
+    "suffix": "",
+    "k": "Sections, end to end"
+   }
   ],
   "note": "A complete, end-to-end identity — strategy, logo, type, color, art direction, broadcast, apparel, and out-of-home — built so the league's all-star players are always the stars of the show."
  },
  "credits": [
-  { "k": "Creative Direction", "v": "Justin Restaino" },
-  { "k": "Brand Development", "v": "Justin Restaino" },
-  { "k": "Client", "v": "Riot Games — LCS" }
+  {
+   "k": "Creative Direction",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Brand Development",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Client",
+   "v": "Riot Games — LCS"
+  }
  ],
  "next": {
   "slug": "2022-spring-finals",

@@ -711,7 +711,9 @@ function HorizontalSection({ children }) {
 
 /* ───────────────── Reveals ───────────────── */
 
-function useReveal() {
+function useReveal(dep) {
+  // Re-binds when `dep` changes so late-mounted .reveal elements (e.g. the
+  // Selected Work cards, which render after work.json loads) get observed.
   useEffect(() => {
     const select = () => document.querySelectorAll(".reveal, .mask-line, .reveal-name, .reveal-headline");
     const io = new IntersectionObserver(
@@ -731,7 +733,7 @@ function useReveal() {
       });
     }, 80);
     return () => {clearTimeout(init);io.disconnect();};
-  }, []);
+  }, [dep]);
 }
 
 /* ───────────────── Nav ───────────────── */
@@ -760,17 +762,27 @@ function Nav() {
     const on = () => {
       const y = window.scrollY;
       setHidden(y > last.current && y > 200);
+      // Legibility scrim: a soft top fade appears once content can reach the
+      // nav zone (body class so the fixed scrim div can live outside the
+      // mix-blend nav element).
+      document.body.classList.toggle("is-scrolled", y > 80);
       last.current = y;
     };
     window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
+    return () => {
+      window.removeEventListener("scroll", on);
+      document.body.classList.remove("is-scrolled");
+    };
   }, []);
   return (
+    <React.Fragment>
+    <div className="nav-scrim" aria-hidden="true"></div>
     <nav className={"nav " + (hidden ? "hide" : "")}>
       <div className="nav-links">
         {NAV_ITEMS.map((it) => <ShutterLink key={it.idx} {...it} />)}
       </div>
-    </nav>);
+    </nav>
+    </React.Fragment>);
 
 }
 
@@ -968,11 +980,19 @@ function Hero({ onPlayReel }) {
     <section className="hero section" id="top" data-fx="top">
       <div className="hero-stage" onClick={onPlayReel}>
         <ReelBackdrop />
+        {/* Showreel moment — gives the revealed-reel beat a composition
+            instead of a lone pill in the dark. Reveals with the same --p
+            budget as the CTA (CSS handles timing). */}
+        <div className="reel-moment" aria-hidden="true">
+          <div className="rm-eyebrow"><span className="dot"></span>01 — Showreel</div>
+          <div className="rm-title">The Reel</div>
+          <div className="rm-meta">Selected work ✦ MMXXII — MMXXVI ✦ Sound on</div>
+        </div>
         <button
           className="reel-cta"
           onClick={(e) => { e.stopPropagation(); onPlayReel(); }}
           data-hover>
-          Click to see reel
+          ▶&nbsp;&nbsp;Watch the reel
         </button>
       </div>
     </section>);
@@ -1371,6 +1391,44 @@ function WhatIDoSection() {
 
 }
 
+/* ───────────────── Selected Work (desktop home) ─────────────────
+   Editorial grid of the newest projects so the homepage actually shows
+   work. First two cards run large, the next four half-width. Pulls from
+   work.json (already fetched by App for the mobile home). */
+function SelectedWorkSection({ work }) {
+  const items = (work || []).slice(0, 6);
+  if (!items.length) return null;
+  return (
+    <section className="sw section" id="selected-work">
+      <span className="vert-label right">Selected work ✦ The proof</span>
+      <div className="container">
+        <header className="sw-head">
+          <div className="sw-eyebrow reveal"><span className="dot"></span>04 — Selected work</div>
+          <h2 className="sw-title reveal">Recent <span className="sw-em">builds.</span></h2>
+          <a className="sw-all reveal" href="work.html" data-hover>All {work.length} projects →</a>
+        </header>
+        <div className="sw-grid">
+          {items.map((p, i) => (
+            <a className={"sw-card reveal" + (i < 2 ? " sw-lg" : "")}
+              style={{ transitionDelay: (i % 2) * 90 + "ms" }}
+              key={p.slug || i} href={"/project/" + p.slug + "/"} data-hover>
+              <div className="sw-media">
+                {p.media && p.media.type === "video"
+                  ? <video src={p.media.src} poster={p.media.poster} muted loop playsInline autoPlay preload="metadata" />
+                  : <div className="sw-img" style={{ backgroundImage: `url(${p.media && p.media.src})` }}></div>}
+              </div>
+              <div className="sw-meta">
+                <span className="sw-name">{p.title}</span>
+                <span className="sw-sub">{p.client} ✦ {p.year}</span>
+              </div>
+              <span className="sw-arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>);
+}
+
 /* ───────────────── Contact ───────────────── */
 
 function ContactSection() {
@@ -1381,22 +1439,31 @@ function ContactSection() {
     <section className="contact section" id="contact">
       <div className="container">
         <div className="contact-eyebrow reveal">
-          <span><span className="strong">04</span> — Work with me.</span>
+          <span><span className="strong">05</span> — Work with me.</span>
           <span className="rule"></span>
           <span style={{ color: "var(--on-d-faint)" }}>Hi, hello.</span>
         </div>
 
-        <h2 className="contact-headline reveal-headline">
-          <span className="line"><span className="word lg">Let's build</span></span>
-          <span className="line d1">
-            <span className="word lg">
-              <a className="link" href={"mailto:" + email} data-hover>
-                something<span className="punct">.</span>
-                <span className="underline"></span>
-              </a>
+        <div className="contact-hgroup">
+          <h2 className="contact-headline reveal-headline">
+            <span className="line"><span className="word lg">Let's build</span></span>
+            <span className="line d1">
+              <span className="word lg">
+                <a className="link" href={"mailto:" + email} data-hover>
+                  something<span className="punct">.</span>
+                  <span className="underline"></span>
+                </a>
+              </span>
             </span>
-          </span>
-        </h2>
+          </h2>
+          {/* Right-side availability block — balances the headline so the
+              right half of the section isn't dead air. */}
+          <div className="contact-avail reveal reveal-d-1" aria-hidden="true">
+            <div className="ca-k">— Currently</div>
+            <div className="ca-v">Open for select<br />projects, MMXXVI</div>
+            <div className="ca-arrow">↘</div>
+          </div>
+        </div>
 
         {/* Direct links to the Work + About pages */}
         <div className="contact-links">
@@ -1611,7 +1678,7 @@ function App() {
   useAnchorClicks();
   useCursor(t.cursor && !isMobile);
   useHoverDot();
-  useReveal();
+  useReveal(work.length);
   useNameMorph();
   useStatementImageCards();
   useNumbersProgress();
@@ -1706,6 +1773,7 @@ function App() {
         <StatementSection />
         <NumbersSection />
         <WhatIDoSection />
+        <SelectedWorkSection work={work} />
         <ContactSection />
         <Footer time={time} />
       </main>

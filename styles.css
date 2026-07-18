@@ -632,8 +632,8 @@ body.nav-rail .rail { display: flex; }
    --p at 1 — a beat of "fully revealed reel" before the pin releases and
    Statement comes up. */
 .hero {
-  min-height: 270vh;
-  height: 270vh;
+  min-height: 225vh;
+  height: 225vh;
   position: relative;
   background: #0c0a08;
   isolation: isolate;
@@ -1025,7 +1025,7 @@ body.reel-off .name-stage::after { display: none; }
      the next card rises over it for a dynamic scene-cut handoff. */
   --si-exit: clamp(0, calc((var(--p, 0) - 0.58) * 2.6), 1);
   filter:
-    blur(calc(clamp(0, calc(1 - var(--p, 0) * 5.5), 1) * 22px))
+    blur(calc(clamp(0, calc(1 - var(--p, 0) * 8), 1) * 16px))
     saturate(1.12)
     brightness(calc((1 - var(--si-exit) * 0.5) * (0.7 + var(--enter, 1) * 0.3)));
   transform:
@@ -2021,15 +2021,17 @@ body.font-bricolage .nstory-num { font-family: var(--body); font-weight: 700; le
    any logo reads consistently on the dark background. */
 .brand-logo {
   flex-shrink: 0;
-  margin: 0 30px;
+  /* Wide spacing so one full set of logos spans at least a viewport —
+     otherwise the loop's duplicates sit side by side and read as a bug. */
+  margin: 0 clamp(38px, 3.6vw, 64px);
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .brand-logo img {
-  max-height: clamp(26px, 3vw, 42px);
-  max-width: 170px;
+  max-height: clamp(30px, 3.4vw, 48px);
+  max-width: 200px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);   /* solid white */
@@ -3905,7 +3907,7 @@ main.stack > .numbers-wrap.stick {
      (p 0→0.28) → "By the numbers" reveal → left→right stat wave with a
      PEAK HOLD on each → finale where all five light up together. */
   padding: 0;
-  min-height: 380vh;
+  min-height: 330vh;
 }
 /* Inner stage stays pinned at the viewport top for the full pin window. */
 .numbers-stage {
@@ -5013,9 +5015,12 @@ body.custom-cursor .pc-lightbox-close { cursor: none; }
 }
 .pc-impact-inner { position: relative; max-width: 1300px; margin: 0 auto; }
 .pc-impact-row {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(24px, 3vw, 56px);
+  /* auto-fit so 3 metrics spread across the full row instead of hugging
+     the left of a 4-col grid */
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(24px, 3vw, 56px);
   margin: 40px 0 48px;
 }
+.pc-metric-k { max-width: 22ch; }
 @media (max-width: 900px) { .pc-impact-row { grid-template-columns: 1fr 1fr; gap: 40px 32px; } }
 @media (max-width: 520px) { .pc-impact-row { grid-template-columns: 1fr; } }
 .pc-metric-n {
@@ -5268,3 +5273,129 @@ body.font-bigshoulders .ab-cta-link .cl-title { font-family: var(--display-alt);
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Nav scrim: soft top fade for legibility once content reaches the nav.
+   Separate fixed element (not a .nav child) because .nav uses
+   mix-blend-mode: difference. Toggled via body.is-scrolled. ── */
+.nav-scrim {
+  position: fixed; top: 0; left: 0; right: 0; height: 96px;
+  z-index: 49; pointer-events: none;
+  background: linear-gradient(180deg, rgba(12,10,8,0.82) 0%, rgba(12,10,8,0.4) 55%, transparent 100%);
+  opacity: 0; transition: opacity .45s ease;
+}
+body.is-scrolled .nav-scrim { opacity: 1; }
+
+/* ── Showreel moment (hero, revealed-reel beat) ── */
+.reel-moment {
+  position: absolute; left: 0; right: 0; bottom: 148px;
+  z-index: 3; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  text-align: center;
+  --rev: clamp(0, calc((var(--p, 0) - 0.3) * 2.2), 1);
+  opacity: var(--rev);
+  transform: translateY(calc((1 - var(--rev)) * 24px));
+  will-change: opacity, transform;
+}
+.rm-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--on-d-mute);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.rm-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--stage-1); display: inline-block; }
+.rm-title {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(44px, 5.6vw, 92px); line-height: 0.95; letter-spacing: -0.02em;
+  color: var(--on-d);
+  text-shadow: 0 10px 60px rgba(0,0,0,0.6);
+}
+.rm-meta {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--on-d-mute);
+}
+@media (max-width: 800px) { .reel-moment { bottom: 128px; } .rm-title { font-size: clamp(34px, 9vw, 44px); } }
+
+/* ── Selected Work (desktop home) ── */
+.sw { background: var(--ink-1); padding: clamp(110px, 16vh, 190px) 0; position: relative; }
+.sw-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: end;
+  gap: 8px 24px; margin-bottom: clamp(36px, 5vh, 64px);
+}
+.sw-eyebrow {
+  grid-column: 1 / -1;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--on-d-mute);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.sw-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--stage-1); }
+.sw-title {
+  margin: 0;
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(40px, 5vw, 84px); line-height: 1; letter-spacing: -0.02em;
+  color: var(--on-d);
+}
+.sw-em { background: var(--grad-hot, linear-gradient(90deg, #ff8a5c, #ff5c8a, #b58cff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sw-all {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--on-d-mute); text-decoration: none; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line-d-2);
+  transition: color .3s ease, border-color .3s ease;
+}
+.sw-all:hover { color: var(--on-d); border-color: var(--stage-1); }
+.sw-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.4vw, 36px);
+}
+.sw-card {
+  position: relative; display: block; text-decoration: none;
+  border-radius: 14px; overflow: hidden;
+  background: #050403;
+}
+.sw-media { position: relative; height: clamp(240px, 30vw, 460px); overflow: hidden; }
+.sw-lg .sw-media { height: clamp(280px, 34vw, 540px); }
+.sw-img, .sw-media video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background-size: cover; background-position: center; object-fit: cover;
+  transform: scale(1.001);
+  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+.sw-card:hover .sw-img, .sw-card:hover .sw-media video { transform: scale(1.045); filter: brightness(0.82); }
+.sw-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 45%, rgba(5,4,3,0.78) 100%);
+}
+.sw-meta {
+  position: absolute; left: clamp(18px, 2vw, 30px); right: 64px; bottom: clamp(16px, 2vw, 26px);
+  z-index: 2; display: flex; flex-direction: column; gap: 6px;
+}
+.sw-name {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(19px, 1.9vw, 30px); line-height: 1.1; letter-spacing: -0.015em;
+  color: var(--on-d);
+}
+.sw-sub { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-d-mute); }
+.sw-arrow {
+  position: absolute; right: clamp(16px, 2vw, 26px); bottom: clamp(14px, 2vw, 24px); z-index: 2;
+  width: 40px; height: 40px; border-radius: 999px;
+  border: 1px solid rgba(237,228,208,0.35);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--on-d); font-size: 15px;
+  background: rgba(8,6,5,0.35); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  transition: background .35s ease, border-color .35s ease, transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.sw-card:hover .sw-arrow { background: var(--stage-1); border-color: var(--stage-1); transform: rotate(-45deg); }
+@media (max-width: 800px) { .sw-grid { grid-template-columns: 1fr; } .sw-head { grid-template-columns: 1fr; } }
+
+/* ── Contact: availability block balances the headline ── */
+.contact-hgroup { position: relative; }
+.contact-avail {
+  position: absolute; right: 0; bottom: clamp(8px, 2vh, 24px);
+  display: flex; flex-direction: column; gap: 10px; align-items: flex-start;
+  text-align: left;
+}
+.contact-avail .ca-k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stage-1); }
+.contact-avail .ca-v { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-d-mute); line-height: 1.7; }
+.contact-avail .ca-arrow { font-size: clamp(34px, 3vw, 52px); color: var(--on-d); line-height: 1; }
+@media (max-width: 1050px) { .contact-avail { display: none; } }
+
+/* ── About: pull the wide band closer (kills the black gap) ── */
+.ab-bio { padding: clamp(70px, 12vh, 150px) clamp(24px, 5vw, 96px) clamp(48px, 7vh, 84px); }

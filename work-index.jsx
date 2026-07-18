@@ -267,17 +267,27 @@ function Nav() {
     const on = () => {
       const y = window.scrollY;
       setHidden(y > last.current && y > 200);
+      // Legibility scrim: a soft top fade appears once content can reach the
+      // nav zone (body class so the fixed scrim div can live outside the
+      // mix-blend nav element).
+      document.body.classList.toggle("is-scrolled", y > 80);
       last.current = y;
     };
     window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
+    return () => {
+      window.removeEventListener("scroll", on);
+      document.body.classList.remove("is-scrolled");
+    };
   }, []);
   return (
+    <React.Fragment>
+    <div className="nav-scrim" aria-hidden="true"></div>
     <nav className={"nav " + (hidden ? "hide" : "")}>
       <div className="nav-links">
         {NAV_ITEMS.map((it) => <ShutterLink key={it.idx} {...it} />)}
       </div>
-    </nav>);
+    </nav>
+    </React.Fragment>);
 }
 
 /* ─────────────── Header ─────────────── */
