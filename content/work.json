@@ -1,6 +1,23 @@
 {
   "projects": [
     {
+      "num": "14",
+      "slug": "slyde",
+      "title": "Slyde",
+      "client": "Self-initiated",
+      "year": 2026,
+      "tags": [
+        "AI Product",
+        "Brand Identity",
+        "Creative Direction",
+        "Product Marketing"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/slyde/hero.webp"
+      }
+    },
+    {
       "num": "01",
       "slug": "phish-sphere-2026",
       "title": "Phish Residency at Sphere — 2026",

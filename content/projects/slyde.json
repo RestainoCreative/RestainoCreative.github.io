@@ -1,0 +1,194 @@
+{
+ "slug": "slyde",
+ "title": "Slyde",
+ "tagline": "An AI presentation studio I conceived, designed and launched — my vision, brought to life with AI.",
+ "tags": [
+  "AI Product",
+  "Brand Identity",
+  "Creative Direction",
+  "Product Marketing"
+ ],
+ "hero": {
+  "type": "image",
+  "src": "/media/slyde/hero.webp"
+ },
+ "facts": [
+  {
+   "k": "Client",
+   "v": "Self-initiated · my product"
+  },
+  {
+   "k": "Role",
+   "v": "Founder, Creative Director"
+  },
+  {
+   "k": "Discipline",
+   "v": "AI Product + Brand + Launch"
+  },
+  {
+   "k": "Year",
+   "v": "2026"
+  },
+  {
+   "k": "Timeframe",
+   "v": "6 months"
+  }
+ ],
+ "challenge": {
+  "body": [
+   "Every agency rebuilds the same presentations from scratch, and every AI slide tool makes them look generic. I wanted a tool that writes like your company — one that learns from your best decks, case studies and brand voice, then builds new presentations in your own templates.",
+   "The bigger challenge was scope. Slyde isn't a prototype: it's a complete product — accounts, billing, real-time collaboration, a design-grade editor — plus a brand and a launch. I wanted to prove that one creative director, working AI-native, could take an idea that big from a sketch to a live product."
+  ]
+ },
+ "feature": {
+  "type": "video",
+  "src": "/media/slyde/film.mp4",
+  "poster": "/media/slyde/film-poster.webp",
+  "caption": "The Slyde launch film, made with AI in Blender and After Effects."
+ },
+ "approach": {
+  "body": [
+   "I started with the idea, not the interface: a company Brain. Slyde turns a team's past decks, case studies, website and voice into an organized knowledge base, then writes on-brand presentations from it — a brief or RFP goes in, a finished deck comes out. That idea shaped the positioning and the line that leads the brand: \"Stop being generic. Use your brain.\"",
+   "I ran the build the way I'd run any production. I set the vision, wrote the briefs, made the product and design calls, and reviewed every feature until it felt right, with AI as the tools that turned that direction into working software. More than 2,800 commits later, Slyde has a Keynote-grade editor with smart guides and charts, real-time multiplayer with live cursors, chat and comments, an AI pipeline that drafts whole decks from a brief, PowerPoint and PDF import, editable PowerPoint export, and team workspaces with roles and paid plans.",
+   "The brand was mine end to end: the name (DeckForge, then Slydra, then Slyde), three design systems that landed on Product Pop's violet and paper, the messaging and the marketing site. I directed the launch film like any shoot — concept, script, look and edit — using AI to drive Blender and After Effects, and took it through 146 versions until every frame landed."
+  ],
+  "led": [
+   "01 — Conceived the product, the positioning and the business model",
+   "02 — Directed the build: vision, briefs, product and design calls, with AI as my tools",
+   "03 — Designed the brand: name, identity, three design systems and messaging",
+   "04 — Built the marketing site and pricing, with paid plans live on Stripe",
+   "05 — Directed the launch film: concept, script, look and edit, made with AI in Blender and After Effects",
+   "06 — Took it from idea to live product, solo, in six months"
+  ]
+ },
+ "gallery": [
+  {
+   "type": "image",
+   "src": "/media/slyde/wordmark.webp",
+   "caption": "The Slyde wordmark."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/editor-template.webp",
+   "caption": "The editor: Brain, slides and chat in one place."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/editor-brain.webp",
+   "caption": "Writing slides straight from the company Brain."
+  },
+  {
+   "type": "video",
+   "src": "/media/slyde/build-the-brain.mp4",
+   "caption": "Building a company Brain."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/brain-cell.webp",
+   "caption": "Drop a Brain cell onto a slide to write it."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/update.webp",
+   "caption": "Update a whole deck for a new client at once."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/team-collaboration.webp",
+   "caption": "Real-time multiplayer with live cursors."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/team-attention.webp",
+   "caption": "Assignments and reviews for the whole team."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/brain-doors.webp",
+   "caption": "Onboarding: build a Brain three ways."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/theme-doors.webp",
+   "caption": "Themes: start fresh, design with AI, or import."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/playbook.webp",
+   "caption": "A deck built in Slyde."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/chapter.webp",
+   "caption": "A deck built in Slyde."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/film-brand-voice.webp",
+   "caption": "From the launch film."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/film-brain.webp",
+   "caption": "From the launch film."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/film-chat.webp",
+   "caption": "From the launch film."
+  },
+  {
+   "type": "image",
+   "src": "/media/slyde/film-comments.webp",
+   "caption": "From the launch film."
+  }
+ ],
+ "impact": {
+  "metrics": [
+   {
+    "n": "1",
+    "suffix": "",
+    "k": "Creative director, end to end"
+   },
+   {
+    "n": "6",
+    "suffix": "",
+    "k": "Months, idea to live product"
+   },
+   {
+    "n": "2,800",
+    "suffix": "+",
+    "k": "Commits shipped"
+   },
+   {
+    "n": "224",
+    "suffix": "K",
+    "k": "Lines of code"
+   }
+  ],
+  "note": "Slyde is live at myslyde.com in private beta, with paid plans running on Stripe — a full product, brand and launch, led by one AI-native creative director."
+ },
+ "credits": [
+  {
+   "k": "Concept, Product & Creative Direction",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Brand, Messaging & Launch",
+   "v": "Justin Restaino"
+  },
+  {
+   "k": "Built with",
+   "v": "AI tools including Claude and Codex, Blender, After Effects"
+  }
+ ],
+ "next": {
+  "slug": "lost-and-found",
+  "title": "Lost and Found",
+  "tagline": "A 100% AI-generated short film — and a proof of concept for AI-native brand storytelling.",
+  "media": {
+   "type": "image",
+   "src": "/media/lost-and-found/hero.webp"
+  }
+ }
+}
