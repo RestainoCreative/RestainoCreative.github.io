@@ -174,14 +174,19 @@ body.sel .stage .tabs button { pointer-events: auto; }
 .disc .n { display: block; margin-bottom: 8px; font: 500 11px var(--mono); letter-spacing: .12em; color: var(--dim); }
 .chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; max-width: 520px; }
 .chips span { padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--grey); }
-.what-r { position: fixed; left: var(--px); top: var(--py); width: var(--pw); height: var(--ph); padding: clamp(84px, 12vh, 120px) var(--pad) var(--pad); display: grid; align-content: center; gap: clamp(26px, 5vh, 52px); color: var(--ink); }
+.what-r { position: fixed; left: var(--px); top: var(--py); width: var(--pw); height: var(--ph); padding: clamp(84px, 12vh, 120px) var(--pad) var(--pad); display: grid; align-content: center; overflow: hidden; color: var(--ink); }
+/* taller than the panel? the column starts at the top and scrolls with the page (see whatTravel) */
+.what-r.tall { align-content: start; }
+.what-in { display: grid; gap: clamp(26px, 5vh, 52px); will-change: transform; }
+.xp .aw-row { padding: clamp(5px, .8vh, 8px) 0; }
+.xp .aw-row b { font-size: clamp(15px, 1.1vw, 19px); }
 .aw-row { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 14px; padding: 12px 0; border-top: 1.5px solid rgba(10,10,10,.85); }
 .aw-row:last-child { border-bottom: 1.5px solid rgba(10,10,10,.85); }
 .aw-row b { font: 800 clamp(18px, 1.55vw, 26px)/1.1 var(--sans); letter-spacing: -.02em; }
 .aw-row span { font: 500 clamp(12px, .9vw, 14px)/1.3 var(--sans); color: rgba(10,10,10,.7); }
 .aw-row i { font: 500 11px var(--mono); font-style: normal; letter-spacing: .1em; }
-.logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 24px; align-items: center; }
-.logos img { width: 100%; max-height: 34px; object-fit: contain; filter: brightness(0); opacity: .82; }
+.logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px 24px; align-items: center; }
+.logos img { width: 100%; height: 34px; object-fit: contain; filter: brightness(0); opacity: .82; }
 .what-r .eye { color: rgba(10,10,10,.6); display: block; margin-bottom: 10px; }
 
 /* ── Contact ─────────────────────────────────────────── */
@@ -288,9 +293,10 @@ body.case-on .nav::before { opacity: 1; }
   .what-l { top: 76px; transform: none; left: 20px; right: 20px; width: auto; justify-items: start; text-align: left; gap: 8px; }
   .disc h3 { font-size: 26px; } .disc p, .disc .n { display: none; }
   .chips { justify-content: flex-start; margin-top: 10px; gap: 5px; } .chips span { padding: 5px 9px; font-size: 9.5px; }
-  .what-r { padding: 18px 20px; gap: 16px; align-content: start; }
+  .what-r { padding: 18px 20px; align-content: start; }
+  .what-in { gap: 16px; }
   .aw-row { padding: 8px 0; grid-template-columns: 1fr auto; row-gap: 2px; } .aw-row span { grid-column: 1 / -1; grid-row: 2; font-size: 12px; } .aw-row i { grid-column: 2; grid-row: 1; }
-  .logos { grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .logos { grid-template-columns: repeat(5, 1fr); gap: 12px 14px; }
   .nav-r .hide-sm { display: none; }
   .case-l { right: auto; left: 20px; width: calc(100vw - 40px); padding: 92px 0 40px; }
   .case-r { left: 0; width: 100vw; }
@@ -367,7 +373,22 @@ body.case-on .nav::before { opacity: 1; }
       <div class="disc"><span class="n">03</span><h3 class="pxt">Innovation</h3><p>I bridge creativity and emerging technology to develop innovative content, workflows, and experiences powered by AI.</p></div>
       <div class="chips"><span>Live shows</span><span>Opening ceremonies</span><span>Concerts</span><span>Broadcast graphics</span><span>Brand identity</span><span>Campaigns</span><span>AR / XR</span><span>Real-time</span><span>AI production</span></div>
     </div>
-    <div class="what-r">
+    <div class="what-r"><div class="what-in">
+      <div>
+        <span class="eye">Experience</span>
+        <div class="aw xp">
+          <div class="aw-row"><b>Creative Director</b><span>Moment Factory</span><i>2025–Present</i></div>
+          <div class="aw-row"><b>Creative Director</b><span>Restaino Creative</span><i>2023–Present</i></div>
+          <div class="aw-row"><b>Marketing Creative Director</b><span>Riot Games</span><i>2021–2023</i></div>
+          <div class="aw-row"><b>Event Creative Director</b><span>Riot Games</span><i>2019–2021</i></div>
+          <div class="aw-row"><b>Senior Graphics Designer &amp; Producer</b><span>Riot Games</span><i>2016–2019</i></div>
+          <div class="aw-row"><b>Graphic Designer</b><span>Reality Check Systems</span><i>2015–2016</i></div>
+          <div class="aw-row"><b>Junior Graphic Designer</b><span>NFL Network</span><i>2014–2015</i></div>
+          <div class="aw-row"><b>Lead Editor, Post Production Coordinator</b><span>The Surf Channel &amp; The Ski Channel</span><i>2014</i></div>
+          <div class="aw-row"><b>Live Events Marketing Intern</b><span>WWE</span><i>2013</i></div>
+          <div class="aw-row"><b>Assistant Editor</b><span>Bradley University</span><i>2012–2013</i></div>
+        </div>
+      </div>
       <div>
         <span class="eye">Awards</span>
         <div class="aw">
@@ -380,10 +401,10 @@ body.case-on .nav::before { opacity: 1; }
       <div>
         <span class="eye">Trusted by</span>
         <div class="logos">
-          <img src="media/RiotGames.webp" alt="Riot Games" loading="lazy" /><img src="media/NFL.webp" alt="NFL" loading="lazy" /><img src="media/CBS.webp" alt="CBS Sports" loading="lazy" /><img src="media/RedBull.webp" alt="Red Bull" loading="lazy" /><img src="media/NHL-mono.webp" alt="NHL" loading="lazy" /><img src="media/MasterCard-mono.webp" alt="Mastercard" loading="lazy" /><img src="media/LouisVuitton.webp" alt="Louis Vuitton" loading="lazy" />
+          <img src="media/RiotGames.webp" alt="Riot Games" loading="lazy" /><img src="media/NFL.webp" alt="NFL" loading="lazy" /><img src="media/CBS.webp" alt="CBS Sports" loading="lazy" /><img src="media/RedBull.webp" alt="Red Bull" loading="lazy" /><img src="media/NHL-mono.webp" alt="NHL" loading="lazy" /><img src="media/MasterCard-mono.webp" alt="Mastercard" loading="lazy" /><img src="media/LouisVuitton.webp" alt="Louis Vuitton" loading="lazy" /><img src="media/SpaceCenterHouston.webp" alt="Space Center Houston" loading="lazy" /><img src="media/TelemundoDeportes.webp" alt="Telemundo Deportes" loading="lazy" /><img src="media/Phish.webp" alt="Phish" loading="lazy" />
         </div>
       </div>
-    </div>
+    </div></div>
   </section>
 
   <section class="contact" data-sec="contact">
@@ -555,7 +576,7 @@ body.case-on .nav::before { opacity: 1; }
   // that has reached it. Scrolling fast through the words therefore sends out concentric rings — a rainbow — instead
   // of each new flood cancelling the one before it.
   const waves = [], pWaves = [];
-  let listTravel = 0, STEP, wordsEnd, reelIn, reelFull, reelOut, workStart, workEnd, recStart, recEnd, whatStart, contactStart, total;
+  let listTravel = 0, whatTravel = 0, STEP, wordsEnd, reelIn, reelFull, reelOut, workStart, workEnd, recStart, recEnd, whatStart, contactStart, total;
 
   // The hero's dark side holds a portrait that only exists inside the colour bursts. Each burst colour gets its own
   // toned copy: the photo cover-fit to the dark side, its colour dropped (luminance kept), then multiplied by the colour.
@@ -647,7 +668,12 @@ body.case-on .nav::before { opacity: 1; }
     recStart = workEnd + H * .3;
     recEnd = recStart + (NR - 1) * STEP;
     whatStart = recEnd + H * .2;
-    contactStart = whatStart + H;
+    // the What I do column scrolls with the page when it's taller than its panel; the section stretches to fit
+    const wIn = $('.what-in'), wR = $('.what-r'), wcs = getComputedStyle(wR);
+    wIn.style.width = (WHATR.w - parseFloat(wcs.paddingLeft) - parseFloat(wcs.paddingRight)) + 'px';
+    whatTravel = Math.max(0, Math.ceil(wIn.offsetHeight - (WHATR.h - parseFloat(wcs.paddingTop) - parseFloat(wcs.paddingBottom))));
+    wR.classList.toggle('tall', whatTravel > 0);
+    contactStart = whatStart + Math.max(H, whatTravel + H * .75);
     total = contactStart + H * .7;
     $('#track').style.height = (total + H) + 'px';
     if (caseLive) caseMeasure();
@@ -1337,6 +1363,10 @@ body.case-on .nav::before { opacity: 1; }
     if (sel >= 0 && secO.work <= .01 && !caseBusy) deselect();
     setSec('record', smooth(workEnd + H * .1, recStart, y) * (1 - smooth(recEnd + H * .05, whatStart, y)));
     setSec('what', smooth(whatStart, whatStart + H * .25, y) * (1 - smooth(contactStart - H * .1, contactStart + H * .1, y)));
+    if (secO.what > .01) {
+      const wIn = $('.what-in'), wy = -Math.round(clamp(y - whatStart - H * .25, 0, whatTravel));
+      if (wIn._y !== wy) { wIn._y = wy; wIn.style.transform = `translate3d(0,${wy}px,0)`; }
+    }
     setSec('contact', smooth(contactStart, contactStart + H * .2, y));
     rootS.setProperty('--vig', (secO.reel * .9).toFixed(3));
     rootS.setProperty('--scrollO', (1 - smooth(STEP * .3, STEP * 1.5, y)).toFixed(3));
