@@ -1,7 +1,7 @@
 {
  "slug": "lost-and-found",
  "title": "Lost and Found",
- "tagline": "Creating a 100% AI-generated short film.",
+ "tagline": "A 100% AI-generated short film — and a proof of concept for AI-native brand storytelling.",
  "tags": [
   "AI",
   "Creative Direction",
@@ -36,8 +36,8 @@
  ],
  "challenge": {
   "body": [
-   "AI has often carried a stigma — people think it can't look good, and that it's limited to slow zooms and wide sci-fi landscapes. The challenge I gave myself was to break that perception by creating camera movements that felt natural and cinematic, all while telling a story that felt grounded and real.",
-   "Most AI content online tends to be short clips without much depth or meaning. I set out to go further — building a real story and fully realized world using nothing but text-to-video prompting."
+   "AI video carries a stigma: people assume it can't look good, and that it's limited to slow zooms and sci-fi landscapes. For brands, that perception is the real barrier — nobody wants their story to look like a tech demo. I set out to break it with camera work that felt natural and cinematic, in service of a story that felt grounded and real.",
+   "Most AI content online is a string of short clips with no depth or meaning. I wanted to show what happens when you bring a creative director's discipline to the tools: a real story, a fully realized world and characters an audience could care about, built with nothing but text-to-video prompting."
   ],
   "media": {
    "type": "image",
@@ -52,13 +52,13 @@
  },
  "approach": {
   "body": [
-   "I challenged myself to create a 100% AI-generated short film in just six days — to learn the tools firsthand, explore the limits of what AI was capable of, and see how far I could push the technology creatively.",
-   "I wrote and storyboarded a post-apocalyptic thriller following a dog, a robot, and a little girl on a haunting journey. Using a range of tools — primarily Google's Veo 2 — I generated every single clip, with a huge part of the process being R&D on prompt engineering to achieve the right visual fidelity and consistency across environments and characters."
+   "I gave myself six days to make a 100% AI-generated short film — to learn the tools firsthand, find their limits, and work out a repeatable process I could bring to brand and marketing work.",
+   "I wrote and storyboarded a post-apocalyptic thriller following a dog, a robot and a little girl on a haunting journey. Using a range of tools — primarily Google's Veo 2 — I generated every clip, spending much of the process on prompt-engineering R&D to keep characters and environments consistent from shot to shot, the same way a brand world has to hold together across a campaign."
   ],
   "led": [
-   "Wrote, storyboarded, and directed the film",
+   "Wrote, storyboarded and directed the film",
    "Generated every clip via text-to-video",
-   "Led prompt-engineering R&D for consistency"
+   "Built a prompt-engineering process for character and world consistency"
   ]
  },
  "gallery": [
@@ -91,7 +91,7 @@
     "k": "Shares & reposts"
    }
   ],
-  "note": "After posting on LinkedIn, the film quickly gained traction — over a million impressions, 100+ shares and reposts, and several new job opportunities within the week. The lessons learned continue to shape how I approach AI-driven storytelling."
+  "note": "Posted on LinkedIn, the film passed a million impressions and 100+ shares and reposts within the week, and brought several new job opportunities. The process now shapes how I approach AI-native storytelling for brands."
  },
  "credits": [
   {

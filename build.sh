@@ -13,3 +13,6 @@ const b=require('@babel/core'),fs=require('fs');
 
 # Regenerate the static per-project pages (per-slug OG/meta for link previews).
 python3 scripts/gen_project_pages.py
+
+# Refresh the homepage's built-in copy of the CMS work list + case studies (and its repeat-image list).
+python3 scripts/home_snapshot.py

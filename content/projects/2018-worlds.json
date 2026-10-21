@@ -1,9 +1,9 @@
 {
   "slug": "2018-worlds",
   "title": "2018 World Championship",
-  "tagline": "Debuting a virtual band live on stage.",
+  "tagline": "Launching K/DA, a virtual pop group, live on stage — and Riot's highest-grossing skin line in history.",
   "tags": [
-    "AR Concert",
+    "IP Launch",
     "Creative Direction",
     "Creative Producer",
     "Innovation"
@@ -23,7 +23,7 @@
     },
     {
       "k": "Discipline",
-      "v": "Augmented Reality Concert"
+      "v": "IP Launch + AR Concert"
     },
     {
       "k": "Year",
@@ -36,8 +36,8 @@
   ],
   "challenge": {
     "body": [
-      "A live performance featuring multiple AR characters interacting in real time with real-life performers had never been done before. We had to build everything from the ground up — custom technology, original character assets, and animation that synced perfectly with the choreography happening live on stage.",
-      "Launching K/DA was Riot's most ambitious IP rollout in over a decade. The stakes were high, and the challenge was bringing together teams across game development, marketing, music, and esports to pull off a cohesive, global launch."
+      "Launching K/DA was Riot's most ambitious IP rollout in over a decade, uniting game development, marketing, music and esports behind one global launch. The stakes were high: the debut had to make fans fall for a band that didn't physically exist.",
+      "A live performance with AR characters interacting in real time with real performers had never been done. We built everything from the ground up — custom technology, original character assets and animation synced perfectly to the choreography happening live on stage."
     ],
     "media": {
       "type": "image",
@@ -47,13 +47,13 @@
   "feature": null,
   "approach": {
     "body": [
-      "Riot Games was launching K/DA — a virtual pop group composed of League of Legends characters. To introduce them to the world, I pitched the idea of a live performance where the virtual idols would share the stage with their real-world counterparts, overseeing all creative integration to deliver a globally acclaimed moment.",
-      "As creative lead, I sourced and managed the external partners that brought the band to life. Over seven months, we modeled the characters from scratch, collaborated with a motion-capture studio to record the choreography, refined the animation, and applied it to the digital performers — all while working closely with creative teams across Riot."
+      "Riot was introducing K/DA, a virtual pop group made of League of Legends characters. I pitched debuting them live, with the virtual idols sharing the stage with their real-world counterparts — turning a product launch into a performance fans would watch, share and remember — and oversaw all creative integration.",
+      "As creative lead, I sourced and managed the external partners that brought the band to life. Over seven months, we modeled the characters from scratch, recorded the choreography with a motion-capture studio, refined the animation and applied it to the digital performers — all in close collaboration with creative teams across Riot."
     ],
     "led": [
-      "Pitched and led the K/DA live performance",
+      "Pitched the live debut as the centerpiece of the K/DA launch",
       "Sourced and managed external partners",
-      "Oversaw character modeling, mocap, and animation"
+      "Oversaw character modeling, mocap and animation"
     ]
   },
   "gallery": [
@@ -111,7 +111,7 @@
         "k": "Highest-grossing skin line in Riot history"
       }
     ],
-    "note": "A massively successful launch — K/DA became the highest-grossing skin line in Riot Games' history, and the live performance drew over 100 million viewers, cementing the moment as a cultural milestone for gaming and entertainment."
+    "note": "A massively successful launch: K/DA became the highest-grossing skin line in Riot Games' history, and the debut drew more than 100 million viewers — a cultural milestone for gaming and entertainment."
   },
   "credits": [
     {

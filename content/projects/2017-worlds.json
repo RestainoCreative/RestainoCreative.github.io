@@ -1,9 +1,9 @@
 {
  "slug": "2017-worlds",
  "title": "AR Elder Dragon",
- "tagline": "Summoning an AR dragon into the stadium.",
+ "tagline": "Summoning League of Legends' Elder Dragon into the Bird's Nest — a moment that carried the game far beyond its players.",
  "tags": [
-  "Opening Ceremony",
+  "IP Activation",
   "Creative Direction",
   "Creative Producer",
   "Innovation"
@@ -23,7 +23,7 @@
   },
   {
    "k": "Discipline",
-   "v": "Opening Ceremony"
+   "v": "IP Activation + Opening Ceremony"
   },
   {
    "k": "Year",
@@ -36,8 +36,8 @@
  ],
  "challenge": {
   "body": [
-   "League of Legends is one of the most popular gaming IPs in the world, and we wanted to use it in the most awe-inspiring way possible. We also knew the Beijing Olympic Stadium was one of the most iconic, massive venues in the world — how could we use its size as a character?",
-   "Augmented reality at this size, scope, and scale had yet to be accomplished. Traditional live AR for broadcast had always been normal fullscreens put into 3D space. This was something new, requiring custom character design, animation, and software development."
+   "League of Legends is one of the most popular gaming IPs in the world, and Worlds 2017 at the Beijing Olympic Stadium was a chance to show its characters at a scale fans had never seen. How could we use one of the most iconic venues on earth as part of the story?",
+   "Augmented reality at this size, scope and scale had never been done. Live AR for broadcast had always meant flat graphics placed into 3D space — this needed custom character design, animation and software development."
   ],
   "media": {
    "type": "image",
@@ -52,12 +52,12 @@
  },
  "approach": {
   "body": [
-   "I pitched and led the creative ideation, development, and execution of the AR Dragon that flew into the stadium during the 2017 Worlds Opening Ceremony — working alongside composers, artists, choreographers, and art directors to oversee the entire creative implementation of the dragon within the show.",
-   "The project was treated as an R&D execution until it could be proven possible. I sourced the technical and creative partners: Zero Density as the render engine for its unique ability to integrate live shadows across 3D geometry via a port of Unreal Engine, and Passion Republic as the animation and design partner for their expertise in real-time character optimization."
+   "I pitched and led the creative ideation, development and execution of the AR Elder Dragon that flew into the stadium during the opening ceremony — working with composers, artists, choreographers and art directors to make a creature from the game feel real to fans in the stadium and the audience at home.",
+   "It was treated as R&D until we proved it possible. I brought in the partners to make it real: Zero Density as the render engine, for its unique ability to cast live shadows across 3D geometry via a port of Unreal Engine, and Passion Republic for animation and design, for their expertise in real-time character optimization."
   ],
   "led": [
    "Pitched and led creative ideation and execution",
-   "Sourced technical and creative partners",
+   "Sourced the technical and creative partners",
    "Led all onsite execution and day-to-day artist feedback"
   ]
  },
@@ -131,7 +131,7 @@
     "k": "Sports Emmy for Live Graphic Design"
    }
   ],
-  "note": "Immediately after its debut, the dragon became a cultural phenomenon — covered by all major news outlets, posted by LeBron James, and ultimately winning Riot Games its first-ever Sports Emmy. It set the standard for real-time graphics that the industry still follows."
+  "note": "The dragon became a cultural phenomenon overnight — covered by all major news outlets, posted by LeBron James, and winning Riot Games its first-ever Sports Emmy. It put League of Legends in front of an audience far beyond gaming, and set the standard for real-time graphics the industry still follows."
  },
  "credits": [
   {

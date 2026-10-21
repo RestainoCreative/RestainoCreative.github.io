@@ -1,10 +1,10 @@
 {
  "slug": "phish-sphere-2026",
  "title": "Phish Residency at Sphere — 2026",
- "tagline": "Nine night. Zero Repeats. Reinventing how Sphere is used forever.",
+ "tagline": "Nine nights. Zero repeats. A fan experience as unpredictable as the band.",
  "tags": [
-  "Concert ",
-  "Creative Direction ",
+  "Fan Experience",
+  "Creative Direction",
   "Show Direction",
   "Innovation"
  ],
@@ -14,8 +14,8 @@
  },
  "challenge": {
   "body": [
-   "Two years after our first run, Phish returned to Sphere for something far bigger: nine shows over three weekends with not one song repeated — 161 unique songs, more than 27 hours of music.",
-   "Any jam could stretch from four minutes to thirty, so the visuals had to follow the band live, in the moment. The 2024 bar had to be cleared by an order of magnitude — every song its own world, reacting in real time, flawless across nine sold-out nights on the largest high-resolution screen on the planet."
+   "Phish fans follow the band from city to city because no two shows are ever the same — that unpredictability is the brand. Two years after our first run, Phish returned to Sphere for nine shows over three weekends with not one song repeated: 161 unique songs, more than 27 hours of music, and a fanbase that would notice anything that felt recycled.",
+   "Any jam could stretch from four minutes to thirty, so the visuals couldn't be playback — they had to follow the band in the moment, the way the fans do. And our 2024 run had already set the bar: every song needed its own world, on the largest high-resolution screen on the planet, every single night."
   ],
   "media": {
    "src": "/media/2_Phish_FURY_042326_1102.webp"
@@ -29,14 +29,14 @@
  },
  "approach": {
   "body": [
-   "I led the project end to end as creative and delivery lead — accountable for the show that hit the screen every night. I directed a global team of 50+ artists across multiple studios, steering 70+ visual content pieces from concept through onsite execution, and owned the creative direction, real-time development, and live show direction across all nine nights.",
-   "The centerpiece was a virtual light rig: a real-time engine that recreated a physical light show on Sphere's 160,000 sq ft media plane, with 7,000+ virtual DMX lights played live by the band's longtime lighting designer. Around it we built real-time worlds — iridescent spiderwebs, bubblegum universes, a hot-dog spaceship odyssey — each adapting to the band's setlist in the moment, anchored by high-resolution capture of The Barn, Phish's Vermont studio."
+   "The idea was to make the venue feel like part of the band. I led the project end to end as creative and delivery lead, directing a global team of 50+ artists across multiple studios and steering 70+ visual pieces from concept through nine nights of show direction — with one rule: everything had to feel like Phish, never like a tech demo.",
+   "The centerpiece was a virtual light rig: a real-time engine that recreated a physical light show across Sphere's 160,000 sq ft screen, with 7,000+ virtual lights played live by the band's longtime lighting designer, so the visuals improvised alongside the music. Around it we built worlds drawn from the band's own lore — iridescent spiderwebs, bubblegum universes, a hot-dog spaceship odyssey — anchored by high-resolution capture of The Barn, Phish's Vermont studio. Every night became something fans could only have caught in that room."
   ],
   "led": [
-   "01 — Creative and delivery lead, accountable for the entire show",
-   "02 — Directed 50+ artists across multiple studios and 70+ content pieces",
-   "03 — Designed and built the real-time virtual light rig and live engine",
-   "04 — Led onsite innovation and show direction across nine nights"
+   "01 — Creative and delivery lead, accountable for the fan experience every night",
+   "02 — Directed 50+ artists across multiple studios and 70+ visual pieces",
+   "03 — Created the real-time virtual light rig that let the visuals improvise with the band",
+   "04 — Led show direction across nine sold-out nights"
   ]
  },
  "gallery": [
@@ -125,7 +125,7 @@
    {
     "n": "150",
     "suffix": "K+",
-    "k": "Fans live in attendance"
+    "k": "Fans in the room"
    },
    {
     "n": "161",
@@ -138,6 +138,6 @@
     "k": "Sold-out nights"
    }
   ],
-  "note": "GQ said we \"reinvented Sphere forever\" — nine sold-out nights, 161 songs without a single repeat, and over 27 hours of music. Another world-first for live entertainment."
+  "note": "GQ said we \"reinvented Sphere forever.\" Nine sold-out nights, 150,000+ fans in the room and 161 songs without a single repeat — proof that a show can deepen a fanbase's bond with a band, not just entertain it."
  }
 }
