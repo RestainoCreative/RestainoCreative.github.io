@@ -73,14 +73,13 @@ body.nav-dark .nav-r { color: var(--ink); }
 
 /* ── Intro ───────────────────────────────────────────── */
 .intro { display: grid; place-items: center; transition: opacity .6s ease, filter .6s ease, transform .9s var(--out); }
-.mark { font: 900 clamp(56px, 6vw, 84px)/1 var(--sans); font-variation-settings: "wdth" 125; letter-spacing: -.04em; color: #CFCDC8; animation: breathe 2.6s ease-in-out infinite; }
-.mark span { display: inline-block; transition: transform .8s var(--spring); }
+.mark { font: 900 clamp(46px, 7.4vw, 124px)/.9 var(--sans); font-variation-settings: "wdth" 125; letter-spacing: -.035em; color: #CFCDC8; text-align: center; animation: breathe 2.6s ease-in-out infinite; }
+.mark span { display: block; transition: transform .8s var(--spring); }
 @keyframes breathe { 50% { transform: scale(1.06); color: #fff; } }
 .pill { position: fixed; left: 50%; bottom: 7vh; transform: translateX(-50%); padding: 13px 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); background: rgba(10,10,10,.6); font: 700 14px var(--sans); letter-spacing: .26em; text-transform: uppercase; color: #D8D6D0; white-space: nowrap; transition: opacity .5s ease, transform .6s var(--spring); }
 body.armed .intro { transform: scale(1.4); filter: blur(10px); }
 body.armed .intro .mark span:first-child { transform: translateX(-60vw); }
 body.armed .intro .mark span:last-child { transform: translateX(60vw); }
-body.armed .pill.start { opacity: 0; transform: translate(-50%, 20px); }
 
 /* ── Shared "Make it ___" sentence ───────────────────── */
 .make {
@@ -322,8 +321,7 @@ body.case-on .nav::before { opacity: 1; }
 </header>
 
 <div class="stage">
-  <section class="intro" data-sec="intro" aria-hidden="true"><div class="mark"><span>J</span><span>R</span></div></section>
-  <div class="pill start" id="startPill" aria-hidden="true">Move your cursor</div>
+  <section class="intro" data-sec="intro" aria-hidden="true"><div class="mark"><span>JUSTIN</span><span>RESTAINO</span></div></section>
 
   <section class="hero" data-sec="hero" aria-hidden="true">
     <p class="make pxt" id="make"></p>
@@ -1013,7 +1011,6 @@ body.case-on .nav::before { opacity: 1; }
     mediaState = 'words';
   }
   later(4200, () => { if (!armed && !FINE) arm(); }, 'arm');
-  $('#startPill').textContent = FINE ? 'Move your cursor' : 'Touch to begin';
 
   let videoOn = false;
   function showMedia(kind, k) {
