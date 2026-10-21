@@ -54,7 +54,7 @@ button { font: inherit; color: inherit; }
 .media img, .media video { position: absolute; inset: -3%; width: 106%; height: 106%; object-fit: cover; opacity: 0; will-change: transform; }
 .media img.on { opacity: 1; }
 .media .vig { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(0,0,0,.05), rgba(0,0,0,.6)); opacity: var(--vig, 0); }
-#fx { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; image-rendering: pixelated; }
+#fx { position: fixed; inset: 0 0 auto 0; width: 100%; height: var(--vh, 100%); z-index: 2; pointer-events: none; image-rendering: pixelated; }
 .stage { position: fixed; inset: 0; z-index: 3; pointer-events: none; transition: opacity .3s ease; }
 .stage a, .stage button { pointer-events: auto; }
 .stage section { position: fixed; inset: 0; }
@@ -304,7 +304,14 @@ body.case-on .nav::before { opacity: 1; }
   .nav-r .hide-sm { display: none; }
   .case-l { right: auto; left: 20px; width: calc(100vw - 40px); padding: 92px 0 40px; }
   .case-r { left: 0; width: 100vw; }
-  .nav::before { width: 100vw; }
+  /* bigger tap areas, same visual position */
+  .nav-r a { padding: 12px 2px; margin: -12px -2px; }
+  .tabs button { padding: 12px 14px; }
+  .wl { padding: 3px 0; }
+  .brand { padding: 10px 0; margin: -10px 0; }
+  /* lists and panels scroll under the nav on phones, so the nav always sits on a soft fade */
+  .nav::before { width: 100vw; height: 86px; opacity: 1; background: linear-gradient(var(--bg) 52px, rgba(5,5,5,0)); }
+  .what-r.tall { -webkit-mask-image: linear-gradient(transparent, #000 16px); mask-image: linear-gradient(transparent, #000 16px); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
@@ -507,7 +514,7 @@ body.case-on .nav::before { opacity: 1; }
   const NONE = 255, NW = WORDS.length, NR = RECORD.length;
 
   /* ── State (declared early: DOM handlers reference it) ── */
-  let caseLive = false, armed = false, mediaState = null, hoverK = -1, hoverAt = 0, hoverMedia = -1, sel = -1, contactK = 0, contactNext = 0, mw = 100, mwv = 0;
+  let selMix = 0, selTop = 0, filledK = -1, caseLive = false, armed = false, mediaState = null, hoverK = -1, hoverAt = 0, hoverMedia = -1, sel = -1, contactK = 0, contactNext = 0, mw = 100, mwv = 0;
 
   /* ── DOM ─────────────────────────────────────────────── */
   const body = document.body, rootS = document.documentElement.style;
@@ -619,16 +626,27 @@ body.case-on .nav::before { opacity: 1; }
   }
   if (portrait.complete) setTimeout(preparePortrait, 0); else portrait.addEventListener('load', preparePortrait);
 
+  // On touch screens the browser bar slides away as you scroll, changing innerHeight. Laying out against the large
+  // viewport (bar hidden) keeps every scroll position and panel steady instead of re-laying out mid-scroll.
+  const vhProbe = Object.assign(document.createElement('div'), { ariaHidden: 'true' });
+  vhProbe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100lvh;visibility:hidden;pointer-events:none';
+  document.body.appendChild(vhProbe);
+  const viewH = () => (FINE ? innerHeight : vhProbe.offsetHeight || innerHeight);
+
   function layout() {
-    W = innerWidth; H = innerHeight; narrow = W < 760;
+    W = innerWidth; H = viewH(); narrow = W < 760;
+    rootS.setProperty('--vh', H + 'px');
     SPLIT = narrow ? { x: 0, y: Math.round(H * .44), w: W, h: H - Math.round(H * .44) } : { x: Math.round(W / 2), y: 0, w: W - Math.round(W / 2), h: H };
     FULL = { x: 0, y: 0, w: W, h: H };
     WORKR = narrow ? { x: 0, y: Math.round(H * .66), w: W, h: H - Math.round(H * .66) } : SPLIT;
-    WHATR = narrow ? { x: 0, y: Math.round(H * .42), w: W, h: H - Math.round(H * .42) } : SPLIT;
+    // phones: the What I do panel starts below whatever its headings and tags need (short screens push it down)
+    const whatY = narrow ? Math.max(Math.round(H * .42), Math.ceil($('.what-l').offsetTop + $('.what-l').offsetHeight + 18)) : 0;
+    WHATR = narrow ? { x: 0, y: whatY, w: W, h: H - whatY } : SPLIT;
     PAD = narrow ? 20 : Math.round(clamp(W * .024, 24, 48));
     measure.font = '800 100px Archivo';
     const longest = Math.max(...WORDS.concat(RECORD).map((w) => measure.measureText(w.w).width)) / 100 || 7.4;
-    FS = Math.floor(Math.min(narrow ? W * .13 : W * .056, (SPLIT.w - PAD * 2) / (longest * 1.04)));
+    // phones leave room for the landing stretch (wdth 125 is ~12% wider), so the longest word never clips at the edge
+    FS = Math.floor(Math.min(narrow ? W * .13 : W * .056, (SPLIT.w - PAD * 2) / (longest * (narrow ? 1.14 : 1.04))));
     L = Math.round(FS * 1.02);
     rowY = narrow ? SPLIT.y + SPLIT.h * .36 : H * .5;
     // every work row (title + its meta label, + the hover slide) has to fit its side of the split
@@ -688,7 +706,8 @@ body.case-on .nav::before { opacity: 1; }
   }
   let pKey = '';
   layout();
-  addEventListener('resize', layout);
+  let seenW = 0, seenH = 0;
+  addEventListener('resize', () => { const w = innerWidth, h = viewH(); if (w === seenW && h === seenH) return; seenW = w; seenH = h; layout(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
 
   const mixR = (a, b, t) => ({ x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t), w: lerp(a.w, b.w, t), h: lerp(a.h, b.h, t) });
@@ -1073,6 +1092,7 @@ body.case-on .nav::before { opacity: 1; }
   const wItems = [...$('#wcol').children];
   function fillProject(k) {
     const p = PROJECTS[k];
+    filledK = k;
     $('#wHead').textContent = p.head;
     $('#wCaps').textContent = p.caps;
     ['#wS0', '#wS1', '#wS2'].forEach((s, j) => { $(s).textContent = p.stats[j] || ''; $(s).style.display = p.stats[j] ? '' : 'none'; });
@@ -1098,7 +1118,7 @@ body.case-on .nav::before { opacity: 1; }
   }
   function deselect() {
     if (sel < 0) return;
-    sel = -1; body.classList.remove('sel');
+    sel = -1; filledK = -1; body.classList.remove('sel');
     cancel('detail');
     wItems.forEach((el) => el.classList.remove('in'));
     wlItems.forEach((b, i) => { b.style.setProperty('--i', NPJ - i); b.classList.remove('down'); });
@@ -1343,7 +1363,8 @@ body.case-on .nav::before { opacity: 1; }
       if (Math.abs(sTarget - sCur) < .5) { sCur = sTarget; wheeling = false; }
       scrollTo(0, sCur);
     }
-    sy += (scrollY - sy) * (REDUCED ? 1 : 1 - Math.exp(-dt * 16));
+    // a wheel's steps get eased; a finger's native scroll is already smooth, so touch tracks it 1:1 with no lag
+    sy = REDUCED || !FINE ? scrollY : sy + (scrollY - sy) * (1 - Math.exp(-dt * 16));
     const y = sy;
     if (!armed && y > 8) arm();
     if (armed && y > STEP * 3 && !reelBg.getAttribute('src')) { reelBg.preload = 'auto'; reelBg.src = reelBg.dataset.src; reelBg.load(); }
@@ -1355,7 +1376,14 @@ body.case-on .nav::before { opacity: 1; }
       caseFrame(y);
     } else {
     phase = y < reelIn + H * .2 ? 'words' : y < reelOut + H * .3 ? 'reel' : y < workEnd + H * .12 ? 'work' : y < whatStart ? 'record' : y < contactStart ? 'what' : 'contact';
-    applyRect(rectAt(y));
+    // phones: a selected project's image grows up to just below its details instead of leaving a black gap
+    let rect = rectAt(y);
+    // it rises as the details fill in (so it never overshoots), and eases between projects
+    const selOn = narrow && sel >= 0 && phase === 'work', filled = filledK === sel, kSel = REDUCED ? 1 : 1 - Math.exp(-dt * 7);
+    if (selOn && filled) { const w = $('#wcol'), t = Math.min(rect.y, Math.max(Math.round(H * .38), w.offsetTop + w.offsetHeight + 22)); selTop = selMix < .01 ? t : selTop + (t - selTop) * kSel; }
+    selMix += ((selOn && (filled || selMix > .5) ? 1 : 0) - selMix) * kSel;
+    if (selMix > .002) rect = mixR(rect, { x: rect.x, y: selTop, w: rect.w, h: rect.y + rect.h - selTop }, ease(selMix));
+    applyRect(rect);
     body.classList.toggle('nav-dark', armed && !narrow && (phase === 'words' || phase === 'record' || phase === 'what' || phase === 'contact'));
 
     // every section's visibility is scroll-driven, so transitions track your scroll
