@@ -1,6 +1,6 @@
 {
  "slug": "2020-worlds",
- "title": "Beijing World Championship",
+ "title": "Riot Games World Championship — Shanghai",
  "tagline": "Celebrating ten years of League of Legends Esports with the fans who built it — mid-pandemic.",
  "tags": [
   "Brand Experience",
@@ -124,12 +124,12 @@
   }
  ],
  "next": {
-  "slug": "phish-at-sphere",
-  "title": "Phish Residency at Sphere",
-  "tagline": "Reimagining real-time visuals for concerts.",
+  "slug": "2022-spring-finals",
+  "title": "Tyler1 Ad Spot",
+  "tagline": "Teaming up with League's biggest influencer to bring fans back to the LCS after the pandemic.",
   "media": {
    "type": "image",
-   "src": "/media/phish-at-sphere/hero.webp"
+   "src": "/media/2022-spring-finals/hero.webp"
   }
  }
 }

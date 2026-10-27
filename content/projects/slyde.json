@@ -1,9 +1,9 @@
 {
  "slug": "slyde",
  "title": "Slyde",
- "tagline": "An AI presentation studio I conceived, designed and launched — my vision, brought to life with AI.",
+ "tagline": "A presentation studio that knows your company — so every pitch starts from your best work, not a blank slide.",
  "tags": [
-  "AI Product",
+  "Product",
   "Brand Identity",
   "Creative Direction",
   "Product Marketing"
@@ -23,7 +23,7 @@
   },
   {
    "k": "Discipline",
-   "v": "AI Product + Brand + Launch"
+   "v": "Product + Brand + Launch"
   },
   {
    "k": "Year",
@@ -36,28 +36,28 @@
  ],
  "challenge": {
   "body": [
-   "Every agency rebuilds the same presentations from scratch, and every AI slide tool makes them look generic. I wanted a tool that writes like your company — one that learns from your best decks, case studies and brand voice, then builds new presentations in your own templates.",
-   "The bigger challenge was scope. Slyde isn't a prototype: it's a complete product — accounts, billing, real-time collaboration, a design-grade editor — plus a brand and a launch. I wanted to prove that one creative director, working AI-native, could take an idea that big from a sketch to a live product."
+   "Teams lose days rebuilding the same presentations. Their best decks, case studies and positioning live in old files and people's heads, so every new pitch starts from a blank slide — and the tools that promise speed hand back something generic that doesn't sound like the company at all.",
+   "I wanted to fix that end to end: one place that holds what a company knows and how it talks, and turns it into on-brand presentations in its own templates — fast enough for a same-day RFP, good enough to send."
   ]
  },
  "feature": {
   "type": "video",
   "src": "/media/slyde/film.mp4",
   "poster": "/media/slyde/film-poster.webp",
-  "caption": "The Slyde launch film, made with AI in Blender and After Effects."
+  "caption": "The Slyde launch film."
  },
  "approach": {
   "body": [
-   "I started with the idea, not the interface: a company Brain. Slyde turns a team's past decks, case studies, website and voice into an organized knowledge base, then writes on-brand presentations from it — a brief or RFP goes in, a finished deck comes out. That idea shaped the positioning and the line that leads the brand: \"Stop being generic. Use your brain.\"",
-   "I ran the build the way I'd run any production. I set the vision, wrote the briefs, made the product and design calls, and reviewed every feature until it felt right, with AI as the tools that turned that direction into working software. More than 2,800 commits later, Slyde has a Keynote-grade editor with smart guides and charts, real-time multiplayer with live cursors, chat and comments, an AI pipeline that drafts whole decks from a brief, PowerPoint and PDF import, editable PowerPoint export, and team workspaces with roles and paid plans.",
-   "The brand was mine end to end: the name (DeckForge, then Slydra, then Slyde), three design systems that landed on Product Pop's violet and paper, the messaging and the marketing site. I directed the launch film like any shoot — concept, script, look and edit — using AI to drive Blender and After Effects, and took it through 146 versions until every frame landed."
+   "The answer is a company Brain. Slyde gathers a team's past decks, case studies, website and voice into an organized knowledge base, then builds new presentations from it — a brief goes in, a finished deck in the company's own templates comes out. That idea shaped the positioning and the line that leads the brand: \"Stop being generic. Use your brain.\"",
+   "Around it sits a complete product: a Keynote-grade editor with smart guides and charts, real-time collaboration with live cursors, chat, comments and assignments, a slide library the whole team can search, PowerPoint and PDF import, editable PowerPoint export, and workspaces with roles and paid plans. I led all of it — the vision, the product and design calls, and every feature review — across more than 2,800 commits.",
+   "The brand was mine end to end: the name (DeckForge, then Slydra, then Slyde), three design systems that landed on Product Pop's violet and paper, the messaging and the marketing site. I directed the launch film like any shoot — concept, script, look and edit — built in Blender and After Effects and taken through 146 versions until every frame landed."
   ],
   "led": [
-   "01 — Conceived the product, the positioning and the business model",
-   "02 — Directed the build: vision, briefs, product and design calls, with AI as my tools",
+   "01 — Defined the problem, the product and the positioning",
+   "02 — Directed the product: vision, briefs, design and feature calls",
    "03 — Designed the brand: name, identity, three design systems and messaging",
    "04 — Built the marketing site and pricing, with paid plans live on Stripe",
-   "05 — Directed the launch film: concept, script, look and edit, made with AI in Blender and After Effects",
+   "05 — Directed the launch film: concept, script, look and edit",
    "06 — Took it from idea to live product, solo, in six months"
   ]
  },
@@ -110,7 +110,7 @@
   {
    "type": "image",
    "src": "/media/slyde/theme-doors.webp",
-   "caption": "Themes: start fresh, design with AI, or import."
+   "caption": "Themes: start fresh or bring in your own."
   },
   {
    "type": "image",
@@ -166,7 +166,7 @@
     "k": "Lines of code"
    }
   ],
-  "note": "Slyde is live at myslyde.com in private beta, with paid plans running on Stripe — a full product, brand and launch, led by one AI-native creative director."
+  "note": "Slyde is live at myslyde.com in private beta, with paid plans running on Stripe — a full product, brand and launch, led by one creative director."
  },
  "credits": [
   {
@@ -176,19 +176,15 @@
   {
    "k": "Brand, Messaging & Launch",
    "v": "Justin Restaino"
-  },
-  {
-   "k": "Built with",
-   "v": "AI tools including Claude and Codex, Blender, After Effects"
   }
  ],
  "next": {
-  "slug": "lost-and-found",
-  "title": "Lost and Found",
-  "tagline": "A 100% AI-generated short film — and a proof of concept for AI-native brand storytelling.",
+  "slug": "phish-sphere-2026",
+  "title": "Phish Residency at Sphere — 2026",
+  "tagline": "Nine nights. Zero repeats. A fan experience as unpredictable as the band.",
   "media": {
    "type": "image",
-   "src": "/media/lost-and-found/hero.webp"
+   "src": "/media/1_Phish_FURY_042526_0790.webp"
   }
  }
 }

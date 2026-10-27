@@ -1,23 +1,6 @@
 {
   "projects": [
     {
-      "num": "14",
-      "slug": "slyde",
-      "title": "Slyde",
-      "client": "Self-initiated",
-      "year": 2026,
-      "tags": [
-        "AI Product",
-        "Brand Identity",
-        "Creative Direction",
-        "Product Marketing"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/slyde/hero.webp"
-      }
-    },
-    {
       "num": "01",
       "slug": "phish-sphere-2026",
       "title": "Phish Residency at Sphere — 2026",
@@ -35,43 +18,91 @@
       }
     },
     {
-      "num": "07",
-      "slug": "lost-and-found",
-      "title": "Lost and Found",
-      "client": "Self-initiated",
-      "year": 2025,
+      "num": "01",
+      "slug": "phish-at-sphere",
+      "title": "Phish Residency at Sphere",
+      "client": "Moment Factory",
+      "year": 2024,
       "tags": [
-        "AI",
+        "Concert",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/lost-and-found/hero.webp"
+        "src": "/media/phish-at-sphere/hero.webp"
       }
     },
     {
-      "num": "04",
-      "slug": "pfl-world-tournament-graphics",
-      "title": "PFL World Tournament: Brand Development",
-      "client": "Professional Fighters League",
-      "year": 2025,
+      "num": "06",
+      "slug": "2017-worlds",
+      "title": "AR Elder Dragon",
+      "client": "Riot Games",
+      "year": 2017,
       "tags": [
-        "Brand Identity",
+        "Opening Ceremony",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/pfl-world-tournament-graphics/hero.webp"
+        "src": "/media/2017-worlds/hero.webp"
       }
     },
     {
-      "num": "05",
-      "slug": "pfl-brand-film",
-      "title": "PFL World Tournament: Brand Spot",
-      "client": "Professional Fighters League",
-      "year": 2025,
+      "num": "10",
+      "slug": "2018-worlds",
+      "title": "K/DA Live Show Launch",
+      "client": "Riot Games",
+      "year": 2018,
+      "tags": [
+        "Brand Activation",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2018-worlds/hero.webp"
+      }
+    },
+    {
+      "num": "03",
+      "slug": "2019-worlds",
+      "title": "Riot Games World Championship — Paris",
+      "client": "Riot Games",
+      "year": 2019,
+      "tags": [
+        "Opening Ceremony",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2019-worlds/hero.webp"
+      }
+    },
+    {
+      "num": "12",
+      "slug": "2020-worlds",
+      "title": "Riot Games World Championship — Shanghai",
+      "client": "Riot Games",
+      "year": 2020,
+      "tags": [
+        "Opening Ceremony",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/2020-worlds/hero.webp"
+      }
+    },
+    {
+      "num": "11",
+      "slug": "2022-spring-finals",
+      "title": "Tyler1 Ad Spot",
+      "client": "Riot Games",
+      "year": 2022,
       "tags": [
         "Promotional Film",
         "Creative Direction",
@@ -79,23 +110,39 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/pfl-brand-film/hero.webp"
+        "src": "/media/2022-spring-finals/hero.webp"
       }
     },
     {
-      "num": "02",
-      "slug": "elpelotazo",
-      "title": "Telemundo: El Pelotazo",
-      "client": "Telemundo Deportes",
-      "year": 2025,
+      "num": "08",
+      "slug": "tomorrow-we-fight",
+      "title": "Tomorrow We Fight — LCS 10-Year Anniversary Spot",
+      "client": "Riot Games",
+      "year": 2022,
       "tags": [
-        "Brand Identity",
+        "Promotional Film",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/elpelotazo/hero.webp"
+        "src": "/media/tomorrow-we-fight/hero.webp"
+      }
+    },
+    {
+      "num": "09",
+      "slug": "igniteupriseunleash",
+      "title": "Ignite. Uprise. Unleash. — LCS Kickoff Video",
+      "client": "Riot Games",
+      "year": 2022,
+      "tags": [
+        "Promotional Film",
+        "Creative Direction",
+        "Creative Producer"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/igniteupriseunleash/hero.webp"
       }
     },
     {
@@ -116,131 +163,36 @@
       }
     },
     {
-      "num": "01",
-      "slug": "phish-at-sphere",
-      "title": "Phish Residency at Sphere",
-      "client": "Moment Factory",
-      "year": 2024,
+      "num": "02",
+      "slug": "elpelotazo",
+      "title": "El Pelotazo Brand Launch",
+      "client": "Telemundo Deportes",
+      "year": 2025,
       "tags": [
-        "Concert",
+        "Brand Identity",
         "Creative Direction",
         "Creative Producer"
       ],
       "media": {
         "type": "image",
-        "src": "/media/phish-at-sphere/hero.webp"
+        "src": "/media/elpelotazo/hero.webp"
       }
     },
     {
-      "num": "09",
-      "slug": "igniteupriseunleash",
-      "title": "Ignite. Uprise. Unleash.",
-      "client": "Riot Games",
-      "year": 2022,
+      "num": "14",
+      "slug": "slyde",
+      "title": "Slyde",
+      "client": "Self-initiated",
+      "year": 2026,
       "tags": [
-        "Promotional Film",
+        "Product",
+        "Brand Identity",
         "Creative Direction",
-        "Creative Producer"
+        "Product Marketing"
       ],
       "media": {
         "type": "image",
-        "src": "/media/igniteupriseunleash/hero.webp"
-      }
-    },
-    {
-      "num": "08",
-      "slug": "tomorrow-we-fight",
-      "title": "Tomorrow We Fight",
-      "client": "Riot Games",
-      "year": 2022,
-      "tags": [
-        "Promotional Film",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/tomorrow-we-fight/hero.webp"
-      }
-    },
-    {
-      "num": "11",
-      "slug": "2022-spring-finals",
-      "title": "Tyler1 LCS Promo",
-      "client": "Riot Games",
-      "year": 2022,
-      "tags": [
-        "Promotional Film",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2022-spring-finals/hero.webp"
-      }
-    },
-    {
-      "num": "12",
-      "slug": "2020-worlds",
-      "title": "Beijing World Championship",
-      "client": "Riot Games",
-      "year": 2020,
-      "tags": [
-        "Opening Ceremony",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2020-worlds/hero.webp"
-      }
-    },
-    {
-      "num": "03",
-      "slug": "2019-worlds",
-      "title": "Paris World Championship",
-      "client": "Riot Games",
-      "year": 2019,
-      "tags": [
-        "Opening Ceremony",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2019-worlds/hero.webp"
-      }
-    },
-    {
-      "num": "10",
-      "slug": "2018-worlds",
-      "title": "2018 World Championship",
-      "client": "Riot Games",
-      "year": 2018,
-      "tags": [
-        "AR Concert",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2018-worlds/hero.webp"
-      }
-    },
-    {
-      "num": "06",
-      "slug": "2017-worlds",
-      "title": "AR Elder Dragon",
-      "client": "Riot Games",
-      "year": 2017,
-      "tags": [
-        "Opening Ceremony",
-        "Creative Direction",
-        "Creative Producer"
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/2017-worlds/hero.webp"
+        "src": "/media/slyde/hero.webp"
       }
     }
   ]

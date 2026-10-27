@@ -1,6 +1,6 @@
 {
  "slug": "elpelotazo",
- "title": "Telemundo: El Pelotazo",
+ "title": "El Pelotazo Brand Launch",
  "tagline": "Giving a brand-new Telemundo sports show an identity fans could recognize in a second.",
  "tags": [
   "Brand Identity",
@@ -117,12 +117,12 @@
   }
  ],
  "next": {
-  "slug": "2019-worlds",
-  "title": "Paris World Championship",
-  "tagline": "Creating a spectacle for the Riot Games World Championship using holograms.",
+  "slug": "slyde",
+  "title": "Slyde",
+  "tagline": "A presentation studio that knows your company — so every pitch starts from your best work, not a blank slide.",
   "media": {
    "type": "image",
-   "src": "/media/2019-worlds/hero.webp"
+   "src": "/media/slyde/hero.webp"
   }
  }
 }

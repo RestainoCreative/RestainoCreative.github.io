@@ -160,12 +160,12 @@
     }
   ],
   "next": {
-    "slug": "elpelotazo",
-    "title": "Telemundo: El Pelotazo",
-    "tagline": "Designing the brand identity for a new Telemundo talk show.",
+    "slug": "2017-worlds",
+    "title": "AR Elder Dragon",
+    "tagline": "Summoning League of Legends' Elder Dragon into the Bird's Nest — a moment that carried the game far beyond its players.",
     "media": {
       "type": "image",
-      "src": "/media/elpelotazo/hero.webp"
+      "src": "/media/2017-worlds/hero.webp"
     }
   }
 }

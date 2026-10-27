@@ -1,6 +1,6 @@
 {
  "slug": "igniteupriseunleash",
- "title": "Ignite. Uprise. Unleash.",
+ "title": "Ignite. Uprise. Unleash. — LCS Kickoff Video",
  "tagline": "Resetting the LCS's tone and voice to win back its fans — and give them new heroes.",
  "tags": [
   "Brand Campaign",
@@ -133,12 +133,12 @@
   }
  ],
  "next": {
-  "slug": "2018-worlds",
-  "title": "2018 World Championship",
-  "tagline": "Debuting a virtual band live on stage.",
+  "slug": "lcs-rebrand",
+  "title": "League Championship Series: 2024 Rebrand",
+  "tagline": "Rebuilding North America's premier League of Legends league into a brand where players make their name.",
   "media": {
    "type": "image",
-   "src": "/media/2018-worlds/hero.webp"
+   "src": "/media/lcs-rebrand/hero.webp"
   }
  }
 }

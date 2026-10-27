@@ -139,5 +139,14 @@
    }
   ],
   "note": "GQ said we \"reinvented Sphere forever.\" Nine sold-out nights, 150,000+ fans in the room and 161 songs without a single repeat — proof that a show can deepen a fanbase's bond with a band, not just entertain it."
+ },
+ "next": {
+  "slug": "phish-at-sphere",
+  "title": "Phish Residency at Sphere",
+  "tagline": "Real-time visuals that improvised with the band — a concert experience fans couldn't get anywhere else.",
+  "media": {
+   "type": "image",
+   "src": "/media/phish-at-sphere/hero.webp"
+  }
  }
 }

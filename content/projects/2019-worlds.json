@@ -1,6 +1,6 @@
 {
   "slug": "2019-worlds",
-  "title": "Paris World Championship",
+  "title": "Riot Games World Championship — Paris",
   "tagline": "One stage, two launches: Riot's new virtual band True Damage and a Louis Vuitton partnership.",
   "tags": [
     "Brand Launch",
@@ -153,12 +153,12 @@
     }
   ],
   "next": {
-    "slug": "pfl-world-tournament-graphics",
-    "title": "PFL World Tournament: Brand Development",
-    "tagline": "Creating the visual future for the Professional Fighters League.",
+    "slug": "2020-worlds",
+    "title": "Riot Games World Championship — Shanghai",
+    "tagline": "Celebrating ten years of League of Legends Esports with the fans who built it — mid-pandemic.",
     "media": {
       "type": "image",
-      "src": "/media/pfl-world-tournament-graphics/hero.webp"
+      "src": "/media/2020-worlds/hero.webp"
     }
   }
 }

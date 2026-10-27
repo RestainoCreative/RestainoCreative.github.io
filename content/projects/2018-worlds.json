@@ -1,9 +1,9 @@
 {
   "slug": "2018-worlds",
-  "title": "2018 World Championship",
-  "tagline": "Launching K/DA, a virtual pop group, live on stage — and Riot's highest-grossing skin line in history.",
+  "title": "K/DA Live Show Launch",
+  "tagline": "A brand activation that launched K/DA, Riot's virtual pop group, live on the biggest stage in esports — and drove the highest-grossing skin line in Riot history.",
   "tags": [
-    "IP Launch",
+    "Brand Activation",
     "Creative Direction",
     "Creative Producer",
     "Innovation"
@@ -23,7 +23,7 @@
     },
     {
       "k": "Discipline",
-      "v": "IP Launch + AR Concert"
+      "v": "Brand Activation + Live Launch"
     },
     {
       "k": "Year",
@@ -36,7 +36,7 @@
   ],
   "challenge": {
     "body": [
-      "Launching K/DA was Riot's most ambitious IP rollout in over a decade, uniting game development, marketing, music and esports behind one global launch. The stakes were high: the debut had to make fans fall for a band that didn't physically exist.",
+      "K/DA was Riot's most ambitious IP launch in over a decade: a virtual pop group of League of Legends champions, with game development, marketing, music and esports all behind it. The brand needed a launch moment big enough to make fans fall for a band that didn't physically exist — and buy into it.",
       "A live performance with AR characters interacting in real time with real performers had never been done. We built everything from the ground up — custom technology, original character assets and animation synced perfectly to the choreography happening live on stage."
     ],
     "media": {
@@ -47,11 +47,11 @@
   "feature": null,
   "approach": {
     "body": [
-      "Riot was introducing K/DA, a virtual pop group made of League of Legends characters. I pitched debuting them live, with the virtual idols sharing the stage with their real-world counterparts — turning a product launch into a performance fans would watch, share and remember — and oversaw all creative integration.",
+      "I pitched the activation: debut K/DA live at the World Championship, with the virtual idols sharing the stage with their real-world vocalists — turning a product launch into a performance fans would watch, share and remember. I oversaw all creative integration, keeping the band, the song and the brand moment working as one.",
       "As creative lead, I sourced and managed the external partners that brought the band to life. Over seven months, we modeled the characters from scratch, recorded the choreography with a motion-capture studio, refined the animation and applied it to the digital performers — all in close collaboration with creative teams across Riot."
     ],
     "led": [
-      "Pitched the live debut as the centerpiece of the K/DA launch",
+      "Pitched the live debut as the brand activation at the heart of the K/DA launch",
       "Sourced and managed external partners",
       "Oversaw character modeling, mocap and animation"
     ]
@@ -124,12 +124,12 @@
     }
   ],
   "next": {
-    "slug": "2022-spring-finals",
-    "title": "Tyler1 LCS Promo",
-    "tagline": "Teaming up with League's biggest influencer to bring fans back from the pandemic.",
+    "slug": "2019-worlds",
+    "title": "Riot Games World Championship — Paris",
+    "tagline": "One stage, two launches: Riot's new virtual band True Damage and a Louis Vuitton partnership.",
     "media": {
       "type": "image",
-      "src": "/media/2022-spring-finals/hero.webp"
+      "src": "/media/2019-worlds/hero.webp"
     }
   }
 }

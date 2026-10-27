@@ -1,6 +1,6 @@
 {
  "slug": "2022-spring-finals",
- "title": "Tyler1 LCS Promo",
+ "title": "Tyler1 Ad Spot",
  "tagline": "Teaming up with League's biggest influencer to bring fans back to the LCS after the pandemic.",
  "tags": [
   "Influencer Campaign",
@@ -141,12 +141,12 @@
   }
  ],
  "next": {
-  "slug": "2020-worlds",
-  "title": "Beijing World Championship",
-  "tagline": "Creating a 10-year anniversary spectacle during a pandemic.",
+  "slug": "tomorrow-we-fight",
+  "title": "Tomorrow We Fight — LCS 10-Year Anniversary Spot",
+  "tagline": "Using the league's legends to pass the torch — and build fandom for its next generation.",
   "media": {
    "type": "image",
-   "src": "/media/2020-worlds/hero.webp"
+   "src": "/media/tomorrow-we-fight/hero.webp"
   }
  }
 }
